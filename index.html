@@ -260,6 +260,159 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/js技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/js技巧/" itemprop="url">
+                  js技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T23:55:28+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="日常积累"><a href="#日常积累" class="headerlink" title="日常积累"></a>日常积累</h2><ul>
+<li><p>Scope<br>  共享的[[Scope]],所以循环中创建多个函数会只取得最后一次循环变量的赋值</p>
+</li>
+<li><p>鼠标事件<br>  js鼠标拖拽要触发mousemove事件绑定在document元素上，可解决快速移动失效所拖拽元素跟不上的问题，其他类似问题都可绑定在document上解决</p>
+</li>
+<li><p>表达式赋值<br>  (operation)()赋值运算再执行函数的关键在于赋值时取到的函数为执行时直接触发的函数，而不在于会把这个函数赋值给谁再由它来执行(决定this指向)</p>
+</li>
+<li><p>作用域<br>  查找变量先从作用域的前端开始，即当前环境的变量对象或活动对象查，之后若在函数中再沿着[[Scope]]中保存的父变量对象的层级链向上查找至全局对象，浏览器中即window对象，之后再进行二维作用域链查找，因window继承于Object.prototype对象，所以查到Object.prototype为止</p>
+</li>
+<li><p>函数参数解构赋值<br>  解构赋值function({x=1,y=2}={})，{}为默认值，即没有传入参数将{}对象做为默认值，因为默认值为空对象，所以又触发设置默认的对象解构赋值所以参数为1，2</p>
+</li>
+<li><p>函数参数传递<br>  函数参数只能按值传递，因此传递引用类型时并非按引用访问，而是存储实参到变量对象中并与传进的变量引用内存中的同一个引用类型，因此将参数指向另一个引用类型时并不会影响到传进函数的变量所引用的值</p>
+</li>
+<li><p>js执行机制<br>  js逐行解释执行代码，当执行到函数调用时，此时调用函数内部的作用域链为[[Scope]] + 当前函数的AO对象<br>  但[[Scope]]保存的对象为调用此函数的AO/VO对象，仅为预编译保存的值+调用函数之前的代码执行值<br>  所以在调用函数之后才赋值的变量是取不到的，即使是闭包也如此(单线程执行代码即同步)</p>
+</li>
+<li><p>正则表达式<br>  加标志g 会引起交替返回true 和false<br>  使用标志g 不会在匹配第一个项时就停止，而会保留状态，直到没有匹配才会重置<br>  可以写RegExp.lastIndex = 0重置这种状态</p>
+</li>
+<li><p>==比较操作符<br>  参数数据类型相同直接进行比较<br>  不同 </p>
+<pre><code>布尔值：转换为数值进行比较
+字符串：如果另一比较类型为数值会转化为数值通过Number()方法转换
+对象：先调用valueOf()比较，不行再调用toString()比较(得到基本类型)
+</code></pre><p>  规则 </p>
+<pre><code>null和undefined不会转换且互相相等
+NaN不等于任何值，即使是NaN
+两个对象会比较引用即指针
+</code></pre></li>
+<li><p>stack(栈)<br>  数据结构<br>  代码运行方式<br>  内存区域</p>
+</li>
+<li><p>异步/同步调用<br>  异步的函数调用不返回原来代码调用处<br>  回调函数 </p>
+<pre><code>需要带状态的才叫回调函数
+回调和闭包有一个共同的特性：在最终“回调”调用以前，前面所有的状态都得存着
+</code></pre></li>
+<li><p>EventLoop<br>  Event Loop是一个程序结构，用于等待和发送消息和事件<br>  EventLoop派一个人来轮询所有的，其他人都可以把观察条件和回调函数注册在EventLoop上，它进行统一的轮询，注册的人越多，轮询一圈的时间越长。但是简化了编程，不用每个人都写轮询了，提供API变得方便。</p>
+</li>
+<li>异步 =&gt; 回调 =&gt; EventLoop</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/Hexo搭建博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -338,18 +491,12 @@
         
           
             <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ol>
-<li><p>安装hexo<br><code>npm install hexo-cli -g</code></p>
-</li>
-<li><p>生成博客<br><code>hexo init blog</code><br><code>cd blog</code></p>
-</li>
-<li><p>安装依赖<br><code>npm install</code><br><em>注意：</em>可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息</p>
-</li>
-<li><p>本地启动查看<br><code>hexo server</code></p>
-</li>
-<li><p>生成网页<br><code>hexo generate</code><br>可以在 public 目录查看整个网站的文件</p>
-</li>
-<li><p>部署到Git<br><code>hexo deploy</code><br>需要安装部署插件<br><code>npm install hexo-deployer-git --save</code></p>
-</li>
+<li>安装hexo<br><code>npm install hexo-cli -g</code></li>
+<li>生成博客<br><code>hexo init blog</code><br><code>cd blog</code></li>
+<li>安装依赖<br><code>npm install</code><br><em>注意：</em>可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息</li>
+<li>本地启动查看<br><code>hexo server</code></li>
+<li>生成网页<br><code>hexo generate</code><br>可以在 public 目录查看整个网站的文件</li>
+<li>部署到Git<br><code>hexo deploy</code><br>需要安装部署插件<br><code>npm install hexo-deployer-git --save</code></li>
 </ol>
 <h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><ol>
 <li>创建git仓库</li>
@@ -365,19 +512,18 @@
 </li>
 </ul>
 <h2 id="开始写博客"><a href="#开始写博客" class="headerlink" title="开始写博客"></a>开始写博客</h2><ol>
-<li><p>生成文章<br><code>hexo new &quot;标题&quot;</code></p>
-</li>
-<li><p>生成页面<br><code>hexo new page &quot;页面&quot;</code></p>
-</li>
+<li>生成文章<br><code>hexo new &quot;标题&quot;</code></li>
+<li>生成页面<br><code>hexo new page &quot;页面&quot;</code><br><strong> 所有源文件都在source文件夹下 </strong></li>
 </ol>
-<p>所有源文件都在source文件夹下</p>
 <h2 id="换主题"><a href="#换主题" class="headerlink" title="换主题"></a>换主题</h2><p>需改全局配置 _config.yml 下的 theme 为要替换的主题<br>然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo server</div></pre></td></tr></table></figure></p>
 <h2 id="管理Hexo博客源文件和Git页面"><a href="#管理Hexo博客源文件和Git页面" class="headerlink" title="管理Hexo博客源文件和Git页面"></a>管理Hexo博客源文件和Git页面</h2><ul>
 <li>建立分支hexo管理源文件<br><code>git checkout -b hexo</code></li>
 </ul>
 <h2 id="附：hexo命令行使用"><a href="#附：hexo命令行使用" class="headerlink" title="附：hexo命令行使用"></a>附：hexo命令行使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hexo help                   // 查看帮助</div><div class="line">hexo init                   // 初始化一个目录</div><div class="line">hexo new &quot;postName&quot;         // 新建文章</div><div class="line">hexo new page &quot;pageName&quot;    // 新建页面</div><div class="line">hexo generate               // 生成网页，可以在 public 目录查看整个网站的文件</div><div class="line">hexo server                 // 本地预览，&apos;Ctrl+C&apos;关闭</div><div class="line">hexo deploy                 // 部署.deploy目录</div><div class="line">hexo clean</div><div class="line">// 清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹**</div></pre></td></tr></table></figure>
-<p>简写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo new</div><div class="line">hexo g == hexo generate</div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div></pre></td></tr></table></figure>
+<ul>
+<li>简写 *<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo new</div><div class="line">hexo g == hexo generate</div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
           
         
@@ -574,7 +720,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -587,7 +733,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
