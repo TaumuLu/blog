@@ -8,22 +8,17 @@ tags: Blog
 
 1. 安装hexo
 `npm install hexo-cli -g`
-
 2. 生成博客
 `hexo init blog`
 `cd blog`
-
 3. 安装依赖
 `npm install`
 *注意：*可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息
-
 4. 本地启动查看
 `hexo server`
-
 5. 生成网页
 `hexo generate`
 可以在 public 目录查看整个网站的文件
-
 6. 部署到Git
 `hexo deploy`
 需要安装部署插件
@@ -37,6 +32,7 @@ tags: Blog
 4. 填写Page name和Tagline点击Continue to layouts完成
 
 ## 配置Hexo
+
 - 全局配置 _config.yml
     ```
     language: zh-CN #语言
@@ -49,16 +45,13 @@ tags: Blog
     ```
 - 主题配置 themes/[next]/_config.yml
 
-
 ## 开始写博客
 
 1. 生成文章
 `hexo new "标题"`
-
 2. 生成页面
 `hexo new page "页面"`
-
-所有源文件都在source文件夹下
+** 所有源文件都在source文件夹下 **
 
 ## 换主题
 
@@ -69,7 +62,6 @@ hexo clean
 hexo generate
 hexo server
 ```
-
 
 ## 管理Hexo博客源文件和Git页面
 
@@ -89,9 +81,7 @@ hexo deploy                 // 部署.deploy目录
 hexo clean
 // 清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹**
 ```
-
-简写
-
+* 简写 *
 ```
 hexo n == hexo new
 hexo g == hexo generate
