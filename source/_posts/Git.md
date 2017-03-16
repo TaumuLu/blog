@@ -85,6 +85,18 @@ git remote set-url origin git@github.com:userame/repository.git
 // 从HTTPS远程的URL更改到SSH
 ```
 
+## 同步fork源代码
+
+1. 首先要先确定一下是否建立了主repo的远程源
+`git remote -v`
+
+2. 如果里面只能看到你自己的两个源(fetch 和 push)，那就需要添加主repo的源
+`git remote add upstream URL`
+`git remote -v`
+3. 然后你就能看到upstream了，如果想与主repo合并：
+`git fetch upstream`
+`git merge upstream/master`
+
 ## git常用命令清单
 
 ```
