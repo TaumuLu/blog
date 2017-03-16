@@ -97,7 +97,7 @@
 <meta property="og:description" content="Init做前端一年多了，期间也做过许多关于适配移动端的项目，且基于手机用户的数量之大，移动端适配也成了前端必点的技能点，但自身对移动端适配的理解并不深刻，也一直处于遗留阶段，恰好今天看都有关移动端适配的文章，便作此文章总结归纳加填坑，以供日后再理解铺垫
 准备工作
 设置Meta标签&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=devic">
-<meta property="og:updated_time" content="2017-03-16T10:20:30.850Z">
+<meta property="og:updated_time" content="2017-03-16T10:27:34.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端适配">
 <meta name="twitter:description" content="Init做前端一年多了，期间也做过许多关于适配移动端的项目，且基于手机用户的数量之大，移动端适配也成了前端必点的技能点，但自身对移动端适配的理解并不深刻，也一直处于遗留阶段，恰好今天看都有关移动端适配的文章，便作此文章总结归纳加填坑，以供日后再理解铺垫
@@ -344,8 +344,13 @@
 <blockquote>
 <p>width = device-width   宽度等于当前设备的宽度<br>initial-scale          初始的缩放比例（默认设置为1.0）<br>minimum-scale          允许用户缩放到的最小比例（默认设置为1.0）<br>maximum-scale          允许用户缩放到的最大比例（默认设置为1.0）<br>user-scalable          用户是否可以手动缩放（默认设置为no）</p>
 </blockquote>
-<p><strong> 兼容代码 </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">    &lt;script src=&quot;http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;http://cdn.bootcss.com/html5media/1.1.8/html5media.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
-<p><strong> 渲染模式代码 </strong><br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge, chrome=1&quot;&gt;</code></p>
+<ol>
+<li><p>兼容代码 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">    &lt;script src=&quot;http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;http://cdn.bootcss.com/html5media/1.1.8/html5media.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>渲染模式代码<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge, chrome=1&quot;&gt;</code></p>
+</li>
+</ol>
 <h2 id="适配方案"><a href="#适配方案" class="headerlink" title="适配方案"></a>适配方案</h2><h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><ul>
 <li><p>描述</p>
 <blockquote>
@@ -374,9 +379,93 @@
 <p>all          用于所有的媒体设备<br>aural        用于语音和音频合成器<br>braille      用于盲人用点字法触觉回馈设备<br>embossed     用于分页的盲人用点字法打印机<br>handheld     用于小的手持的设备<br>print        用于打印机<br>projection   用于方案展示，比如幻灯片<br>screen       用于电脑显示器<br>tty          用于使用固定密度字母栅格的媒体，比如电传打字机和终端<br>tv           用于电视机类型的设备</p>
 </blockquote>
 </li>
-<li><p>媒体属性<br>|属性               |值                    |Min/Max|描述                 |<br>|:—————–:|:——————–:|:—–:|:—:                |<br>|color              |整数                  |yes    |每种色彩的字节数     |<br>|color-index        |整数                  |yes    |色彩表中的色彩数     |<br>|device-aspect-ratio|整数/整数             |yes    |宽高比例             |<br>|device-height      |length                |yes    |设备屏幕的输出高度   |<br>|device-width       |length                |yes    |设备屏幕的输出宽度   |<br>|grid               |整数                  |no     |是否是基于格栅的设备 |<br>|height             |length                |yes    |渲染界面的高度       |<br>|monochrome         |整数                  |yes    |单色帧缓冲器像素字节 |<br>|resolution         |分辨率(“dpi/dpcm”)    |yes    |分辨率               |<br>|scan               |Progressive interlaced|no     |tv媒体类型的扫描方式 |<br>|width              |length                |yes    |渲染界面的宽度       |<br>|orientation        |Portrait/landscape    |no     |横屏或竖屏           |</p>
+<li><p>媒体属性</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">值</th>
+<th style="text-align:center">Min/Max</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:center">整数</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">每种色彩的字节数</td>
+</tr>
+<tr>
+<td style="text-align:center">color-index</td>
+<td style="text-align:center">整数</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">色彩表中的色彩数</td>
+</tr>
+<tr>
+<td style="text-align:center">device-aspect-ratio</td>
+<td style="text-align:center">整数/整数</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">宽高比例</td>
+</tr>
+<tr>
+<td style="text-align:center">device-height</td>
+<td style="text-align:center">length</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">设备屏幕的输出高度</td>
+</tr>
+<tr>
+<td style="text-align:center">device-width</td>
+<td style="text-align:center">length</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">设备屏幕的输出宽度</td>
+</tr>
+<tr>
+<td style="text-align:center">grid</td>
+<td style="text-align:center">整数</td>
+<td style="text-align:center">no</td>
+<td style="text-align:center">是否是基于格栅的设备</td>
+</tr>
+<tr>
+<td style="text-align:center">height</td>
+<td style="text-align:center">length</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">渲染界面的高度</td>
+</tr>
+<tr>
+<td style="text-align:center">monochrome</td>
+<td style="text-align:center">整数</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">单色帧缓冲器像素字节</td>
+</tr>
+<tr>
+<td style="text-align:center">resolution</td>
+<td style="text-align:center">分辨率(“dpi/dpcm”)</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">分辨率</td>
+</tr>
+<tr>
+<td style="text-align:center">scan</td>
+<td style="text-align:center">Progressive interlaced</td>
+<td style="text-align:center">no</td>
+<td style="text-align:center">tv媒体类型的扫描方式</td>
+</tr>
+<tr>
+<td style="text-align:center">width</td>
+<td style="text-align:center">length</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">渲染界面的宽度</td>
+</tr>
+<tr>
+<td style="text-align:center">orientation</td>
+<td style="text-align:center">Portrait/landscape</td>
+<td style="text-align:center">no</td>
+<td style="text-align:center">横屏或竖屏</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><p>Css里使用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@media (min-width: 700px) &#123; ... &#125;</div><div class="line">@media (min-width: 700px) and (orientation: landscape) &#123; ... &#125;</div><div class="line">@media (min-width: 700px), handheld and (orientation: landscape) &#123; ... &#125;</div><div class="line">@media not all and (monochrome) &#123; ... &#125;</div></pre></td></tr></table></figure>
