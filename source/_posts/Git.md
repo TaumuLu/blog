@@ -78,11 +78,12 @@ tags: Git
 [官网说明](https://help.github.com/articles/testing-your-ssh-connection/)
 
 ```
-git remote -v   // 列出当前远程名现有的url
-git remote set-url origin https://github.com/userame/repository.git
+// 列出当前远程名现有的url
+git remote -v   
 // 从SSH远程的URL更改到HTTPS 
-git remote set-url origin git@github.com:userame/repository.git
+git remote set-url origin https://github.com/userame/repository.git
 // 从HTTPS远程的URL更改到SSH
+git remote set-url origin git@github.com:userame/repository.git
 ```
 
 ## 同步fork源代码
@@ -91,11 +92,16 @@ git remote set-url origin git@github.com:userame/repository.git
 `git remote -v`
 
 2. 如果里面只能看到你自己的两个源(fetch 和 push)，那就需要添加主repo的源
-`git remote add upstream URL`
-`git remote -v`
+```
+git remote add upstream URL
+git remote -v`
+```
+
 3. 然后你就能看到upstream了，如果想与主repo合并：
-`git fetch upstream`
-`git merge upstream/master`
+```
+git fetch upstream
+git merge upstream/master
+```
 
 ## git常用命令清单
 
@@ -134,9 +140,12 @@ git config --list             // 列出配置信息
 git config --global user.name "user"  
 git config --global user.email "user@email.com"
 
-git config core.longpaths true                        // 支持长文件名添加
-git config --global core.quotepath false              路径中文转义                   
-git config --global credential.helper store           // 设置无需每次提交密码
+// 支持长文件名添加
+git config core.longpaths true                        
+// 路径中文转义
+git config --global core.quotepath false     
+// 设置无需每次提交密码                      
+git config --global credential.helper store           
 
 http://yourname:password@git.oschina.net/name/project.git
 

@@ -34,15 +34,15 @@ tags: Blog
 ## 配置Hexo
 
 - 全局配置 _config.yml
-    ```
-    language: zh-CN #语言
-    theme: next
-    ...
-    deploy:
-        type: git
-        repo: 刚刚github创库地址.git
-        branch: master 
-    ```
+```
+language: zh-CN #语言
+theme: next
+...
+deploy:
+    type: git
+    repo: 刚刚github创库地址.git
+    branch: master 
+```
 - 主题配置 themes/[next]/_config.yml
 
 ## 开始写博客
@@ -61,15 +61,14 @@ tags: Blog
 hexo clean
 hexo generate
 hexo server
+
 ```
 
 ## 管理Hexo博客源文件和Git页面
-
 - 建立分支hexo管理源文件
 `git checkout -b hexo`
 
 ## 附：hexo命令行使用
-
 ```
 hexo help                   // 查看帮助
 hexo init                   // 初始化一个目录

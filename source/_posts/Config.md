@@ -71,14 +71,11 @@ alias bundle-ios='react-native bundle --platform ios --entry-file index.ios.js -
 ### 插件
 
 - Additional Information
-
 - Appspector
 - Adblock Plus
-
 - Axure RP Extension for Chrome
 - HostAdmin App
 - JSONView
-
 - LastPass: Free Password Manager
 - Momentum
 - Octotree
@@ -97,25 +94,20 @@ alias bundle-ios='react-native bundle --platform ios --entry-file index.ios.js -
 ## 环境变量
 
 ### Java 
-
 - JAVA_HOME
 `C:\Program Files\Java\jdk1.7.0_79`
 
 ### Android 
-
 - ANDROID_HOME
 `C:\Program Files (x86)\Android\android-sdk`
 
 ### Node 
-
 - NODE_PATH
 `C:\Program Files\nodejs\node_modules`
 
 ### NVM 
-
 - NVM_HOME
 `C:\Users\MT\AppData\Roaming\nvm`
-
 - NVM_SYMLINK
 `C:\Program Files\nodejs`
 
@@ -123,23 +115,18 @@ alias bundle-ios='react-native bundle --platform ios --entry-file index.ios.js -
 
 ```
 %JAVA_HOME%\bin
-
 %ANDROID_HOME%\platform-tools\
-
 %NVM_HOME%
 %NVM_SYMLINK%
 
 C:\Program Files\nodejs
 C:\Users\Taumu\AppData\Roaming\nvm
-
 C:\Users\MT\.babun
 
 C:\Program Files\Python36\
 C:\Program Files\Python36\Scripts\
 
 C:\Program Files\MongoDB\Server\3.4\bin
-
 D:\Web\Develop\php-7.0.12-Win32-VC14-x64
-
 D:\Web\Develop\Apache22\bin
 ```
