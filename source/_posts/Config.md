@@ -1,0 +1,145 @@
+---
+title: Config
+date: 2017-03-20 22:57:39
+tags: Config
+---
+
+## Node.js
+
+### 全局安装包
+
+- airs 
+- code-push-cli
+- hexo
+- jshint
+- react-native-cli
+- supervisor
+- uglify-js
+- vue-cli
+- webpack
+- yarn
+
+```
+npm install -g airs yarn webpack vue-cli react-native-cli hexo jshint uglify-js
+
+```
+
+### .npmrc
+
+```
+registry=https://registry.npm.taobao.org
+
+```
+
+## Nvm
+
+### setting.txt
+
+```
+root: C:\Users\MT\AppData\Roaming\nvm
+path: C:\Program Files\nodejs
+proxy: none
+arch: 64
+node_mirror: https://npm.taobao.org/mirrors/node/
+npm_mirror: https://npm.taobao.org/mirrors/npm/
+
+```
+
+## Linux
+
+### .bashrc
+
+```
+alias bundle-android='react-native bundle --platform android --entry-file index.android.js --bundle-output ./bundles/index.android.bundle --dev false'
+
+alias bundle-ios='react-native bundle --platform ios --entry-file index.ios.js --bundle-output ./bundles/index.ios.bundle --dev false'
+
+```
+
+
+## Google
+
+### 主题
+
+- Деревянный хром
+- pine wood theme
+- woodark
+- black wood
+- Blue/Green Cubes
+- 炭黑+銀色金屬
+
+### 插件
+
+- Additional Information
+
+- Appspector
+- Adblock Plus
+
+- Axure RP Extension for Chrome
+- HostAdmin App
+- JSONView
+
+- LastPass: Free Password Manager
+- Momentum
+- Octotree
+- OneTab
+- Page Ruler
+- Postman
+- Proxy SwitchyOmega
+
+- Redux DevTools
+- Vue.js devtools
+
+- 二维码(QR码)生成器(QR Code Generator)
+- 捕捉网页截图 - FireShot的
+- 猎豹翻译
+
+## 环境变量
+
+### Java 
+
+- JAVA_HOME
+`C:\Program Files\Java\jdk1.7.0_79`
+
+### Android 
+
+- ANDROID_HOME
+`C:\Program Files (x86)\Android\android-sdk`
+
+### Node 
+
+- NODE_PATH
+`C:\Program Files\nodejs\node_modules`
+
+### NVM 
+
+- NVM_HOME
+`C:\Users\MT\AppData\Roaming\nvm`
+
+- NVM_SYMLINK
+`C:\Program Files\nodejs`
+
+### path 
+
+```
+%JAVA_HOME%\bin
+
+%ANDROID_HOME%\platform-tools\
+
+%NVM_HOME%
+%NVM_SYMLINK%
+
+C:\Program Files\nodejs
+C:\Users\Taumu\AppData\Roaming\nvm
+
+C:\Users\MT\.babun
+
+C:\Program Files\Python36\
+C:\Program Files\Python36\Scripts\
+
+C:\Program Files\MongoDB\Server\3.4\bin
+
+D:\Web\Develop\php-7.0.12-Win32-VC14-x64
+
+D:\Web\Develop\Apache22\bin
+```
