@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Blog," />
+  <meta name="keywords" content="web前端" />
 
 
 
@@ -87,34 +87,15 @@
 
 
 
-<meta name="description" content="安装Hexo
-安装hexonpm install hexo-cli -g
-生成博客hexo init blogcd blog
-安装依赖npm install注意：可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息
-本地启动查看hexo server
-生成网页hexo generate可以在 public 目录查看整个网站的文件
-部署到Git">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo搭建博客">
-<meta property="og:url" content="http://yoursite.com/2017/03/12/Hexo搭建博客/index.html">
+<meta name="description" content="记录学习前端的点滴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Taumu的博客">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Taumu的博客">
-<meta property="og:description" content="安装Hexo
-安装hexonpm install hexo-cli -g
-生成博客hexo init blogcd blog
-安装依赖npm install注意：可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息
-本地启动查看hexo server
-生成网页hexo generate可以在 public 目录查看整个网站的文件
-部署到Git">
-<meta property="og:updated_time" content="2017-03-22T12:41:18.702Z">
+<meta property="og:description" content="记录学习前端的点滴">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo搭建博客">
-<meta name="twitter:description" content="安装Hexo
-安装hexonpm install hexo-cli -g
-生成博客hexo init blogcd blog
-安装依赖npm install注意：可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息
-本地启动查看hexo server
-生成网页hexo generate可以在 public 目录查看整个网站的文件
-部署到Git">
+<meta name="twitter:title" content="Taumu的博客">
+<meta name="twitter:description" content="记录学习前端的点滴">
 
 
 
@@ -142,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/12/Hexo搭建博客/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
 
 
-  <title> Hexo搭建博客 | Taumu的博客 </title>
+  <title> Taumu的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -173,7 +154,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -266,9 +249,174 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/js技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/js技巧/" itemprop="url">
+                  js技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T23:55:28+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="日常积累"><a href="#日常积累" class="headerlink" title="日常积累"></a>日常积累</h2><ul>
+<li><p>Scope<br>  共享的[[Scope]],所以循环中创建多个函数会只取得最后一次循环变量的赋值</p>
+</li>
+<li><p>鼠标事件<br>  js鼠标拖拽要触发mousemove事件绑定在document元素上，可解决快速移动失效所拖拽元素跟不上的问题，其他类似问题都可绑定在document上解决</p>
+</li>
+<li><p>表达式赋值<br>  (operation)()赋值运算再执行函数的关键在于赋值时取到的函数为执行时直接触发的函数，而不在于会把这个函数赋值给谁再由它来执行(决定this指向)</p>
+</li>
+<li><p>作用域<br>  查找变量先从作用域的前端开始，即当前环境的变量对象或活动对象查，之后若在函数中再沿着[[Scope]]中保存的父变量对象的层级链向上查找至全局对象，浏览器中即window对象，之后再进行二维作用域链查找，因window继承于Object.prototype对象，所以查到Object.prototype为止</p>
+</li>
+<li><p>函数参数解构赋值<br>  解构赋值function({x=1,y=2}={})，{}为默认值，即没有传入参数将{}对象做为默认值，因为默认值为空对象，所以又触发设置默认的对象解构赋值所以参数为1，2</p>
+</li>
+<li><p>函数参数传递<br>  函数参数只能按值传递，因此传递引用类型时并非按引用访问，而是存储实参到变量对象中并与传进的变量引用内存中的同一个引用类型，因此将参数指向另一个引用类型时并不会影响到传进函数的变量所引用的值</p>
+</li>
+<li><p>js执行机制<br>  js逐行解释执行代码，当执行到函数调用时，此时调用函数内部的作用域链为[[Scope]] + 当前函数的AO对象<br>  但[[Scope]]保存的对象为调用此函数的AO/VO对象，仅为预编译保存的值+调用函数之前的代码执行值<br>  所以在调用函数之后才赋值的变量是取不到的，即使是闭包也如此(单线程执行代码即同步)</p>
+</li>
+<li><p>正则表达式<br>  加标志g 会引起交替返回true 和false<br>  使用标志g 不会在匹配第一个项时就停止，而会保留状态，直到没有匹配才会重置<br>  可以写RegExp.lastIndex = 0重置这种状态</p>
+</li>
+<li><p>==比较操作符<br>  参数数据类型相同直接进行比较</p>
+<ul>
+<li>不同 <ul>
+<li>布尔值：转换为数值进行比较</li>
+<li>字符串：如果另一比较类型为数值会转化为数值通过Number()方法转换</li>
+<li>对象：先调用valueOf()比较，不行再调用toString()比较(得到基本类型)</li>
+</ul>
+</li>
+<li>规则 <ul>
+<li>null和undefined不会转换且互相相等</li>
+<li>NaN不等于任何值，即使是NaN</li>
+<li>两个对象会比较引用即指针</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>stack(栈)<br>  数据结构<br>  代码运行方式<br>  内存区域</p>
+</li>
+<li><p>异步/同步调用<br>  异步的函数调用不返回原来代码调用处</p>
+<ul>
+<li>回调函数 <ul>
+<li>需要带状态的才叫回调函数</li>
+<li>回调和闭包有一个共同的特性：在最终“回调”调用以前，前面所有的状态都得存着</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>EventLoop<br>  Event Loop是一个程序结构，用于等待和发送消息和事件<br>  EventLoop派一个人来轮询所有的，其他人都可以把观察条件和回调函数注册在EventLoop上，它进行统一的轮询，注册的人越多，轮询一圈的时间越长。但是简化了编程，不用每个人都写轮询了，提供API变得方便。</p>
+</li>
+<li>异步 =&gt; 回调 =&gt; EventLoop</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
 
   
 
@@ -298,7 +446,10 @@
             
             
               
-                Hexo搭建博客
+                
+                <a class="post-title-link" href="/2017/03/12/Hexo搭建博客/" itemprop="url">
+                  Hexo搭建博客
+                </a>
               
             
           </h1>
@@ -349,7 +500,9 @@
       
 
       
-        <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ol>
+        
+          
+            <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ol>
 <li>安装hexo<br><code>npm install hexo-cli -g</code></li>
 <li>生成博客<br><code>hexo init blog</code><br><code>cd blog</code></li>
 <li>安装依赖<br><code>npm install</code><br><em>注意：</em>可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息</li>
@@ -384,70 +537,163 @@
 <h2 id="附：hexo命令行使用"><a href="#附：hexo命令行使用" class="headerlink" title="附：hexo命令行使用"></a>附：hexo命令行使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hexo help                   // 查看帮助</div><div class="line">hexo init                   // 初始化一个目录</div><div class="line">hexo new &quot;postName&quot;         // 新建文章</div><div class="line">hexo new page &quot;pageName&quot;    // 新建页面</div><div class="line">hexo generate               // 生成网页，可以在 public 目录查看整个网站的文件</div><div class="line">hexo server                 // 本地预览，&apos;Ctrl+C&apos;关闭</div><div class="line">hexo deploy                 // 部署.deploy目录</div><div class="line">hexo clean</div><div class="line">// 清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹**</div></pre></td></tr></table></figure>
 <p><strong> 简写 </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo new</div><div class="line">hexo g == hexo generate</div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div></pre></td></tr></table></figure></p>
 
+          
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Blog/" rel="tag"># Blog</a>
-          
-        </div>
+
       
 
       
-        
-      
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/03/12/开始/" rel="next" title="开启博客之旅">
-                <i class="fa fa-chevron-left"></i> 开启博客之旅
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/14/js技巧/" rel="prev" title="js技巧">
-                js技巧 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/开始/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/12/开始/" itemprop="url">
+                  开启博客之旅
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T11:14:13+08:00">
+                2017-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h4 id="前述"><a href="#前述" class="headerlink" title="前述"></a>前述</h4><p>从开始做前端便发现程序员是爱写博客的，原因在于程序员这个职业注定了终生学习，加之互联网技术的发展永远都比你学习的速度快，稍有懈怠便落后他人，所以还要时刻保持危机感</p>
+<h4 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h4><p>需要高效提升自己，除找出适合自己的学习方法外，还需要温故而知新，不得不说人的记忆力还是很差的，学的多也忘得多，眼过千遍不如手过一遍，所以写博客就是巩固自己已学会的知识，节约二次学习成本</p>
+<h2 id="当前"><a href="#当前" class="headerlink" title="当前"></a>当前</h2><p>也是从学前端开始知道写博客的重要性后，总是再想要去做，并未付诸行动，也是怠惰，从开始的csdn写过两篇也就没了，确实惭愧，如今又逢当初困境，更应加以实现，就从现在开始，做比想更重要</p>
+
+          
+        
       
     </div>
-  </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
           
           </div>
@@ -455,10 +701,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -478,17 +720,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -561,22 +794,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Github"><span class="nav-number">2.</span> <span class="nav-text">配置Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Hexo"><span class="nav-number">3.</span> <span class="nav-text">配置Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面配置"><span class="nav-number">3.1.</span> <span class="nav-text">页面配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#社交链接"><span class="nav-number">3.2.</span> <span class="nav-text">社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启评论"><span class="nav-number">3.3.</span> <span class="nav-text">开启评论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始写博客"><span class="nav-number">4.</span> <span class="nav-text">开始写博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换主题"><span class="nav-number">5.</span> <span class="nav-text">换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理Hexo博客源文件和Git页面"><span class="nav-number">6.</span> <span class="nav-text">管理Hexo博客源文件和Git页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附：hexo命令行使用"><span class="nav-number">7.</span> <span class="nav-text">附：hexo命令行使用</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -682,10 +899,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
 
   
 
