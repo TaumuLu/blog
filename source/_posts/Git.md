@@ -145,10 +145,11 @@ git config core.longpaths true
 // 路径中文转义
 git config --global core.quotepath false     
 // 设置无需每次提交密码                      
-git config --global credential.helper store           
+git config --global credential.helper store      
+// 设置git默认为其它编辑器
+git config --global core.editor "vim"  
 
 http://yourname:password@git.oschina.net/name/project.git
-
 
 
 git config --global alias.st "status" 

@@ -40,10 +40,62 @@ theme: next
 ...
 deploy:
     type: git
-    repo: 刚刚github创库地址.git
+    repo: github地址.git
     branch: master 
 ```
 - 主题配置 themes/[next]/_config.yml
+
+### 页面配置
+
+```
+---
+title: Git使用
+date: 2017-03-15 08:37:42
+tags: Git 
+categories: Tools
+comments: true
+---
+
+// tags   设置文章的标签
+// categories   设置文章分类
+// comments   设置是否显示评论
+```
+
+### 社交链接
+
+```
+social:
+  GitHub: https://github.com/chaserr
+  Zhihu: https://www.zhihu.com/people/Taumu
+
+social_icons:
+  enable: true
+  GitHub: github
+  Zhihu: globe
+  # Twitter: twitter
+  # Weibo: weibo
+
+```
+
+### 开启评论
+
+```
+# disqus评论,  与多说类似, 国内一般使用多说
+# disqus_shortname: 
+duoshuo_shortname: #填写你的多说域名
+
+# 多说热评文章 true 或者 false
+duoshuo_hotartical: true
+
+# 多说分享服务
+duoshuo_share: true
+duoshuo_info:
+  ua_enable: true
+  admin_enable: false
+  user_id:
+      admin_nickname:
+
+```
 
 ## 开始写博客
 
@@ -65,6 +117,7 @@ hexo server
 ```
 
 ## 管理Hexo博客源文件和Git页面
+
 - 建立分支hexo管理源文件
 `git checkout -b hexo`
 
@@ -80,7 +133,7 @@ hexo deploy                 // 部署.deploy目录
 hexo clean
 // 清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹**
 ```
-* 简写 *
+** 简写 ** 
 ```
 hexo n == hexo new
 hexo g == hexo generate
