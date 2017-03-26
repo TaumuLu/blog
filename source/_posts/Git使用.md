@@ -103,7 +103,33 @@ git fetch upstream
 git merge upstream/master
 ```
 
-## git常用命令清单
+## Git配置
+```
+git config --list   // 列出配置信息
+
+git config --global user.name "user"  
+git config --global user.email "user@email.com"
+
+
+git config core.longpaths true   // 支持长文件名     
+
+git config --global core.quotepath false   // 路径中文转义
+
+git config --global credential.helper store   // 记住提交密码
+
+git config core.ignorecase false   // 关闭忽略大小写
+
+git config --global core.editor "vim"   // 默认编辑器  
+
+
+// 设置别名
+git config --global alias.st "status" 
+git config --global alias.ci "commit" 
+git config --global alias.co "checkout"
+
+```
+
+## Git常用命令清单
 
 ```
 git status                    // 当前状态
@@ -114,8 +140,6 @@ git status                    // 当前状态
 
 git clone github地址          // 获取github上文件
 
-ls                            // 查看当前路径文件
-                           
 git log                       // 列出提交历史，输入q退出查看
 git reset --hard commit       // 恢复到历史的某个版本
 git reset --hard HEAD^        // 恢复到历史第一个版本
@@ -134,25 +158,6 @@ git checkout -b master1       // 在当前分支创建并切换到master1新分�
 
 git merge master              // 将master分支合并到当前分支
 
-git config --list             // 列出配置信息
-
-
-git config --global user.name "user"  
-git config --global user.email "user@email.com"
-
-// 支持长文件名添加
-git config core.longpaths true                        
-// 路径中文转义
-git config --global core.quotepath false     
-// 设置无需每次提交密码                      
-git config --global credential.helper store      
-// 设置git默认为其它编辑器
-git config --global core.editor "vim"  
-
 http://yourname:password@git.oschina.net/name/project.git
 
-
-git config --global alias.st "status" 
-git config --global alias.ci "commit" 
-git config --global alias.co "checkout"
 ```
