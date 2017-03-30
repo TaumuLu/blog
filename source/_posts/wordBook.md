@@ -11,3 +11,4 @@ touch-触摸
 brew-酿造
 study-学习
 practice-实践
+transfer-迁移
