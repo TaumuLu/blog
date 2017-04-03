@@ -6,3 +6,4 @@ tags: Vim
 
 ## Init
 Vim是一个开源文本编辑器
+在命令窗下输入vimtutor来学习
