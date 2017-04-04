@@ -1,9 +1,16 @@
 ---
-title: 你不知道的JavaScript
+title: JavaScript权威指南
 date: 2017-03-30 11:00:32
 tags: 读书总结
 ---
 
+## 简介
+作为前端人必需必备必读的圣经，听名字也就不言而喻了，同其他人一样我也当作工具书
+
+### 状态
+目前未看完
+
+## 正文
 Window对象 > window {
     Document对象 > document {
         属性 {
