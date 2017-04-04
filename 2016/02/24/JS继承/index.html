@@ -1,0 +1,835 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言此文写于工作前自学前端的日子，当时写在csdn上，时隔一年多翻出重新整理成markdown格式，同作为记录自己前端之路的历程 
+面向对象的程序设计初实不记得了，只知道没有理解。怎么得出的结论呢，没有恍然大悟的感觉，看完只觉得一片混乱，自始至终也不知道就算学会那些了又有什么呢用，根本用不上的感觉，也就是不会运用。只能说见识太少了，试着去看了JQuery的源码找寻答案，看如何应用，结果只因看不懂。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS继承">
+<meta property="og:url" content="http://yoursite.com/2016/02/24/JS继承/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="前言此文写于工作前自学前端的日子，当时写在csdn上，时隔一年多翻出重新整理成markdown格式，同作为记录自己前端之路的历程 
+面向对象的程序设计初实不记得了，只知道没有理解。怎么得出的结论呢，没有恍然大悟的感觉，看完只觉得一片混乱，自始至终也不知道就算学会那些了又有什么呢用，根本用不上的感觉，也就是不会运用。只能说见识太少了，试着去看了JQuery的源码找寻答案，看如何应用，结果只因看不懂。">
+<meta property="og:updated_time" content="2017-03-30T02:52:55.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS继承">
+<meta name="twitter:description" content="前言此文写于工作前自学前端的日子，当时写在csdn上，时隔一年多翻出重新整理成markdown格式，同作为记录自己前端之路的历程 
+面向对象的程序设计初实不记得了，只知道没有理解。怎么得出的结论呢，没有恍然大悟的感觉，看完只觉得一片混乱，自始至终也不知道就算学会那些了又有什么呢用，根本用不上的感觉，也就是不会运用。只能说见识太少了，试着去看了JQuery的源码找寻答案，看如何应用，结果只因看不懂。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/02/24/JS继承/"/>
+
+
+
+
+
+  <title> JS继承 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/24/JS继承/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS继承
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-24T18:21:28+08:00">
+                2016-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>此文写于工作前自学前端的日子，当时写在csdn上，时隔一年多翻出重新整理成markdown格式，同作为记录自己前端之路的历程 </p>
+<h2 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h2><h3 id="初实"><a href="#初实" class="headerlink" title="初实"></a>初实</h3><p>不记得了，只知道没有理解。怎么得出的结论呢，没有恍然大悟的感觉，看完只觉得一片混乱，自始至终也不知道就算学会那些了又有什么呢用，根本用不上的感觉，也就是不会运用。只能说见识太少了，试着去看了JQuery的源码找寻答案，看如何应用，结果只因看不懂。</p>
+<h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>陆续又看了几遍吧，收获不大，这次除外，不过不排除这次是建立在之前看了几遍的基础上才有所收获的。想想只想说下次再想看懂书，先静下心来，全投入的去看。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先以习惯来，整理好层次。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>JavaScript中有三种不同类型的属性：</p>
+<ol>
+<li><p>数据属性<br>数据属性就是我们通常所用的”普通”属性，它用来将一个字符串名称映射到某个值上</p>
+</li>
+<li><p>访问器属性<br>可以借助函数来获取或设置一个属性的值，这些函数称之为访问器函数，控制属性读取的访问器函数为getter，控制属性写入的访问器函数为setter</p>
+</li>
+<li><p>内部属性<br>有一些属性仅仅是为规范所用的，为内部属性，因为它们无法通过JavaScript直接访问到，但是它们的确存在并影响着程序的表现，内部属性的名称比较特殊，都被两个中括号包围着</p>
+</li>
+</ol>
+<h4 id="属性特性"><a href="#属性特性" class="headerlink" title="属性特性"></a>属性特性</h4><p>一个属性的所有状态，包括它的数据和元数据，都存储在该属性的特性中，属性拥有自己的特性，就像对象拥有自己的属性一样，特性的名称写成类似内部属性的形式即双中括号</p>
+<ul>
+<li><p>数据属性拥有的特性:</p>
+<ul>
+<li>Writable<br>存储着一个布尔值，表明能否修改属性的值。默认值true</li>
+<li>Value<br>存储着属性的值,也就是属性的数据。默认值undefined</li>
+</ul>
+</li>
+<li><p>访问器属性拥有的特性:</p>
+<ul>
+<li>Get<br>存储着getter函数,也就是在读取这个属性时调用的函数，该函数返回的值也就是这个属性的值。默认值undefined</li>
+<li>Set<br>存储着setter函数,也就是在写入这个属性值时调用的函数。该函数在调用时会被传入一个参数，参数的值为所赋的那个新值。默认值undefined</li>
+</ul>
+</li>
+<li><p>两种类型的属性都有的特性：</p>
+<ul>
+<li>Configurable<br>存储着一个布尔值，表示能否删除这个属性从而重新定义属性，能否修改属性的特性，能否把属性修改成访问器属性，基本控制了一个属性的元数据的可写性。默认值true</li>
+<li>Enumerable<br>存储着一个布尔值，表示能否通过 for-in 循环返回属性。默认值true</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>JavaScript使用new操作符创建对象，或者用直接字面量创建对象。与其他语言不同，JavaScript对象在完成创建后仍能增加成员</p>
+<ol>
+<li><p>工厂模式：<br>原理：创建对象的传统方式，首先创建一个Object实例，然后增加成员属性，把这些代码用一个函数封装起来并返回所创建的对象，那这个函数就是创建对象的工厂函数</p>
+<blockquote>
+<p>解决了创建多个相似对象的问题，工厂函数的名字并不是类的名字，虽然可以用new操作符，但无法使用instanceof来判断所创建的对象的类型。另外，如果把成员函数的函数体定义在工厂函数的内部的话，创建对象时会重复的创建成员函数实例，函数也是一种对象，因此浪费内存。</p>
+</blockquote>
+<p> <strong> 问题 </strong><br> 对象识别问题，方法重复创建</p>
+</li>
+<li><p>构造函数模式：<br>原理：创建一个新对象，将构造函数的作用域赋给新对象（this的作用），执行构造函数的代码来为新对象添加属性</p>
+<blockquote>
+<p>构造函数类似工厂函数，所不同的是构造函数的名字就是类名，可以用new操作符来创建对象。用构造函数创建对象的好处是所生成的对象可以用instanceof来判断所属的类。创建的新对象有constroctor属性指向构造函数</p>
+</blockquote>
+<p> <strong> 问题 </strong><br> 方法重复创建</p>
+</li>
+<li><p>原型模式：<br>原理：将属性和方法定义在构造函数原型对象中。</p>
+<blockquote>
+<p>每个函数都有一个prototype属性，是一个指针，指向一个对象，其用途就是包含着所有实例共享的属性和方法。原型是对象的模板，可以用prototype属性来定义一个类，原型模式同构造函数一样可以用instanceof判断所创建的对象的类型</p>
+</blockquote>
+<p> <strong> 问题 </strong><br> 共享所有属性和方法，对引用类型而言有问题。原型模式的构造函数不能带任何参数</p>
+</li>
+<li><p>组合使用构造函数和原型模式：<br>原理：结合各自利弊</p>
+<blockquote>
+<p>组合模式利用构造函数定义非函数成员，用原型定义函数成员，避免了重复创建方法造成的内存浪费，又不会造成对象实例间的相互影响。</p>
+</blockquote>
+</li>
+<li><p>动态原型模式：<br>原理：解决独立的构造函数和原型，利用if语句封装起来</p>
+</li>
+<li><p>寄生构造函数模式：<br>原理：将工厂模式用 new 操作符创建</p>
+<blockquote>
+<p>在特殊情况下用来为对象创建构造函数</p>
+</blockquote>
+<p> <strong> 问题 </strong><br> 对象识别问题</p>
+</li>
+<li><p>稳妥构造函数：<br>原理：同寄生构造函数模式，区别在于方法不引用 this，不用 new 操作符创建</p>
+<p> <strong> 问题 </strong><br> 对象识别问题</p>
+</li>
+</ol>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>主要为构造函数和原型模式最为重要，寄生构造函数模式和稳妥构造函数只为特殊情况下使用，不过思想值得学习</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承分为接口继承和实现继承，对JavaScript来说只能依靠实现继承，原理为原型链实现</p>
+<ol>
+<li>原型链<br>在之前创建对象的各类方法上加入了原型链而实现继承。从而可以让构造函数的原型对象继承另一个构造函数和原型对象，使其原型对象成为他们的实例（因此而拥有他们的方法和属性），之后在此构造函数上创建的实例就拥有这两个构造函数和其原型对象的所有属性和方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">// 超类型</div><div class="line">function parent() &#123;      </div><div class="line">    this.name = par;</div><div class="line">&#125;</div><div class="line">parent.prototype.getname = function() &#123;</div><div class="line">    return this.name;</div><div class="line">&#125;</div><div class="line">// 子类型</div><div class="line">function child() &#123;       </div><div class="line">    this.age = 11;</div><div class="line">&#125;</div><div class="line">//替换原型，继承parent</div><div class="line">child.prototype = new parent();       </div><div class="line">child.prototype.getage = function() &#123;</div><div class="line">    return this.age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var test = new child();</div><div class="line"></div><div class="line">alert(test.name);       // par</div><div class="line">alert(test.getname());  // par</div><div class="line"></div><div class="line">alert(test.age);        // 11</div><div class="line">alert(test.getage());   // 11</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>本质为重写child的原型对象，换了一个新原型为 parent的实例，即作为实例因此就拥有 parent实例所拥有的全部属性和方法</p>
+<blockquote>
+<p>内部生成一个指针，为 [[prototype]]，指向 parent的原型</p>
+</blockquote>
+<pre><code>本质上扩展了原型搜素机制，即 child的实例搜索其属性方法时，先搜索child.prototype的原型，没有找到再往上搜索 parent.prototype的原型
+
+所有引用类型都继承 Object，也是通过原型链实现的
+
+用instanceof和isPrototype都能识别对象，返回true
+
+给child原型添加方法的代码一定要放在替换child的原型语句之后。在 child原型上使用字面量添加的方法会再次重写原型链，使继承无效
+
+** 问题 **
+通过原型实现的继承会共享属性和方法
+创建的子类型实例时，不能向超类型的构造函数传递参数
+</code></pre><ol>
+<li>借用构造函数<br>也叫伪造对象或经典继承<br>在子类型构造函数的内部调用超类型构造函数<br>通过 apply()和 call()方法来实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 超类型</div><div class="line">function parent(oname) &#123;      </div><div class="line">    this.name = oname;</div><div class="line">&#125;</div><div class="line">// 子类型</div><div class="line">function child(oname, oage) &#123;      </div><div class="line">    // 继承了parent还传递了参数 </div><div class="line">    parent.call(this, oname);       </div><div class="line">    this.age = oage;</div><div class="line">&#125;</div><div class="line">var test = new child();</div><div class="line"></div><div class="line">alert(test.name);       // oname</div><div class="line">alert(test.age);        // oage</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong> 问题 </strong><br>同构造函数，方法重复创建</p>
+<ol>
+<li>组合继承<br>也叫为经典继承<br>使用原型链来实现对原型属性和方法的继承，使用构造函数来实现对实例属性的继承<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">// 超类型</div><div class="line">function parent(oname) &#123;      </div><div class="line">    this.name = oname;</div><div class="line">    this.arrays = [1,2,3];</div><div class="line">&#125;</div><div class="line">parent.prototype.getname = function() &#123;</div><div class="line">    return this.name;</div><div class="line">&#125;</div><div class="line">// 子类型</div><div class="line">function child(oname, oage) &#123;       </div><div class="line">    // 继承parent传递参数</div><div class="line">    parent.call(this, oname);</div><div class="line">    this.age = oage;</div><div class="line">&#125;</div><div class="line">// 替换原型，继承parent</div><div class="line">child.prototype = new parent();       </div><div class="line">child.prototype.getage = function() &#123;</div><div class="line">    return this.age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var one = new child();</div><div class="line">var two = new child();</div><div class="line"></div><div class="line">alert(one.name);        // oname</div><div class="line">alert(one.getname());   // oname</div><div class="line"></div><div class="line">one.arrays.push(&quot;4&quot;);</div><div class="line">alert(one.arrays);      // 1,2,3,4</div><div class="line">alert(one.age);         // oage</div><div class="line">alert(one.getage());    // oage</div><div class="line"></div><div class="line"></div><div class="line">alert(two.name);        // oname</div><div class="line">alert(two.getname());   // oname</div><div class="line"></div><div class="line">alert(two.arrays);      // 1,2,3</div><div class="line">alert(two.age);         // oage</div><div class="line">alert(two.getage());    // oage</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>同结合各自利弊，很完美了。但还差一点</p>
+<pre><code>** 问题 **
+我自己的问题，当时看的时候就有个问题，即通过child.prototype=new parent()替换了原型，继承了parent，按之前原型链说的应该连同parent构造函数中非其原型中的name和arrays属性一同继承，成为child原型的属性，因此实例one改变引用类型arrays，那么实例two的array也会改变，结果不然
+
+原因是调用了两次parent构造函数，第一次是替换原型时，第二次为在child构造函数中调用parent构造函数，所以在child原型中的这两个同名属性就被屏蔽了
+</code></pre><ol>
+<li>原型式继承<br>目的就是让已有的对象利用原型的共享性都共享一个属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function object(O) &#123;</div><div class="line">    function F()&#123;&#125;;</div><div class="line">    F.prototype = O;</div><div class="line">    return new F();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用了原型的方法，即拥有原型的特性</p>
+<blockquote>
+<p>ECMAScript 5新増了 Object.create()规范了原型是继承<br>该方法接受两个参数，第一个参数为用作新对象原型的对象。第二个参数为为这个新对象定义额外属性的对象，格式与 Object.defineProperties()的第二个参数格式相同</p>
+</blockquote>
+<ol>
+<li>寄生式继承<br>目的是让已有的对象利用构造函数来添加一个方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function createAnother(original) &#123;</div><div class="line">    var clone = Object(original);</div><div class="line">    clone.sayHi = function() &#123;</div><div class="line">        alert(&quot;Hi&quot;);</div><div class="line">    &#125;;</div><div class="line">    return clone;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用了构造函数的方法，即拥有构造函数的特性<br>方法会重复创建</p>
+<ol>
+<li>寄生组合式继承<br>目的：<br>组合继承会调用两次超类型，之前说过，因此需要解决<br>通过借用构造函数来继承属性，通过原型链的混成形式，即利用原型式继承来继承方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">// 超类型</div><div class="line">function parent(oname) &#123;      </div><div class="line">    this.name = oname;</div><div class="line">    this.arrays = [1,2,3];</div><div class="line">&#125;</div><div class="line">parent.prototype.getname = function() &#123;</div><div class="line">    return this.name;</div><div class="line">&#125;</div><div class="line">// 子类型</div><div class="line">function child(oname, oage) &#123;       </div><div class="line">    parent.call(this, oname);</div><div class="line">    this.age = oage;</div><div class="line">&#125;</div><div class="line">// 之前的方法继承</div><div class="line">// child.prototype=new parent();       </div><div class="line">// 现在的方法继承</div><div class="line">function inheritPrototype(child, parent) &#123;        </div><div class="line">    // 获取即复制 parent.prototype的原型得到其副本</div><div class="line">    var prototype = Object(parent.prototype);     </div><div class="line">    // 添加副本的 constructor属性并改为指向 child</div><div class="line">    prototype.constructor = child;                </div><div class="line">    // 再将副本赋值给子类型的原型</div><div class="line">    child.prototype = prototype;                  </div><div class="line">&#125;</div><div class="line"></div><div class="line">child.prototype.getage = function()&#123;</div><div class="line">    return this.age;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>再创建child的实例和组合式继承的结果一样</p>
+<pre><code>这样做的好处是只调用了一次 parent函数，避免在child.prototype上创建了不必要、多余的属性。（即之前讲到被屏蔽的）
+</code></pre><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>在我看来创建对象有是三种</p>
+<ul>
+<li>一是直接调用，通过在对象上定义，再返回对象，即工厂模式</li>
+<li>二是用new调用，通过 this将定义的指向到创建的对象上，即构造函数</li>
+<li>三是用new调用，通过构造函数的原型定义，即原型模式</li>
+</ul>
+<p>其余的创建方法都是建立在这三个基础上，而继承无非就是扩大了创建对象方法的数量，让实例能不仅拥有一套创建对象方法上的属性和方法，还能继承从其他创建对象方法上定义的属性和方法</p>
+<h3 id="对象的定义为属性和方法的定义"><a href="#对象的定义为属性和方法的定义" class="headerlink" title="对象的定义为属性和方法的定义"></a>对象的定义为属性和方法的定义</h3><p>他们的缺点即优点</p>
+<ul>
+<li>构造函数模式：属性和方法会重复创建，如同基本类型的值复制一样，创建实例即复制重新创建，而一般我们需要实例拥有各自的属性，共享其方法</li>
+<li>原型模式：属性和方法不会重复创建，如同引用类型的值复制一样，创建的实例都指向其共有的属性和方法，共享所有。一改则全改</li>
+</ul>
+<p>所以创建对象的方法所产生的问题都是这些问题，无非属性和方法都共享或都不共享，而需要的是不共享属性，共享其方法</p>
+<h2 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h2><p>暂时就理解这么多了，以上纯属个人理解，等以后再理解更多再写，到时再来看此时的理解作为对比</p>
+<p>总想写的更好更通俗易懂，说是写出来大家理解探讨，但发现除了自己看方便些反而不如书上定义的清晰透彻，也许这就是写博客本来的目地的。若想学点东西还是看书来的更深刻</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>JavaScript高级程序设计</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/20/CSS布局/" rel="next" title="CSS布局">
+                <i class="fa fa-chevron-left"></i> CSS布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/12/开始/" rel="prev" title="开启博客之旅">
+                开启博客之旅 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chaserr" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象的程序设计"><span class="nav-number">2.</span> <span class="nav-text">面向对象的程序设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初实"><span class="nav-number">2.1.</span> <span class="nav-text">初实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续"><span class="nav-number">2.2.</span> <span class="nav-text">后续</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">3.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">3.1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性特性"><span class="nav-number">3.1.1.</span> <span class="nav-text">属性特性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建对象"><span class="nav-number">3.2.</span> <span class="nav-text">创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">3.2.1.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">3.3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">3.3.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的定义为属性和方法的定义"><span class="nav-number">3.4.</span> <span class="nav-text">对象的定义为属性和方法的定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寄语"><span class="nav-number">4.</span> <span class="nav-text">寄语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

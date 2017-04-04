@@ -99,7 +99,7 @@
 概念查询并记录一些算法概念分类等，好的记录需要分类归纳整理，嗯
 稳定性
 保证排序前2个相等的数在序列的前后位置顺序和排序后它们两个">
-<meta property="og:updated_time" content="2017-03-22T14:31:43.038Z">
+<meta property="og:updated_time" content="2017-04-03T05:24:01.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法">
 <meta name="twitter:description" content="算法作为一名前端工程师你好意思说自己会算法吗，对，是的，没事学什么算法啊，这玩意只有面试时用到。。。好像哪里不对，不过也确实，作为前端小白的我确实不会也没机会在工作中用到算法，但这东西还是随时间沉淀的，就目前的理解我觉得实现算法本身的意义在于理解算法的思想，嗯，思想！
@@ -371,7 +371,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function quicksort(arr) &#123;</div><div class="line">    // 递归停止条件</div><div class="line">    if (arr.length  &lt;= 1)</div><div class="line">        return arr;</div><div class="line"></div><div class="line">    // 选取基准值</div><div class="line">    var pivotIndex = Math.ceil(arr.length / 2);</div><div class="line">    var pivot = arr.splice(pivotIndex, 1)[0]; // 基准值</div><div class="line">    var left = [],</div><div class="line">        right = [];</div><div class="line"></div><div class="line">    // 如果大于基准值，移到数组right中；小于基准的值，移到数组left中</div><div class="line">    for (var i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">        if (arr[i] &lt; pivot) &#123;</div><div class="line">            left.push(arr[i]);</div><div class="line">        &#125; else &#123;</div><div class="line">            right.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return quicksort(left).concat(pivot, quicksort(right));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="参看链接"><a href="#参看链接" class="headerlink" title="参看链接"></a>参看链接</h2><p><a href="http://blog.csdn.net/whuslei/article/details/6442755" target="_blank" rel="external">常见排序算法小结</a><br><a href="http://blog.csdn.net/xiazdong/article/details/8462393" target="_blank" rel="external">九大排序算法再总结</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/whuslei/article/details/6442755" target="_blank" rel="external">常见排序算法小结</a><br><a href="http://blog.csdn.net/xiazdong/article/details/8462393" target="_blank" rel="external">九大排序算法再总结</a></p>
 
       
     </div>
@@ -492,7 +492,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -505,7 +505,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -560,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#稳定性"><span class="nav-number">2.1.</span> <span class="nav-text">稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂"><span class="nav-number">2.3.</span> <span class="nav-text">空间复杂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法清单"><span class="nav-number">3.</span> <span class="nav-text">排序算法清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法实现Js篇"><span class="nav-number">4.</span> <span class="nav-text">排序算法实现Js篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">4.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">4.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参看链接"><span class="nav-number">5.</span> <span class="nav-text">参看链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#稳定性"><span class="nav-number">2.1.</span> <span class="nav-text">稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂"><span class="nav-number">2.3.</span> <span class="nav-text">空间复杂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法清单"><span class="nav-number">3.</span> <span class="nav-text">排序算法清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法实现Js篇"><span class="nav-number">4.</span> <span class="nav-text">排序算法实现Js篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">4.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">4.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
