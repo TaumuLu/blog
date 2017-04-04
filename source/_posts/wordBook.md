@@ -41,3 +41,4 @@ remote-遥远的
 include-包括
 alias-别名
 point-点 得分
+language-语言

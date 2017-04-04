@@ -11,35 +11,42 @@ tags: 读书总结
 目前未看完
 
 ## 正文
-Window对象 > window {
-    Document对象 > document {
-        属性 {
-            body
-            ...
-        }
-        方法 {
-            createElement()
-            getElementsById()
-            getElementsByTagName()
-            getElementsByClassName()
-        }
-    }
-    Element对象 {
-        style {
-            width
-            height
-            ...
-        }
-        className
-        firstChild()
-    }
-}
 
-Window对象、Document对象、Element对象 {
-    事件处理程序 {
-        on {
-            click
-            ...
-        }
-    }
-}
+### 第一部分 JavaScript语言核心
+
+### 第二部分 客户端JavaScript
+
+#### 第13章
+- Window对象 
+    window 
+    + Document对象 
+        document 
+        * 属性 
+            - body
+            - ...
+        * 方法 
+            - createElement()
+            - getElementsById()
+            - getElementsByTagName()
+            - getElementsByClassName()
+            - ...
+    + Element对象 {
+        * 属性 
+            - style 
+                + width
+                + height
+                + ...
+            - className
+            - ...
+        * 方法
+            - firstChild()
+            - appendChild()
+            - ...
+
+- Window对象、Document对象、Element对象 
+    + 事件处理程序 
+        on 
+        * click
+        * mouseover
+        * mouseout
+        * ...
