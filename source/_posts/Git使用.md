@@ -1,95 +1,75 @@
 ---
 title: Git使用
-date: 2017-03-15 08:37:42
-tags: Git 
+date: 2017-03-25 23:03:53
+tags: Git
 ---
 
-## Init
+## 前言
+也算是Git的忠实用户了，但慢慢发现其实自己不会用Git，平时开发不但接触的Git命令少并且也没去尝试学习其他，故在此学习并记录Git的使用
 
-** Git是目前世界上最先进的分布式版本控制系统（没有之一） **
-** Unix的哲学是“没有消息就是好消息” **
+## Git Flow
+由来，就像代码需要代码规范一样，代码管理同样需要一个清晰的流程和规范
+Vincent Driessen为了解决这个问题提出了[A Successful Git Branching Model](http://nvie.com/posts/a-successful-git-branching-model/)
 
-## 安装Git
+### 流程分支说明
+- Master 分支
+这个分支最近发布到生产环境的代码，最近发布的Release，这个分支只能从其他分支合并，不能在这个分支直接修改
 
-1. 下载msysgit
-2. 设置环境变量
-    选择使用什么样的命令行工具，一般情况使用默认配置，使用Git Bash
+- Develop(Production) 分支
+这个分支是我们是我们的主开发分支，包含所有要发布到下一个Release的代码，这个主要合并与其他分支，比如Feature分支
 
-    > Git自带：使用Git自带的Git Bash命令行工具
-    > 系统自带CMD：使用windows系统的命令行工具
-    > 二者都有：上面二者同时配置，但是注意，这样会将windows中的find.exe和sort.exe工具覆盖，如果不懂这些尽量不要选择
+- Feature 分支
+这个分支主要是用来开发一个新的功能，一旦开发完成，我们合并回Develop分支进入下一个Release
 
-3. 配置windows环境变量
-    右键“计算机”->“属性”->“高级系统设置”->“环境变量”->在下方的“系统变量”中找到“path”添加
-    `C:\Program Files\Git\cmd`
+- Release分支
+当你需要一个发布一个新Release的时候，我们基于Develop分支创建一个Release分支，完成Release后，我们合并到Master和Develop分支
 
-## Git生成SSH密钥
+- Hotfix分支
+当我们在Master分支发现新的Bug时候，我们需要创建一个Hotfix，完成Hotfix后，我们合并回Master和Develop分支，所以Hotfix的改动会进入下一个Release
 
-1. 设置Git的user name和email
-    `$ git config --global user.name "name"`
-    `$ git config --global user.email "email@gmail.com"`
+### git-flow
+工具Git-flow是按照Vincent Driessen的branch模型，实现的一个高层次（级别）的git仓库操作扩展集合
 
-2. 生成SSH密钥
-    检查本机是否有ssh key设置
-    `$ cd ~/.ssh 或cd .ssh`
-    如果有则进入~/.ssh路径下（ls查看当前路径文件，rm * 删除所有文件）
+#### 安装
+- Mac
+`brew install git-flow`
+- Linux
+`apt-get install git-flow`
+- Windows
+`wget -q -O – –no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash`
 
-3. 使用Git Bash生成新的ssh key
-    ```
-    $ cd ~   // 保证当前路径在”~”下`
-    $ ssh-keygen -t rsa -C "xxxxxx@yy.com"   // 建议填写自己真实有效的邮箱地址
-
-    Generating public/private rsa key pair.
-    Enter file in which to save the key (/c/Users/xxxx_000/.ssh/id_rsa):   
-    // 不填直接回车
-    Enter passphrase (empty for no passphrase):   // 输入密码（可以为空）
-    Enter same passphrase again:   // 再次确认密码（可以为空）
-    Your identification has been saved in /c/Users/xxxx_000/.ssh/id_rsa.   
-    // 生成的密钥
-    Your public key has been saved in /c/Users/xxxx_000/.ssh/id_rsa.pub. 
-    // 生成的公钥
-    The key fingerprint is:
-    e3:51:33:xx:xx:xx:xx:xxx:61:28:83:e2:81 xxxxxx@yy.com
-    *本机已完成ssh key设置，其存放路径为：c:/Users/xxxx_000/.ssh/下。
-    注释：
-    可生成ssh key自定义名称的密钥，默认id_rsa
-    $ ssh-keygen -t rsa -C "邮箱地址" -f ~/.ssh/githug_blog_keys 
-    // 生成ssh key的名称为githug_blog_keys，慎用，容易出现其它异常
-    ```
-
-4. 添加ssh key到GitHub
-    登录GitHub系统；
-    点击右上角账号头像的“▼”→Settings→SSH kyes→Add SSH key
-    复制** id_rsa.pub **的公钥内容
-    Title自定义，将公钥粘贴到GitHub中Add an SSH key的key输入框，最后“Add Key”
-
-5. 测试ssh keys是否设置成功。
-    ```
-    $ ssh -T git@github.com
-    The authenticity of host 'github.com (192.30.252.129)' can't be established.
-    RSA key fingerprint is 16:27:xx:xx:xx:xx:xx:4d:eb:df:a6:48.
-    Are you sure you want to continue connecting (yes/no)? yes 
-    // 确认你是否继续联系，输入yes
-    ...
-    Enter passphrase for key '/c/Users/xxxx_000/.ssh/id_rsa':  
-    // 输入生成ssh key时设置的密码即可，未设则跳过
-    ```
-
-## HTTPS和SSH切换
-
-[官网说明](https://help.github.com/articles/testing-your-ssh-connection/)
+#### 使用
+- 命令一览
+```
+git flow <subcommand> [list] [-v]
+git flow <subcommand> start [-F] <name> [<base>]
+git flow <subcommand> finish [-rFk] <name|nameprefix>
+git flow <subcommand> publish <name>
+git flow <subcommand> track <name>
+git flow <subcommand> diff [<name|nameprefix>]
+git flow <subcommand> rebase [-i] [<name|nameprefix>]
+git flow <subcommand> checkout [<name|nameprefix>]
+git flow <subcommand> pull <remote> [<name>]
 
 ```
-// 列出当前远程名现有的url
-git remote -v   
-// 从SSH远程的URL更改到HTTPS 
-git remote set-url origin https://github.com/userame/repository.git
-// 从HTTPS远程的URL更改到SSH
-git remote set-url origin git@github.com:userame/repository.git
-```
+
+- subcommand
+    + init
+    + feature
+        功能分支
+        基于创建分支必须是develop
+    + release
+        发布分支
+        基于创建分支必须是develop
+    + hotfix
+        修补分支
+        基于创建分支必须是master
+    + support
+        支持分支
+        基于创建分支必须是master
+
 
 ## 同步fork源代码
-
 1. 首先要先确定一下是否建立了主repo的远程源
 `git remote -v`
 
@@ -105,61 +85,41 @@ git fetch upstream
 git merge upstream/master
 ```
 
-## Git配置
-```
-git config --list   // 列出配置信息
-
-git config --global user.name "user"  
-git config --global user.email "user@email.com"
+## Git分支
 
 
-git config core.longpaths true   // 支持长文件名     
+## Git术语
+- Organizations
+组织，即多个开发者组成的团体，可包含众多的库和开发团队
 
-git config --global core.quotepath false   // 路径中文转义
+- Collaborator
+合作开发者，被库的所有者邀请共同开发某一项目，拥有对库的读写权限
 
-git config --global credential.helper store   // 记住提交密码
+- Contributor
+贡献者，对项目有所贡献(如提交代码，修复bug等)的开发者，但不具备合作开发者的访问权限
 
-git config core.ignorecase false   // 关闭忽略大小写
+- Upstream
+上游，对于一个branch或者fork来说，源库的主分支即是其它修改信息的源头，被称为upstream，相对的其它branch或fork就被称为downstream了
 
-git config --global core.editor "vim"   // 默认编辑器  
+- Pull Request(PR)
+即代码合并请求，由其它开发者或用户向项目的collaborators提议的修改请求，collaborators觉得修改信息合理有效即接受，否则拒绝
 
+- Merge
+将一个分支中的修改内容应用到另一个分支的操作就做合并；若两个分支内的修改内容无冲突，则可以通过合并请求(a Pull Request)或命令行(the command line)完成合并操作
 
-// 设置别名
-git config --global alias.st "status" 
-git config --global alias.ci "commit" 
-git config --global alias.co "checkout"
+- Fork
+对其它开发者的库的个人复制，复制的库存在你自己的账户上，你可以自行修改项目内容而不会影响原始的库，也可以将自己的修改通过合并请求(a pull request)的方式请求原始库的开发者更新你的修改
 
-```
+- Fetch
+取回，表示从在线的库上获取最新的修改信息而不需要合并代码，取回的代码可以与你本地的分支代码进行比较
 
-## Git常用命令清单
+- Push
+推送，表示将本地的修改内容推送至线上的库，这样其它的开发者就可以通过GitHub网站访问到你的修改内容了
 
-```
-git status                    // 当前状态
-git add .                     // 添加到缓存区
-git commit -m ""              // 提交操作内容
-git push origin master        // 上传master分支
-git status                    // 当前状态
+- Remote
+远端版本，即类似于GitHub.com的非本地主机的项目版本，可以连接至本地克隆的版本以实现内容同步
 
-git clone github地址          // 获取github上文件
-
-git log                       // 列出提交历史，输入q退出查看
-git reset --hard commit       // 恢复到历史的某个版本
-git reset --hard HEAD^        // 恢复到历史第一个版本
-
-git rm file                   // 删除文件
-git mv file                   // 移动文件
-
-git stash save ""             // 临时保存
-git stash list                // 查看所有临时保存
-git stash pop                 // 恢复最后一次
-
-git pull origin master        // 获取master分支
-
-git checkout master           // 切换master分支
-git checkout -b master1       // 在当前分支创建并切换到master1新分支
-
-git merge master              // 将master分支合并到当前分支
-
-http://yourname:password@git.oschina.net/name/project.git
-
-```
+## 参考资料
+https://help.github.com/articles/github-glossary/
+http://www.codeceo.com/article/how-to-use-git-flow.html
+http://blog.csdn.net/firststp/article/details/50390064

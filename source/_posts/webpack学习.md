@@ -267,8 +267,17 @@ module.exports = {
 - webpack自带的插件
     + webpack.ProvidePlugin
     + webpack.optimize.CommonsChunkPlugin
+    + webpack.optimize.UglifyJsPlugin
+    + webpack.optimize.DedupePlugin
+    + webpack.NoErrorsPlugin
+    + webpack.DefinePlugin
 - 通过npm安装的 
     + ExtractTextPlugin
+    + webpack-visualizer-plugin
+    + html-webpack-plugin
+    + copy-webpack-plugin
+    + extract-text-webpack-plugin
+    + happyPack
 
 #### CommonsChunkPlugin
 用于提取多个入口文件的公共脚本部分，然后生成一个common.js来方便多页面之间进行复用
