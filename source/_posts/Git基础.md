@@ -95,17 +95,11 @@ git config --list   // 列出配置信息
 git config --global user.name "user"  
 git config --global user.email "user@email.com"
 
-
-git config core.longpaths true   // 支持长文件名     
-
-git config --global core.quotepath false   // 路径中文转义
-
+git config core.longpaths true                // 支持长文件名     
+git config --global core.quotepath false      // 路径中文转义
 git config --global credential.helper store   // 记住提交密码
-
-git config core.ignorecase false   // 关闭忽略大小写
-
-git config --global core.editor "vim"   // 默认编辑器  
-
+git config core.ignorecase false              // 关闭忽略大小写
+git config --global core.editor "vim"         // 默认编辑器  
 
 // 设置别名
 git config --global alias.st "status" 
