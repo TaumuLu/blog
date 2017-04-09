@@ -1,0 +1,735 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Git," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言 Git是目前世界上最先进的分布式版本控制系统（没有之一）  Unix的哲学是“没有消息就是好消息” 
+安装Git
+下载msysgit
+设置环境变量 选择使用什么样的命令行工具，一般情况使用默认配置，使用Git Bash
+
+Git自带：使用Git自带的Git Bash命令行工具系统自带CMD：使用windows系统的命令行工具二者都有：上面二者同时配置，但是注意，这样会将windows中的fi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基础">
+<meta property="og:url" content="http://yoursite.com/2017/03/15/Git基础/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="前言 Git是目前世界上最先进的分布式版本控制系统（没有之一）  Unix的哲学是“没有消息就是好消息” 
+安装Git
+下载msysgit
+设置环境变量 选择使用什么样的命令行工具，一般情况使用默认配置，使用Git Bash
+
+Git自带：使用Git自带的Git Bash命令行工具系统自带CMD：使用windows系统的命令行工具二者都有：上面二者同时配置，但是注意，这样会将windows中的fi">
+<meta property="og:updated_time" content="2017-04-09T15:09:37.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git基础">
+<meta name="twitter:description" content="前言 Git是目前世界上最先进的分布式版本控制系统（没有之一）  Unix的哲学是“没有消息就是好消息” 
+安装Git
+下载msysgit
+设置环境变量 选择使用什么样的命令行工具，一般情况使用默认配置，使用Git Bash
+
+Git自带：使用Git自带的Git Bash命令行工具系统自带CMD：使用windows系统的命令行工具二者都有：上面二者同时配置，但是注意，这样会将windows中的fi">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/15/Git基础/"/>
+
+
+
+
+
+  <title> Git基础 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/Git基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Git基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T08:37:42+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong> Git是目前世界上最先进的分布式版本控制系统（没有之一） </strong><br><strong> Unix的哲学是“没有消息就是好消息” </strong></p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><ol>
+<li>下载msysgit</li>
+<li><p>设置环境变量<br> 选择使用什么样的命令行工具，一般情况使用默认配置，使用Git Bash</p>
+<blockquote>
+<p>Git自带：使用Git自带的Git Bash命令行工具<br>系统自带CMD：使用windows系统的命令行工具<br>二者都有：上面二者同时配置，但是注意，这样会将windows中的find.exe和sort.exe工具覆盖，如果不懂这些尽量不要选择</p>
+</blockquote>
+</li>
+<li><p>配置windows环境变量<br> 右键“计算机”-&gt;“属性”-&gt;“高级系统设置”-&gt;“环境变量”-&gt;在下方的“系统变量”中找到“path”添加<br> <code>C:\Program Files\Git\cmd</code></p>
+</li>
+</ol>
+<h2 id="Git生成SSH密钥"><a href="#Git生成SSH密钥" class="headerlink" title="Git生成SSH密钥"></a>Git生成SSH密钥</h2><ol>
+<li><p>设置Git的user name和email<br> <code>$ git config --global user.name &quot;name&quot;</code><br> <code>$ git config --global user.email &quot;email@gmail.com&quot;</code></p>
+</li>
+<li><p>生成SSH密钥<br> 检查本机是否有ssh key设置<br> <code>$ cd ~/.ssh 或cd .ssh</code><br> 如果有则进入~/.ssh路径下（ls查看当前路径文件，rm * 删除所有文件）</p>
+</li>
+<li><p>使用Git Bash生成新的ssh key</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ cd ~   // 保证当前路径在”~”下`</div><div class="line">$ ssh-keygen -t rsa -C &quot;xxxxxx@yy.com&quot;   // 建议填写自己真实有效的邮箱地址</div><div class="line"></div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/c/Users/xxxx_000/.ssh/id_rsa):   </div><div class="line">// 不填直接回车</div><div class="line">Enter passphrase (empty for no passphrase):   // 输入密码（可以为空）</div><div class="line">Enter same passphrase again:   // 再次确认密码（可以为空）</div><div class="line">Your identification has been saved in /c/Users/xxxx_000/.ssh/id_rsa.   </div><div class="line">// 生成的密钥</div><div class="line">Your public key has been saved in /c/Users/xxxx_000/.ssh/id_rsa.pub. </div><div class="line">// 生成的公钥</div><div class="line">The key fingerprint is:</div><div class="line">e3:51:33:xx:xx:xx:xx:xxx:61:28:83:e2:81 xxxxxx@yy.com</div><div class="line">*本机已完成ssh key设置，其存放路径为：c:/Users/xxxx_000/.ssh/下。</div><div class="line">注释：</div><div class="line">可生成ssh key自定义名称的密钥，默认id_rsa</div><div class="line">$ ssh-keygen -t rsa -C &quot;邮箱地址&quot; -f ~/.ssh/githug_blog_keys </div><div class="line">// 生成ssh key的名称为githug_blog_keys，慎用，容易出现其它异常</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加ssh key到GitHub<br> 登录GitHub系统；<br> 点击右上角账号头像的“▼”→Settings→SSH kyes→Add SSH key<br> 复制<strong> id_rsa.pub </strong>的公钥内容<br> Title自定义，将公钥粘贴到GitHub中Add an SSH key的key输入框，最后“Add Key”</p>
+</li>
+<li><p>测试ssh keys是否设置成功。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">The authenticity of host &apos;github.com (192.30.252.129)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is 16:27:xx:xx:xx:xx:xx:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)? yes </div><div class="line">// 确认你是否继续联系，输入yes</div><div class="line">...</div><div class="line">Enter passphrase for key &apos;/c/Users/xxxx_000/.ssh/id_rsa&apos;:  </div><div class="line">// 输入生成ssh key时设置的密码即可，未设则跳过</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="HTTPS和SSH切换"><a href="#HTTPS和SSH切换" class="headerlink" title="HTTPS和SSH切换"></a>HTTPS和SSH切换</h2><p><a href="https://help.github.com/articles/testing-your-ssh-connection/" target="_blank" rel="external">官网说明</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 列出当前远程名现有的url</div><div class="line">git remote -v   </div><div class="line">// 从SSH远程的URL更改到HTTPS </div><div class="line">git remote set-url origin https://github.com/userame/repository.git</div><div class="line">// 从HTTPS远程的URL更改到SSH</div><div class="line">git remote set-url origin git@github.com:userame/repository.git</div></pre></td></tr></table></figure>
+<h2 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">git config --list   // 列出配置信息</div><div class="line"></div><div class="line">git config --global user.name &quot;user&quot;  </div><div class="line">git config --global user.email &quot;user@email.com&quot;</div><div class="line"></div><div class="line">git config core.longpaths true                // 支持长文件名     </div><div class="line">git config --global core.quotepath false      // 路径中文转义</div><div class="line">git config --global credential.helper store   // 记住提交密码</div><div class="line">git config core.ignorecase false              // 关闭忽略大小写</div><div class="line">git config --global core.editor &quot;vim&quot;         // 默认编辑器  </div><div class="line"></div><div class="line">// 设置别名</div><div class="line">git config --global alias.st &quot;status&quot; </div><div class="line">git config --global alias.ci &quot;commit&quot; </div><div class="line">git config --global alias.co &quot;checkout&quot;</div></pre></td></tr></table></figure>
+<h2 id="Git常用命令清单"><a href="#Git常用命令清单" class="headerlink" title="Git常用命令清单"></a>Git常用命令清单</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">git status                    // 当前状态</div><div class="line">git add .                     // 添加到缓存区</div><div class="line">git commit -m &quot;&quot;              // 提交操作内容</div><div class="line">git push origin master        // 上传master分支</div><div class="line">git status                    // 当前状态</div><div class="line"></div><div class="line">git clone github地址          // 获取github上文件</div><div class="line"></div><div class="line">git log                       // 列出提交历史，输入q退出查看</div><div class="line">git reset --hard commit       // 恢复到历史的某个版本</div><div class="line">git reset --hard HEAD^        // 恢复到历史第一个版本</div><div class="line"></div><div class="line">git rm file                   // 删除文件</div><div class="line">git mv file                   // 移动文件</div><div class="line"></div><div class="line">git stash save &quot;&quot;             // 临时保存</div><div class="line">git stash list                // 查看所有临时保存</div><div class="line">git stash pop                 // 恢复最后一次</div><div class="line"></div><div class="line">git pull origin master        // 获取master分支</div><div class="line"></div><div class="line">git checkout master           // 切换master分支</div><div class="line">git checkout -b master1       // 在当前分支创建并切换到master1新分支</div><div class="line"></div><div class="line">git merge master              // 将master分支合并到当前分支</div><div class="line"></div><div class="line">http://yourname:password@git.oschina.net/name/project.git</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/14/JS积累/" rel="next" title="JS积累">
+                <i class="fa fa-chevron-left"></i> JS积累
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/16/移动端适配/" rel="prev" title="移动端适配">
+                移动端适配 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chaserr" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">2.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git生成SSH密钥"><span class="nav-number">3.</span> <span class="nav-text">Git生成SSH密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS和SSH切换"><span class="nav-number">4.</span> <span class="nav-text">HTTPS和SSH切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git配置"><span class="nav-number">5.</span> <span class="nav-text">Git配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git常用命令清单"><span class="nav-number">6.</span> <span class="nav-text">Git常用命令清单</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
