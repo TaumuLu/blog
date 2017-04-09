@@ -43,3 +43,4 @@ alias-别名
 point-点 得分
 language-语言
 Interview-面试
+decorator-装饰
