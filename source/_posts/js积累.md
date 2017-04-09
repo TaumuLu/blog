@@ -1,5 +1,5 @@
 ---
-title: js积累
+title: Js积累
 date: 2017-03-14 23:55:28
 tags: Collect
 ---

@@ -1,5 +1,5 @@
 ---
-title: wordBook
+title: WordBook
 date: 2017-03-28 16:31:33
 tags: English
 ---
@@ -44,3 +44,6 @@ point-点 得分
 language-语言
 Interview-面试
 decorator-装饰
+feature-特征
+hotfix-修补程序
+release-释放 发行
