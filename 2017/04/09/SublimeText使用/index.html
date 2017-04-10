@@ -1,0 +1,768 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="编辑器," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言工欲善其事，必先利其器！对于有强迫症的的我来说选一款适合自己的开发工具是非常非常重要的还有一个非常！从学习前端初始，便选择了SublimeText作为我的开发神器，当然个人非常喜欢Sublime的，能用Sublime的地方肯定不会使用其他编辑器，也在Sublime上投入了大量的时间去学习和配置，故必须写一篇Sublime的使用心得
+介绍Sublime一直被称为前端开发利器，本人是非常认同的，优">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SublimeText使用">
+<meta property="og:url" content="http://yoursite.com/2017/04/09/SublimeText使用/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="前言工欲善其事，必先利其器！对于有强迫症的的我来说选一款适合自己的开发工具是非常非常重要的还有一个非常！从学习前端初始，便选择了SublimeText作为我的开发神器，当然个人非常喜欢Sublime的，能用Sublime的地方肯定不会使用其他编辑器，也在Sublime上投入了大量的时间去学习和配置，故必须写一篇Sublime的使用心得
+介绍Sublime一直被称为前端开发利器，本人是非常认同的，优">
+<meta property="og:updated_time" content="2017-04-10T15:24:11.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SublimeText使用">
+<meta name="twitter:description" content="前言工欲善其事，必先利其器！对于有强迫症的的我来说选一款适合自己的开发工具是非常非常重要的还有一个非常！从学习前端初始，便选择了SublimeText作为我的开发神器，当然个人非常喜欢Sublime的，能用Sublime的地方肯定不会使用其他编辑器，也在Sublime上投入了大量的时间去学习和配置，故必须写一篇Sublime的使用心得
+介绍Sublime一直被称为前端开发利器，本人是非常认同的，优">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/09/SublimeText使用/"/>
+
+
+
+
+
+  <title> SublimeText使用 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/SublimeText使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SublimeText使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-09T21:51:43+08:00">
+                2017-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>工欲善其事，必先利其器！<br>对于有强迫症的的我来说选一款适合自己的开发工具是非常非常重要的还有一个非常！<br>从学习前端初始，便选择了SublimeText作为我的开发神器，当然个人非常喜欢Sublime的，能用Sublime的地方肯定不会使用其他编辑器，也在Sublime上投入了大量的时间去学习和配置，故必须写一篇Sublime的使用心得</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Sublime一直被称为前端开发利器，本人是非常认同的，优雅的界面，流畅的运行，行云流水的操作体验是无可替代的，时至今日也是被大多数人作为主要开发工具，唯一值得诟病的也就不是开源的而已</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>之前一直用的破解的，清风流音制作，用起来也是很好的，之后也是建议直接去官网下载安装好点，个人更喜欢绿色免安装的，可能需要配置右键菜单，Windows可以参考我写的配置右键菜单的方法即可</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>要说Sublime最磨人的还是在配置方面，虽然自定义定制化很高，但繁琐的插件配置就让很多人没了耐心选择直接配好的来用</p>
+<p>本人也是一直在不断配置自己的Sublime，从插件到插件的配置修改再到个人设置，对于如此多的配置还是记下来好点</p>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>首选项 -&gt; 设置<br>可以自己对照左边默认设置来配置</p>
+<p>配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;auto_complete_triggers&quot;:</div><div class="line">    [</div><div class="line">        &#123;</div><div class="line">            &quot;characters&quot;: &quot;&lt;&quot;,</div><div class="line">            &quot;selector&quot;: &quot;text.html&quot;</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            &quot;characters&quot;: &quot;/&quot;,</div><div class="line">            &quot;selector&quot;: &quot;string.quoted.double.html,string.quoted.single.html, source.css&quot;</div><div class="line">        &#125;</div><div class="line">    ],</div><div class="line">    &quot;bold_folder_labels&quot;: true,</div><div class="line">    &quot;color_scheme&quot;: &quot;Packages/User/SublimeLinter/MT (SL).tmTheme&quot;,</div><div class="line">    &quot;default_encoding&quot;: &quot;UTF-8&quot;,</div><div class="line">    &quot;draw_minimap_border&quot;: true,</div><div class="line">    &quot;ensure_newline_at_eof_on_save&quot;: true,</div><div class="line">    &quot;file_exclude_patterns&quot;:</div><div class="line">    [</div><div class="line">        &quot;.DS_Store&quot;,</div><div class="line">        &quot;*.sublime-workspace&quot;,</div><div class="line">        &quot;*.scssc&quot;</div><div class="line">    ],</div><div class="line">    &quot;fold_buttons&quot;: true,</div><div class="line">    &quot;folder_exclude_patterns&quot;:</div><div class="line">    [</div><div class="line">        &quot;.git&quot;,</div><div class="line">        &quot;log&quot;,</div><div class="line">        &quot;tmp/cache&quot;,</div><div class="line">        &quot;.vagrant&quot;</div><div class="line">    ],</div><div class="line">    &quot;font_size&quot;: 13,</div><div class="line">    &quot;highlight_line&quot;: true,</div><div class="line">    &quot;ignored_packages&quot;:</div><div class="line">    [</div><div class="line">        &quot;SyncedSidebarBg&quot;,</div><div class="line">        &quot;Vintage&quot;</div><div class="line">    ],</div><div class="line">    &quot;save_on_focus_lost&quot;: true,</div><div class="line">    &quot;show_encoding&quot;: true,</div><div class="line">    &quot;tab_size&quot;: 4,</div><div class="line">    &quot;theme&quot;: &quot;Material-Theme.sublime-theme&quot;,</div><div class="line">    &quot;translate_tabs_to_spaces&quot;: true,</div><div class="line">    &quot;trim_trailing_white_space_on_save&quot;: true,</div><div class="line">    &quot;update_check&quot;: false,</div><div class="line">    &quot;word_separators&quot;: &quot;./\\()\&quot;&apos;-:,.;&lt;&gt;~!@#$%^&amp;*|+=[]&#123;&#125;`~?（，。、：；）&quot;,</div><div class="line">    &quot;word_wrap&quot;: true</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;</div><div class="line">        &quot;keys&quot;: [&quot;shift+tab&quot;],</div><div class="line">        &quot;command&quot;: &quot;reindent&quot;,</div><div class="line">        &quot;args&quot;: &#123;</div><div class="line">            &quot;single_line&quot;: &quot;false&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        &quot;keys&quot;: [&quot;ctrl+alt+f&quot;],</div><div class="line">        &quot;command&quot;: &quot;htmlprettify&quot;</div><div class="line">    &#125;,</div><div class="line">    // &#123;</div><div class="line">    //     &quot;keys&quot;: [&quot;ctrl+alt+h&quot;],</div><div class="line">    //     &quot;command&quot;: &quot;js_format&quot;,</div><div class="line">    //     &quot;context&quot;: [&#123;</div><div class="line">    //         &quot;key&quot;: &quot;selector&quot;,</div><div class="line">    //         &quot;operator&quot;: &quot;equal&quot;,</div><div class="line">    //         &quot;operand&quot;: &quot;source.js,source.json&quot;</div><div class="line">    //     &#125;]</div><div class="line">    // &#125;,</div><div class="line">    // &#123;</div><div class="line">    //     &quot;keys&quot;: [&quot;ctrl+alt+g&quot;],</div><div class="line">    //     &quot;command&quot;: &quot;css_format&quot;,</div><div class="line">    //     &quot;args&quot;: &#123;</div><div class="line">    //         &quot;action&quot;: &quot;expand&quot;</div><div class="line">    //     &#125;</div><div class="line">    // &#125;,</div><div class="line">    // &#123;</div><div class="line">    //     &quot;keys&quot;: [&quot;ctrl+alt+b&quot;],</div><div class="line">    //     &quot;command&quot;: &quot;alignment&quot;</div><div class="line">    // &#125;,</div><div class="line">    &#123;</div><div class="line">        &quot;keys&quot;: [&quot;tab&quot;],</div><div class="line">        &quot;command&quot;: &quot;expand_abbreviation_by_tab&quot;,</div><div class="line"></div><div class="line">        // put comma-separated syntax selectors for which</div><div class="line">        // you want to expandEmmet abbreviations into &quot;operand&quot; key</div><div class="line">        // instead of SCOPE_SELECTOR.</div><div class="line">        // Examples: source.js, text.html - source</div><div class="line">        &quot;context&quot;: [&#123;</div><div class="line">                &quot;operand&quot;: &quot;source.js&quot;,</div><div class="line">                &quot;operator&quot;: &quot;equal&quot;,</div><div class="line">                &quot;match_all&quot;: true,</div><div class="line">                &quot;key&quot;: &quot;selector&quot;</div><div class="line">            &#125;,</div><div class="line"></div><div class="line">            // run only if there&apos;s no selected text</div><div class="line">            &#123;</div><div class="line">                &quot;match_all&quot;: true,</div><div class="line">                &quot;key&quot;: &quot;selection_empty&quot;</div><div class="line">            &#125;,</div><div class="line"></div><div class="line">            // don&apos;t work if there are active tabstops</div><div class="line">            &#123;</div><div class="line">                &quot;operator&quot;: &quot;equal&quot;,</div><div class="line">                &quot;operand&quot;: false,</div><div class="line">                &quot;match_all&quot;: true,</div><div class="line">                &quot;key&quot;: &quot;has_next_field&quot;</div><div class="line">            &#125;,</div><div class="line"></div><div class="line">            // don&apos;t work if completion popup is visible and you</div><div class="line">            // want to insert completion with Tab. If you want to</div><div class="line">            // expand Emmet with Tab even if popup is visible --</div><div class="line">            // remove this section</div><div class="line">            &#123;</div><div class="line">                &quot;operand&quot;: false,</div><div class="line">                &quot;operator&quot;: &quot;equal&quot;,</div><div class="line">                &quot;match_all&quot;: true,</div><div class="line">                &quot;key&quot;: &quot;auto_complete_visible&quot;</div><div class="line">            &#125;, &#123;</div><div class="line">                &quot;match_all&quot;: true,</div><div class="line">                &quot;key&quot;: &quot;is_abbreviation&quot;</div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">]</div></pre></td></tr></table></figure>
+<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>好用的东西怎么能不配上套好看的衣服</p>
+<ul>
+<li>Material</li>
+<li>Spacefunk</li>
+<li>soda</li>
+<li>Afterglow</li>
+</ul>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>强大的插件机制让你使用起来更得心应手</p>
+<ul>
+<li><p>package control<br>  包管理，必不可少<br>  ctrl+`粘贴以下代码</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = &apos;df21e130d211cfc94d9b0905775a7c0f&apos; + &apos;1e3d39e33b79698005270310898eea76&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)</div></pre></td></tr></table></figure>
+</li>
+<li><p>文本编辑 </p>
+<ul>
+<li>Markdown Preview<br>  更改Markdown文件视图</li>
+<li>MarkdownEditing<br>  生成html文件</li>
+<li>Plain​Tasks</li>
+</ul>
+</li>
+<li>代码格式化 <ul>
+<li>Alignment<br>  =号对齐</li>
+<li>JSFormat</li>
+<li>CSS Format</li>
+<li>HTML-CSS-JS Prettify</li>
+</ul>
+</li>
+<li>中文支持 <ul>
+<li>Chinese​Localizations</li>
+<li>ConvertToUTF8</li>
+<li>IMESupport<br>  中文输入法光标跟随          </li>
+</ul>
+</li>
+<li>代码识别高亮<ul>
+<li>Less                     </li>
+<li>Vue Syntax Highlight     </li>
+<li>Jade</li>
+<li>Babel</li>
+</ul>
+</li>
+<li>代码提示<ul>
+<li>Emmet</li>
+<li>Emmet Css Snippets</li>
+<li>Auto​File​Name<br>  自动输入文件路径</li>
+<li>All Autocomplete<br>  匹配所有打开的文件寻找提示词 </li>
+<li>jQuery</li>
+<li>Nodejs</li>
+<li>HTML5</li>
+</ul>
+</li>
+<li>Git</li>
+<li>GitGutter</li>
+<li>Color​Picker</li>
+<li>File​Diffs   </li>
+<li>DocBlockr    </li>
+<li>Side​Bar​Enhancements<br>  增强右键菜单</li>
+<li>SyncedSidebarBg<br>  侧边栏同步背景颜色</li>
+<li>Clipboard History<br>  粘贴板历史记录</li>
+<li>Bracket​Highlighter<br>  起始结束标记</li>
+<li>Sublime​REPL<br>  运行各种语言</li>
+<li>Sublime​Linter<br>  错误语法提示<ul>
+<li>Sublime​Linter-jshint</li>
+</ul>
+</li>
+<li>Sublime​Code​Intel<br>  代码提示支持多种编程语言</li>
+</ul>
+<h3 id="Sublime​Code​Intel"><a href="#Sublime​Code​Intel" class="headerlink" title="Sublime​Code​Intel"></a>Sublime​Code​Intel</h3><p>SublimeCodeIntel/.codeintel/config下添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//注意上下文需要添加的逗号</div><div class="line">&quot;JavaScript&quot;:&#123;</div><div class="line">    &quot;javascriptExtraPaths&quot;:[]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/编辑器/" rel="tag"># 编辑器</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/08/Mac使用/" rel="next" title="Mac使用">
+                <i class="fa fa-chevron-left"></i> Mac使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/10/日记17-4-7/" rel="prev" title="日记17-4-7">
+                日记17-4-7 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chaserr" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">3.1.</span> <span class="nav-text">设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快捷键"><span class="nav-number">3.2.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题"><span class="nav-number">3.3.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">3.4.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime​Code​Intel"><span class="nav-number">3.5.</span> <span class="nav-text">Sublime​Code​Intel</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
