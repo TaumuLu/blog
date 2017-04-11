@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/Books-JavaScript权威指南/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/Books-你不知道的JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -282,8 +282,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/30/Books-JavaScript权威指南/" itemprop="url">
-                  JavaScript权威指南
+                <a class="post-title-link" href="/2017/03/30/Books-你不知道的JavaScript/" itemprop="url">
+                  你不知道的JavaScript
                 </a>
               
             
@@ -337,59 +337,203 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>作为前端人必需必备必读的圣经，听名字也就不言而喻了，同其他人一样我也当作工具书</p>
-<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>目前未看完</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="第一部分-JavaScript语言核心"><a href="#第一部分-JavaScript语言核心" class="headerlink" title="第一部分 JavaScript语言核心"></a>第一部分 JavaScript语言核心</h3><h3 id="第二部分-客户端JavaScript"><a href="#第二部分-客户端JavaScript" class="headerlink" title="第二部分 客户端JavaScript"></a>第二部分 客户端JavaScript</h3><h4 id="第13章"><a href="#第13章" class="headerlink" title="第13章"></a>第13章</h4><ul>
-<li><p>Window对象<br>  window </p>
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>作者：[美]辛普森（Kyle Simpson）著<br>JavaScript系列书<br>适合中级前端工程师<br>看后收获颇大，个人是非常仰慕此书和作者的</p>
+<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>勉强看完第一卷，其余目前未看完，还未购买此书，之后会一起入手这一系列</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="上卷"><a href="#上卷" class="headerlink" title="上卷"></a>上卷</h3><p>基本看完了一遍，后续会再刷的</p>
+<h4 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h4><ul>
+<li><p>作用域</p>
 <ul>
-<li>Document对象<br>  document <ul>
-<li>属性 <ul>
-<li>body</li>
-<li>…</li>
+<li>编译原理<ul>
+<li>分词/词法分析</li>
+<li>解析/语法分析</li>
+<li>代码生成</li>
 </ul>
 </li>
-<li>方法 <ul>
-<li>createElement()</li>
-<li>getElementsById()</li>
-<li>getElementsByTagName()</li>
-<li>getElementsByClassName()</li>
-<li>…</li>
+<li>理解作用域<ul>
+<li>编译器</li>
+<li>引擎<ul>
+<li>LHS和RHS查找</li>
 </ul>
 </li>
+<li>作用域</li>
 </ul>
 </li>
-<li>Element对象 {<ul>
-<li>属性 <ul>
-<li>style <ul>
-<li>width</li>
-<li>height</li>
-<li>…</li>
+<li>作用域嵌套</li>
+<li>异常</li>
 </ul>
 </li>
-<li>className</li>
-<li>…</li>
-</ul>
-</li>
-<li>方法<ul>
-<li>firstChild()</li>
-<li>appendChild()</li>
-<li>…</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Window对象、Document对象、Element对象 </p>
+<li><p>词法作用域</p>
 <ul>
-<li>事件处理程序<br>  on <ul>
-<li>click</li>
-<li>mouseover</li>
-<li>mouseout</li>
-<li>…</li>
+<li>词法作用域 = 静态作用域</li>
+<li>动态作用域<ul>
+<li>词法阶段</li>
+<li>欺骗语法<ul>
+<li>eval()<ul>
+<li>setTimeout()、setInterval()</li>
+<li>new Function()</li>
+</ul>
+</li>
+<li>with()</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p>函数作用域和块级作用域</p>
+<ul>
+<li>函数中的作用域</li>
+<li>隐藏内部实现</li>
+<li>函数作用域<ul>
+<li>匿名和具名</li>
+<li>立即执行函数表达式(IIFE)</li>
+</ul>
+</li>
+<li>块作用域<ul>
+<li>with</li>
+<li>try/catch</li>
+<li>let</li>
+<li>const</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>提升</p>
+<ul>
+<li>先有声明后赋值</li>
+<li>函数优先</li>
+</ul>
+</li>
+<li><p>作用域闭包</p>
+<ul>
+<li>实质问题<ul>
+<li>当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行</li>
+<li>在定时器、事件监听器、Ajax请求、跨窗口通信、Web Workers或者任何其他的异步（或者同步）任务中，只要使用了回调函数，实际上就是在使用闭包</li>
+</ul>
+</li>
+<li>循环和闭包<ul>
+<li>每个迭代都被封闭在一个共享的全局作用域中</li>
+<li>利用IIFE为每个迭代都生成一个新的作用域</li>
+</ul>
+</li>
+<li>模块</li>
+</ul>
+</li>
+</ul>
+<h4 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h4><ul>
+<li><p>关于this</p>
+<ul>
+<li>this到底是什么<br>  this实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用</li>
+</ul>
+</li>
+<li><p>this全面解析</p>
+<ul>
+<li>调用位置<br>  从调用栈中分析出真正的调用位置的，它决定了this的绑定</li>
+<li>绑定规则<ul>
+<li>默认绑定</li>
+<li>隐式绑定<br>  隐式丢失</li>
+<li>显式绑定（仍无法解决隐式丢失问题）<ul>
+<li>硬绑定<br>  硬绑定之后就无法使用隐式绑定或者显式绑定来修改this</li>
+<li>API调用的“上下文”</li>
+</ul>
+</li>
+<li>new绑定</li>
+</ul>
+</li>
+<li>优先级<ul>
+<li>是否在new中调用（new绑定）？<br>  如果是的话this绑定的是新创建的对象</li>
+<li>是否通过call、apply（显式绑定）或者硬绑定调用？<br>  如果是的话，this绑定的是指定的对象</li>
+<li>是否在某个上下文对象中调用（隐式绑定）？<br>  如果是的话，this绑定的是那个上下文对象</li>
+<li>都不是的话，使用默认绑定。如果在严格模式下，就绑定到undefined，否则绑定到全局对象</li>
+</ul>
+</li>
+<li>绑定例外<ul>
+<li>被忽略的this<ul>
+<li>传入null或undefined作为占位值this应用默认绑定规则</li>
+<li>更安全的this，Object.create(null)</li>
+</ul>
+</li>
+<li>间接引用<br>  调用这个函数会应用默认绑定规则</li>
+<li>软绑定</li>
+<li>this词法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对象</p>
+<ul>
+<li>语法<br>  两种形式定义<ul>
+<li>声明形式</li>
+<li>构造形式</li>
+</ul>
+</li>
+<li>类型</li>
+<li>内容<ul>
+<li>可计算属性名</li>
+<li>属性与方法</li>
+<li>数组<ul>
+<li>为数组添加命名属性，数组的length不改变<br>  若属性名是数字，那它会变成一个数值下标（会修改数组的内容而不添加属性）</li>
+</ul>
+</li>
+<li>复制对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>重构。。。</em></p>
+<h3 id="中卷"><a href="#中卷" class="headerlink" title="中卷"></a>中卷</h3><p>跳着看的，未曾看完</p>
+<h4 id="类型与语法"><a href="#类型与语法" class="headerlink" title="类型与语法"></a>类型与语法</h4><h4 id="异步与性能"><a href="#异步与性能" class="headerlink" title="异步与性能"></a>异步与性能</h4><ul>
+<li><p>异步 </p>
+<ul>
+<li><p>事件循环</p>
+<ul>
+<li><p>队列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var eventLoop = [];</div><div class="line">var event;</div><div class="line"></div><div class="line">while(true) &#123;</div><div class="line">    if(eventLoop.length &gt; 0) &#123;</div><div class="line">        event = envenLoop.shift();</div><div class="line">        try &#123;</div><div class="line">            event();</div><div class="line">        &#125; catch(e) &#123;</div><div class="line">            reportError(err);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>setTimeout() 在到时后才将回调函数放在事件循环中，永远不会调度到当前事件循环tick</p>
+</li>
+</ul>
+</li>
+<li>Javascript <ul>
+<li>是单线程的使其函数中的代码执行具有原子性，即不中断完整运行</li>
+<li>减少了不确定性，相对多线程多进程只有事件顺序级别的</li>
+</ul>
+</li>
+<li>并发 <ul>
+<li>非交互</li>
+<li>交互 <ul>
+<li>协调交互避免竞态</li>
+<li>措施 <ul>
+<li>协调数序</li>
+<li>条件判断，加上锁</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>协作 <ul>
+<li>拆分自身，让其他并发有机会插入事件循环交替执行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>任务 <ul>
+<li>挂在事件循环队列每次tick之后的一个队列</li>
+<li>会在当前事件循环末尾添加</li>
+<li>语句顺序<br>  js引擎在编译完代码后会给这些js语句重新排序已提高执行速度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>回调 </p>
+<ul>
+<li>代码抽象于生活，解释代码犹如思考的大脑</li>
+<li>开发者编写代码的时候是在计划一系列动作的发生，优秀的开发者会认真计划</li>
+<li>回调与我们大脑的顺序思维不匹配，以及控制反转带来的问题</li>
+<li>缺乏顺序性和可信任性</li>
+</ul>
+</li>
+<li><p>Promise </p>
 </li>
 </ul>
 

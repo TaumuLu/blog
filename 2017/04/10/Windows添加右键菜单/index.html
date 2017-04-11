@@ -87,16 +87,67 @@
 
 
 
-<meta name="description" content="记录学习前端的点滴">
+<meta name="description" content="前言最近在Windows上装VSCode需要加入右键菜单，包括Sublime也是，故上网搜了下顺便总结下右键菜单的添加方法
+右键菜单打开win+R，输入regedit命令打开注册表管理器
+作用域
+HKEY_CLASSES_ROOT
+\*  文件
+\shell
+
+
+\Directory  文件夹
+\shell
+\Background  文件夹空白处右键
+
+
+Drive  驱动 
+\shell
+
+
+F">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows添加右键菜单">
 <meta property="og:url" content="http://yoursite.com/2017/04/10/Windows添加右键菜单/index.html">
 <meta property="og:site_name" content="Taumu的博客">
-<meta property="og:description" content="记录学习前端的点滴">
-<meta property="og:updated_time" content="2017-04-10T15:41:41.113Z">
+<meta property="og:description" content="前言最近在Windows上装VSCode需要加入右键菜单，包括Sublime也是，故上网搜了下顺便总结下右键菜单的添加方法
+右键菜单打开win+R，输入regedit命令打开注册表管理器
+作用域
+HKEY_CLASSES_ROOT
+\*  文件
+\shell
+
+
+\Directory  文件夹
+\shell
+\Background  文件夹空白处右键
+
+
+Drive  驱动 
+\shell
+
+
+F">
+<meta property="og:updated_time" content="2017-04-11T15:23:12.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows添加右键菜单">
-<meta name="twitter:description" content="记录学习前端的点滴">
+<meta name="twitter:description" content="前言最近在Windows上装VSCode需要加入右键菜单，包括Sublime也是，故上网搜了下顺便总结下右键菜单的添加方法
+右键菜单打开win+R，输入regedit命令打开注册表管理器
+作用域
+HKEY_CLASSES_ROOT
+\*  文件
+\shell
+
+
+\Directory  文件夹
+\shell
+\Background  文件夹空白处右键
+
+
+Drive  驱动 
+\shell
+
+
+F">
 
 
 
@@ -331,7 +382,34 @@
       
 
       
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在Windows上装VSCode需要加入右键菜单，包括Sublime也是，故上网搜了下顺便总结下右键菜单的添加方法</p>
+<h2 id="右键菜单"><a href="#右键菜单" class="headerlink" title="右键菜单"></a>右键菜单</h2><h3 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h3><p>win+R，输入regedit命令打开注册表管理器</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
+<li>HKEY_CLASSES_ROOT<ul>
+<li>\*<br>  文件<ul>
+<li>\shell</li>
+</ul>
+</li>
+<li>\Directory<br>  文件夹<ul>
+<li>\shell</li>
+<li>\Background<br>  文件夹空白处右键</li>
+</ul>
+</li>
+<li>Drive<br>  驱动 <ul>
+<li>\shell</li>
+</ul>
+</li>
+<li>Folder<br>  文件夹和驱动器<ul>
+<li>\shell</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="添加或移除"><a href="#添加或移除" class="headerlink" title="添加或移除"></a>添加或移除</h2><p>次方法适合大多数应用，改为对应程序的名称即可<br>可以添加更多区域的右键菜单，自己添加入即可</p>
+<h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3><p>将下段代码保存为.inf文件放在要添加的程序文件夹下安装即可<br>其中VSCode为自己设置的右键名称，以及之后的.exe为对应程序的名称<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[Version]</div><div class="line">Signature=&quot;$Windows NT$&quot;</div><div class="line"></div><div class="line">[DefaultInstall]</div><div class="line">AddReg=SublimeText3</div><div class="line"></div><div class="line">[SublimeText3]</div><div class="line">hkcr,&quot;*\\shell\\VSCode&quot;,,,&quot;VSCode&quot;</div><div class="line">hkcr,&quot;*\\shell\\VSCode&quot;,&quot;Icon&quot;,0x20000,&quot;%1%\Code.exe, 0&quot;</div><div class="line">hkcr,&quot;*\\shell\\VSCode\\command&quot;,,,&quot;&quot;&quot;%1%\Code.exe&quot;&quot; &quot;&quot;%%1&quot;&quot; %%*&quot;</div><div class="line"></div><div class="line">hkcr,&quot;directory\\shell\\VSCode&quot;,,,&quot;VSCode&quot;</div><div class="line">hkcr,&quot;directory\\shell\\VSCode&quot;,&quot;Icon&quot;,0x20000,&quot;%1%\Code.exe, 0&quot;</div><div class="line">hkcr,&quot;directory\\shell\\VSCode\\command&quot;,,,&quot;&quot;&quot;%1%\Code.exe&quot;&quot; &quot;&quot;%%1&quot;&quot; %%*&quot;</div></pre></td></tr></table></figure></p>
+<h3 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h3><p>将下段代码保存为.reg文件放在要添加的程序文件夹下运行即可<br>其中VSCode为自己设置的右键名称，以及之后的.exe为对应程序的名称<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Windows Registry Editor Version 5.00</div><div class="line">[-HKEY_CLASSES_ROOT\*\shell\VSCode]</div><div class="line">[-HKEY_CLASSES_ROOT\Directory\shell\VSCode]</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -426,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -500,6 +587,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#右键菜单"><span class="nav-number">2.</span> <span class="nav-text">右键菜单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开"><span class="nav-number">2.1.</span> <span class="nav-text">打开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">2.2.</span> <span class="nav-text">作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加或移除"><span class="nav-number">3.</span> <span class="nav-text">添加或移除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加"><span class="nav-number">3.1.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除"><span class="nav-number">3.2.</span> <span class="nav-text">移除</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
