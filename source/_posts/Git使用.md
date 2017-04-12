@@ -87,6 +87,38 @@ git merge upstream/master
 
 ## Git分支
 
+### 查看分支
+```
+git branch -a       查看所有本地分支和远程分支
+git branch -r       只查看远程分支
+
+```
+
+### 新建分支
+```
+git branch [branchname]           创建本地分支，只是创建分支不切换
+git checkout -b [branchname]      创建本地分支且切换到此分支
+
+```
+
+### 删除分支
+```
+git branch -d | -D [branchname]   删除分支
+git branch -d -r [branchname]     删除远程分支
+
+git branch -a                   任然显示删除的分支，即使远程已删除
+git remote show origin          查看remote地址，远程分支，本地分支与之相对应关系等信息
+git remote prune origin         删除远程仓库不存在的分支
+
+```
+
+### 其他命令
+```
+git branch -m | -M oldbranch newbranch 
+重命名分支，如果newbranch名字分支已经存在，则需要使用-M强制重命名，否则，使用-m进行重命名
+
+```
+
 
 ## Git术语
 - Organizations
@@ -123,3 +155,4 @@ git merge upstream/master
 https://help.github.com/articles/github-glossary/
 http://www.codeceo.com/article/how-to-use-git-flow.html
 http://blog.csdn.net/firststp/article/details/50390064
+http://blog.csdn.net/qq_16885135/article/details/52777871
