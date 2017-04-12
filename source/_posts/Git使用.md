@@ -103,7 +103,7 @@ git checkout -b [branchname]      创建本地分支且切换到此分支
 
 ### 删除分支
 ```
-git branch -d | -D [branchname]   删除分支
+git branch -d | -D [branchname]   删除分支，大写的D强制删除
 git branch -d -r [branchname]     删除远程分支
 
 git branch -a                   任然显示删除的分支，即使远程已删除
@@ -119,6 +119,21 @@ git branch -m | -M oldbranch newbranch
 
 ```
 
+## Git其他命令
+
+### add
+```
+git add -u       将文件的修改、文件的删除，添加到暂存区
+git add .        将文件的修改，文件的新建，添加到暂存区
+git add -A       将文件的修改，文件的删除，文件的新建，添加到暂存区
+
+```
+
+### commit
+```
+git commit -am "<message>"   将所有修改，但未进stage的改动加入stage，并记录commit信息，前提是被改动文件已被跟踪
+
+```
 
 ## Git术语
 - Organizations

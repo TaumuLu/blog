@@ -23,16 +23,34 @@ tags: Mac
     + istat menus
 
 ### homebrew
-命令
+
+#### 常用命令
 ```
+brew search [TEXT|/REGEX/]
+brew (info|home|options) [FORMULA...]
+brew install FORMULA...
+brew update
+brew upgrade [FORMULA...]
+brew uninstall FORMULA...
+brew list [FORMULA...]
+
 brew update && brew cask install react-native-debugger
 ```
 
-install
-- git
-- git-flow
-- nginx
-- node
+#### 安装列表
+install和cask install的区别
+> brew主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发，brew cask主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在mac中直接运行使用
+> brew install curl可以安装curl第三方库，这样你在开发时就可以使用它的库来进行开发
+> brew cask install chrome可以安装谷歌浏览器应用程序，可直接运行brew偏管理第三方库和命令行工具方面的东东brew cask可以看作是苹果官方app store的补充
+
+- install
+    + git
+    + git-flow
+    + nginx
+    + node
+- cask install
+    + java
+    + react-native-debugger
 
 ## 重装系统
 比Windows要操作简单，主要介绍U盘重装
@@ -74,6 +92,8 @@ http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html
 http://freemacsoft.net//
 http://reactide.io/
 
+## 参考链接
+https://www.zhihu.com/question/22624898/answer/105234217
 
 
 
