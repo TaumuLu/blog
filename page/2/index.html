@@ -787,7 +787,7 @@
 <p>曾几何时，我的梦想！！！</p>
 <h2 id="单词记录"><a href="#单词记录" class="headerlink" title="单词记录"></a>单词记录</h2><p>在此随手记录自己学习生活中遇见的单词，供日后翻阅记忆</p>
 <hr>
-<p>touch-触摸<br>brew-酿造<br>study-学习<br>practice-实践<br>transfer-迁移<br>releases-释放<br>upstream-上游<br>ahead-向前的<br>fetch-取来<br>remote-遥远的<br>include-包括<br>alias-别名<br>point-点 得分<br>language-语言<br>Interview-面试<br>decorator-装饰<br>feature-特征<br>hotfix-修补程序<br>release-释放 发行</p>
+<p>touch-触摸<br>brew-酿造<br>study-学习<br>practice-实践<br>transfer-迁移<br>releases-释放<br>upstream-上游<br>ahead-向前的<br>fetch-取来<br>remote-遥远的<br>include-包括<br>alias-别名<br>point-点 得分<br>language-语言<br>Interview-面试<br>decorator-装饰<br>feature-特征<br>hotfix-修补程序<br>release-释放 发行<br>screenfull-全屏</p>
 
           
         
@@ -1267,7 +1267,7 @@
       
         
           
-            
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2>
           
         
       
@@ -1384,7 +1384,7 @@
       
         
           
-            
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2>
           
         
       
@@ -1545,7 +1545,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git fetch upstream</div><div class="line">git merge upstream/master</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><h2 id="Git术语"><a href="#Git术语" class="headerlink" title="Git术语"></a>Git术语</h2><ul>
+<h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><h3 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -a       查看所有本地分支和远程分支</div><div class="line">git branch -r       只查看远程分支</div></pre></td></tr></table></figure>
+<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch [branchname]           创建本地分支，只是创建分支不切换</div><div class="line">git checkout -b [branchname]      创建本地分支且切换到此分支</div></pre></td></tr></table></figure>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git branch -d | -D [branchname]   删除分支，大写的D强制删除</div><div class="line">git branch -d -r [branchname]     删除远程分支</div><div class="line"></div><div class="line">git branch -a                   任然显示删除的分支，即使远程已删除</div><div class="line">git remote show origin          查看remote地址，远程分支，本地分支与之相对应关系等信息</div><div class="line">git remote prune origin         删除远程仓库不存在的分支</div></pre></td></tr></table></figure>
+<h3 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -m | -M oldbranch newbranch </div><div class="line">重命名分支，如果newbranch名字分支已经存在，则需要使用-M强制重命名，否则，使用-m进行重命名</div></pre></td></tr></table></figure>
+<h2 id="Git其他命令"><a href="#Git其他命令" class="headerlink" title="Git其他命令"></a>Git其他命令</h2><h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add -u       将文件的修改、文件的删除，添加到暂存区</div><div class="line">git add .        将文件的修改，文件的新建，添加到暂存区</div><div class="line">git add -A       将文件的修改，文件的删除，文件的新建，添加到暂存区</div></pre></td></tr></table></figure>
+<h3 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -am &quot;&lt;message&gt;&quot;   将所有修改，但未进stage的改动加入stage，并记录commit信息，前提是被改动文件已被跟踪</div></pre></td></tr></table></figure>
+<h2 id="Git术语"><a href="#Git术语" class="headerlink" title="Git术语"></a>Git术语</h2><ul>
 <li><p>Organizations<br>组织，即多个开发者组成的团体，可包含众多的库和开发团队</p>
 </li>
 <li><p>Collaborator<br>合作开发者，被库的所有者邀请共同开发某一项目，拥有对库的读写权限</p>
@@ -1567,7 +1573,7 @@
 <li><p>Remote<br>远端版本，即类似于GitHub.com的非本地主机的项目版本，可以连接至本地克隆的版本以实现内容同步</p>
 </li>
 </ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://help.github.com/articles/github-glossary/" target="_blank" rel="external">https://help.github.com/articles/github-glossary/</a><br><a href="http://www.codeceo.com/article/how-to-use-git-flow.html" target="_blank" rel="external">http://www.codeceo.com/article/how-to-use-git-flow.html</a><br><a href="http://blog.csdn.net/firststp/article/details/50390064" target="_blank" rel="external">http://blog.csdn.net/firststp/article/details/50390064</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://help.github.com/articles/github-glossary/" target="_blank" rel="external">https://help.github.com/articles/github-glossary/</a><br><a href="http://www.codeceo.com/article/how-to-use-git-flow.html" target="_blank" rel="external">http://www.codeceo.com/article/how-to-use-git-flow.html</a><br><a href="http://blog.csdn.net/firststp/article/details/50390064" target="_blank" rel="external">http://blog.csdn.net/firststp/article/details/50390064</a><br><a href="http://blog.csdn.net/qq_16885135/article/details/52777871" target="_blank" rel="external">http://blog.csdn.net/qq_16885135/article/details/52777871</a></p>
 
           
         
@@ -1608,7 +1614,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/22/书签记录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/React学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -1630,8 +1636,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/22/书签记录/" itemprop="url">
-                  书签记录
+                <a class="post-title-link" href="/2017/03/25/React学习/" itemprop="url">
+                  React学习
                 </a>
               
             
@@ -1647,8 +1653,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T22:34:41+08:00">
-                2017-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T13:15:00+08:00">
+                2017-03-25
               </time>
             
 
@@ -1685,180 +1691,7 @@
       
         
           
-            <p>#前言</p>
-<p>自从入了前端最大改变莫过于，莫过于，怎么保存了怎么多书签啊</p>
-<p>每看过一篇都忍不住收藏一下，久而久之越月多，其实私下也没去再看，只是在整理或想到要用时点开再看下，哎，等下，想到再用时，对，其实收藏这么多书签也是为了这一刻，也是值得的</p>
-<p>问题在与看到有用的文章不收藏，怕日后想起又找不到，而提取关键内容又懒得去做，即便收藏找的话也是麻烦，试了很多方法，想想还是存在博客记录下来最高效</p>
-<p>于是乎，在此不断更新记录，作为长期整理</p>
-<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h3 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h3><h4 id="React"><a href="#React" class="headerlink" title="React"></a>React</h4><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25398176" target="_blank" rel="external">40 行代码内实现一个 React.js</a></li>
-</ul>
-<h4 id="WebPack"><a href="#WebPack" class="headerlink" title="WebPack"></a>WebPack</h4><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/26041084" target="_blank" rel="external">Webpack速成</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/25283534" target="_blank" rel="external">webpack源码学习系列</a></li>
-</ul>
-<h4 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h4><hr>
-<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25379434" target="_blank" rel="external">从一道面试题的进阶，到“我可能看了假源码”</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/25800318" target="_blank" rel="external">WebAssembly</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/26054211" target="_blank" rel="external">成为一名函数式码农系列</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/25963600" target="_blank" rel="external">你真的了解javascript吗系列</a></li>
-</ul>
-<h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h4><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25178630" target="_blank" rel="external">Promise 实现详解</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/25979306" target="_blank" rel="external">手写一款 Promise</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/25454328" target="_blank" rel="external">WeakMap的学习和使用</a></li>
-</ul>
-<hr>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><h4 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h4><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25984121" target="_blank" rel="external">Flex布局完全指南</a></li>
-</ul>
-<hr>
-<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25085744" target="_blank" rel="external">我的职业是前端工程师系列</a></li>
-</ul>
-<h4 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h4><ul>
-<li><a href="http://www.imooc.com/article/1115" target="_blank" rel="external">移动端web开发技巧</a></li>
-</ul>
-<hr>
-<h3 id="前端实现"><a href="#前端实现" class="headerlink" title="前端实现"></a>前端实现</h3><h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
-<li><a href="https://segmentfault.com/a/1190000008593715" target="_blank" rel="external">前端常见算法的JS实现</a></li>
-<li><a href="http://www.jianshu.com/p/a87b3d0eeab5" target="_blank" rel="external">常见排序算法理解与JS实现</a></li>
-</ul>
-<h4 id="JS游戏"><a href="#JS游戏" class="headerlink" title="JS游戏"></a>JS游戏</h4><ul>
-<li><a href="http://www.edward67.com/game/popstar/" target="_blank" rel="external">消除之星</a></li>
-<li><a href="http://blog.csdn.net/sunxing007/article/details/3331396" target="_blank" rel="external">JS写俄罗斯方块完美注释版</a></li>
-</ul>
-<hr>
-<h3 id="学习路径"><a href="#学习路径" class="headerlink" title="学习路径"></a>学习路径</h3><h4 id="技能汇总"><a href="#技能汇总" class="headerlink" title="技能汇总"></a>技能汇总</h4><ul>
-<li><a href="http://html5ify.com/fks/" target="_blank" rel="external">FKS Documentation</a></li>
-<li><a href="http://www.oschina.net/news/50654/frontend-knowledge-structure" target="_blank" rel="external">前端工程师必备技能汇总</a></li>
-</ul>
-<h4 id="大牛博客"><a href="#大牛博客" class="headerlink" title="大牛博客"></a>大牛博客</h4><ul>
-<li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="external">阮一峰</a></li>
-<li><a href="http://www.zhangxinxu.com/" target="_blank" rel="external">张鑫旭</a></li>
-<li><a href="http://www.pengyaou.com/" target="_blank" rel="external">彭亚欧</a></li>
-<li><a href="https://www.anotherhome.net/" target="_blank" rel="external">范文杰</a></li>
-<li><a href="http://www.meckodo.com/" target="_blank" rel="external">二哲</a></li>
-<li><a href="http://blog.suconghou.cn/" target="_blank" rel="external">苏苏</a></li>
-<li><a href="http://www.fefork.com/" target="_blank" rel="external">聂微东</a></li>
-<li><a href="https://simplyy.space/" target="_blank" rel="external">SimplyY</a></li>
-</ul>
-<h4 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h4><ul>
-<li><a href="https://www.zhihu.com/question/19651401/answer/154269725" target="_blank" rel="external">关于 JavaScript 学习，有哪些好的博客或者网站推荐？</a></li>
-</ul>
-<h4 id="正则学习"><a href="#正则学习" class="headerlink" title="正则学习"></a>正则学习</h4><ul>
-<li><a href="http://div.io/topic/764?page=1" target="_blank" rel="external">进阶正则表达式 </a></li>
-<li><a href="http://www.cnblogs.com/afarmer/archive/2011/08/29/2158860.html" target="_blank" rel="external">正则表达式中各种字符的含义</a></li>
-</ul>
-<h4 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h4><ul>
-<li><a href="http://stackoverflow.com/" target="_blank" rel="external">stackoverflow</a></li>
-<li><a href="https://segmentfault.com/" target="_blank" rel="external">segmentfault</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="external">Mozilla 开发者网络</a></li>
-<li><a href="http://luuman.github.io/FrontEndGuide/V1/index.html" target="_blank" rel="external">前端导航</a></li>
-<li><a href="https://www.awesomes.cn/" target="_blank" rel="external">前端资源库</a></li>
-<li><a href="https://toutiao.io/" target="_blank" rel="external">开发者头条</a></li>
-<li><a href="http://codecloud.net/" target="_blank" rel="external">程序员的资料库</a></li>
-<li><a href="https://www.oschina.net/" target="_blank" rel="external">开源中国</a></li>
-<li><a href="http://www.runoob.com/" target="_blank" rel="external">菜鸟教程</a></li>
-<li><a href="https://freecodecamp.cn/" target="_blank" rel="external">FreeCodeCamp中文社区</a></li>
-<li><a href="https://www.shortcutfoo.com/" target="_blank" rel="external">ShortcutFoo</a></li>
-<li><a href="http://www.imooc.com/" target="_blank" rel="external">慕课网</a></li>
-<li><a href="http://www.lvyestudy.com/" target="_blank" rel="external">绿叶学习网</a></li>
-<li><a href="http://www.webhek.com/" target="_blank" rel="external">WEB骇客</a></li>
-<li><a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></li>
-<li><a href="http://www.w3cplus.com/" target="_blank" rel="external">w3cplus</a></li>
-<li><a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园</a></li>
-<li><a href="http://www.qdfuns.com/" target="_blank" rel="external">前端网</a></li>
-<li><a href="https://xituqu.com/" target="_blank" rel="external">稀土区</a></li>
-<li><a href="https://www.w3ctech.com/" target="_blank" rel="external">w3ctech</a></li>
-<li><a href="http://www.css88.com/" target="_blank" rel="external">WEB前端开发</a></li>
-<li><a href="https://www.nowcoder.com/" target="_blank" rel="external">牛客网</a></li>
-</ul>
-<hr>
-<h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><h4 id="Sublime-Text"><a href="#Sublime-Text" class="headerlink" title="Sublime Text"></a>Sublime Text</h4><ul>
-<li><a href="https://my.oschina.net/u/574928/blog/505481" target="_blank" rel="external">Sublime Text 3最新版破解及注册码</a></li>
-<li><a href="http://www.fantiyan.cn/?p=92" target="_blank" rel="external">Sublime Text 3插件开发教程</a></li>
-<li><a href="http://www.php100.com/html/it/focus/2014/1128/7935.html" target="_blank" rel="external">全栈开发必备的10款Sublime Text插件</a></li>
-<li><a href="http://www.xuanfengge.com/practical-collection-of-sublime-plug-in.html" target="_blank" rel="external">实用的sublime插件集合 – sublime推荐必备插件</a></li>
-<li><a href="http://www.bubuko.com/infodetail-674799.html" target="_blank" rel="external">Sublime Text 无法使用Package Control或插件安装失败的解决方法</a></li>
-<li><a href="http://www.tuicool.com/articles/UjiiYnM" target="_blank" rel="external">前端神器之Sublime Text2/3简单明了使用总结</a></li>
-<li><a href="https://www.zhihu.com/question/24896283" target="_blank" rel="external">Sublime Text 有哪些使用技巧</a></li>
-<li><a href="https://www.zhihu.com/question/24736400" target="_blank" rel="external">sublime text 3 插件推荐</a></li>
-<li><a href="https://www.zhihu.com/question/31980899?sort=created" target="_blank" rel="external">哪些字体在Sublime上特别好看</a></li>
-<li><a href="https://segmentfault.com/a/1190000000505218" target="_blank" rel="external">12个不可不知的Sublime Text应用技巧和诀窍</a></li>
-<li><a href="https://segmentfault.com/a/1190000003698071" target="_blank" rel="external">Sublime Text 3搭建React.js开发环境</a></li>
-<li><a href="http://www.whidy.net/sublime-text-3-user-setting-intro.html" target="_blank" rel="external">Sublime Text 3常用用户自定义配置推荐</a></li>
-<li><a href="http://www.xiumu.org/note/sublime-text-3.shtml" target="_blank" rel="external">Sublime Text常用插件</a></li>
-<li><a href="http://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai" target="_blank" rel="external">Sublime Text配色方案DIY</a></li>
-<li><a href="http://color-themes.com/?view=index" target="_blank" rel="external">Color Themes</a></li>
-</ul>
-<hr>
-<h3 id="前端面试"><a href="#前端面试" class="headerlink" title="前端面试"></a>前端面试</h3><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25859524" target="_blank" rel="external">前端面试指南</a></li>
-<li><a href="http://www.jianshu.com/p/8b68f4df749e" target="_blank" rel="external">这里有超过20家的前端面试题</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/26000132" target="_blank" rel="external">2017暑期阿里面试总结(前端方向)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/25308541" target="_blank" rel="external">JavaScript 面试中常见算法问题详解</a></li>
-<li><a href="http://www.w3cplus.com/css/write-to-front-end-developer-interview.html" target="_blank" rel="external">写给前端面试者</a></li>
-<li><a href="http://get.ftqq.com/744.get" target="_blank" rel="external">如何写好技术简历</a></li>
-<li><a href="http://www.jobui.com/mianshiti/it/web/5066/" target="_blank" rel="external">史上最全前端面试题</a></li>
-<li><a href="http://www.cnblogs.com/Darren_code/archive/2012/01/31/questions.html" target="_blank" rel="external">前端各种面试题</a></li>
-<li><a href="http://www.w3cplus.com/css/interview-question-css.html" target="_blank" rel="external">有关于CSS的面试题和练习</a></li>
-<li><a href="http://www.w3cplus.com/css/front-end-web-development-quiz.html" target="_blank" rel="external">Web前端开发测试题</a></li>
-<li><a href="http://www.cnblogs.com/xxcanghai/p/5189353.html" target="_blank" rel="external">一道常被人轻视的前端JS面试题</a></li>
-<li><a href="http://www.cnblogs.com/xxcanghai/p/4991870.html" target="_blank" rel="external">大部分人都会做错的经典JS闭包面试题</a></li>
-<li><a href="http://www.cnblogs.com/xxcanghai/p/5205998.html" target="_blank" rel="external">2016十家公司前端面试小记</a></li>
-<li><a href="https://segmentfault.com/a/1190000000465431" target="_blank" rel="external">前端开发面试题</a></li>
-<li><a href="https://j11y.io/javascript/another-javascript-quiz/" target="_blank" rel="external">Another JavaScript quiz</a></li>
-<li><a href="http://www.css88.com/archives/7052" target="_blank" rel="external">10道典型的JavaScript面试题</a></li>
-<li><a href="http://www.kancloud.cn/digest/front-interview/86832" target="_blank" rel="external">前端面试题目搜集</a></li>
-<li><a href="http://www.cnblogs.com/bigboyLin/p/5272902.html#" target="_blank" rel="external">Web前端面试题目汇总</a></li>
-<li><a href="https://github.com/ElemeFE/node-interview/blob/master/sections/js-basic.md#%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD" target="_blank" rel="external">node-interview</a></li>
-<li><a href="https://github.com/ElemeFE/node-interview/blob/master/README.md" target="_blank" rel="external">如何通过饿了么 Node.js 面试</a></li>
-</ul>
-<hr>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ul>
-<li><a href="http://tool.oschina.net/regex" target="_blank" rel="external">正则测试</a></li>
-<li><a href="http://www.cnblogs.com/zxin/archive/2013/01/26/2877765.html" target="_blank" rel="external">常用正则表达式</a></li>
-<li><a href="http://caniuse.com/" target="_blank" rel="external">兼容性查询</a></li>
-<li><a href="http://www.cssue.com/tools/jsformat/" target="_blank" rel="external">格式化JS或HTML</a></li>
-<li><a href="http://jsoneditoronline.org/" target="_blank" rel="external">格式化JSON</a></li>
-<li><a href="http://man.linuxde.net" target="_blank" rel="external">Linux命令大全查询</a></li>
-</ul>
-<h4 id="参考手册"><a href="#参考手册" class="headerlink" title="参考手册"></a>参考手册</h4><h4 id="静态资源库"><a href="#静态资源库" class="headerlink" title="静态资源库"></a>静态资源库</h4><ul>
-<li><a href="http://cdn.code.baidu.com/" target="_blank" rel="external">百度静态资源公共库</a></li>
-<li><a href="https://staticfile.org/" target="_blank" rel="external">Staticfile CDN</a></li>
-<li><a href="http://www.oschina.net/news/53128/public-cdn" target="_blank" rel="external">常用的CDN公共库加速服务</a></li>
-</ul>
-<h4 id="Css工具"><a href="#Css工具" class="headerlink" title="Css工具"></a>Css工具</h4><ul>
-<li><a href="http://alloyteam.github.io/gopng/" target="_blank" rel="external">GoPng</a></li>
-<li><a href="https://tinypng.com/" target="_blank" rel="external">TinyPng</a></li>
-<li><a href="http://pxtoem.com/" target="_blank" rel="external">单位转换</a></li>
-<li><a href="http://www.sioe.cn/yingyong/yanse-rgb-16/" target="_blank" rel="external">颜色码转换工具</a></li>
-<li><a href="https://icomoon.io/" target="_blank" rel="external">开源图标字体库</a></li>
-<li><a href="http://www.windows93.net/" target="_blank" rel="external">网页颜色搭配表及颜色搭配技巧</a></li>
-</ul>
-<h4 id="翻译工具"><a href="#翻译工具" class="headerlink" title="翻译工具"></a>翻译工具</h4><ul>
-<li><a href="http://fanyi.baidu.com/?aldtype=16047#auto/zh/" target="_blank" rel="external">百度翻译</a></li>
-<li><a href="http://fanyi.youdao.com/" target="_blank" rel="external">有道翻译</a></li>
-<li><a href="http://translate.google.cn/" target="_blank" rel="external">谷歌翻译</a></li>
-</ul>
-<hr>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li><a href="http://skill.phodal.com/" target="_blank" rel="external">前端技能树</a></li>
-<li><a href="http://www.itellyou.cn/" target="_blank" rel="external">MSDN, 我告诉你</a></li>
-</ul>
-<h4 id="优秀网站"><a href="#优秀网站" class="headerlink" title="优秀网站"></a>优秀网站</h4><ul>
-<li><a href="http://www.uisdc.com/best-website-designs-2015" target="_blank" rel="external">2015年不容错过的最佳网页设计作品</a></li>
-<li><a href="http://strml.net/" target="_blank" rel="external">实时编码效果</a></li>
-<li><a href="http://www.windows93.net/" target="_blank" rel="external">Windows 93网页实现</a></li>
-</ul>
-<h4 id="设计审美"><a href="#设计审美" class="headerlink" title="设计审美"></a>设计审美</h4><ul>
-<li><a href="http://www.zcool.com.cn/article/ZMzg2NDM2.html" target="_blank" rel="external">界面设计必备-色彩三刀流</a></li>
-</ul>
-<hr>
-<h3 id="前端简历"><a href="#前端简历" class="headerlink" title="前端简历"></a>前端简历</h3><p><a href="http://www.flqin.com/" target="_blank" rel="external">http://www.flqin.com/</a><br><a href="http://momeakl.github.io/CV/" target="_blank" rel="external">http://momeakl.github.io/CV/</a><br><a href="http://ztf.me/resume/" target="_blank" rel="external">http://ztf.me/resume/</a><br><a href="http://html.love/" target="_blank" rel="external">http://html.love/</a><br><a href="http://resume.fanlinfeng.com/" target="_blank" rel="external">http://resume.fanlinfeng.com/</a><br><a href="http://www.niefee.com/" target="_blank" rel="external">http://www.niefee.com/</a><br><a href="http://joyeecheung.github.io/resume/" target="_blank" rel="external">http://joyeecheung.github.io/resume/</a></p>
-
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2>
           
         
       
@@ -1938,7 +1771,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

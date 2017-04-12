@@ -99,7 +99,7 @@ Master 分支这个分支最近发布到">
 Git Flow由来，就像代码需要代码规范一样，代码管理同样需要一个清晰的流程和规范Vincent Driessen为了解决这个问题提出了A Successful Git Branching Model
 流程分支说明
 Master 分支这个分支最近发布到">
-<meta property="og:updated_time" content="2017-04-09T15:09:37.785Z">
+<meta property="og:updated_time" content="2017-04-12T15:46:55.351Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git使用">
 <meta name="twitter:description" content="前言也算是Git的忠实用户了，但慢慢发现其实自己不会用Git，平时开发不但接触的Git命令少并且也没去尝试学习其他，故在此学习并记录Git的使用
@@ -384,7 +384,13 @@ Master 分支这个分支最近发布到">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git fetch upstream</div><div class="line">git merge upstream/master</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><h2 id="Git术语"><a href="#Git术语" class="headerlink" title="Git术语"></a>Git术语</h2><ul>
+<h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><h3 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -a       查看所有本地分支和远程分支</div><div class="line">git branch -r       只查看远程分支</div></pre></td></tr></table></figure>
+<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch [branchname]           创建本地分支，只是创建分支不切换</div><div class="line">git checkout -b [branchname]      创建本地分支且切换到此分支</div></pre></td></tr></table></figure>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git branch -d | -D [branchname]   删除分支，大写的D强制删除</div><div class="line">git branch -d -r [branchname]     删除远程分支</div><div class="line"></div><div class="line">git branch -a                   任然显示删除的分支，即使远程已删除</div><div class="line">git remote show origin          查看remote地址，远程分支，本地分支与之相对应关系等信息</div><div class="line">git remote prune origin         删除远程仓库不存在的分支</div></pre></td></tr></table></figure>
+<h3 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -m | -M oldbranch newbranch </div><div class="line">重命名分支，如果newbranch名字分支已经存在，则需要使用-M强制重命名，否则，使用-m进行重命名</div></pre></td></tr></table></figure>
+<h2 id="Git其他命令"><a href="#Git其他命令" class="headerlink" title="Git其他命令"></a>Git其他命令</h2><h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add -u       将文件的修改、文件的删除，添加到暂存区</div><div class="line">git add .        将文件的修改，文件的新建，添加到暂存区</div><div class="line">git add -A       将文件的修改，文件的删除，文件的新建，添加到暂存区</div></pre></td></tr></table></figure>
+<h3 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -am &quot;&lt;message&gt;&quot;   将所有修改，但未进stage的改动加入stage，并记录commit信息，前提是被改动文件已被跟踪</div></pre></td></tr></table></figure>
+<h2 id="Git术语"><a href="#Git术语" class="headerlink" title="Git术语"></a>Git术语</h2><ul>
 <li><p>Organizations<br>组织，即多个开发者组成的团体，可包含众多的库和开发团队</p>
 </li>
 <li><p>Collaborator<br>合作开发者，被库的所有者邀请共同开发某一项目，拥有对库的读写权限</p>
@@ -406,7 +412,7 @@ Master 分支这个分支最近发布到">
 <li><p>Remote<br>远端版本，即类似于GitHub.com的非本地主机的项目版本，可以连接至本地克隆的版本以实现内容同步</p>
 </li>
 </ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://help.github.com/articles/github-glossary/" target="_blank" rel="external">https://help.github.com/articles/github-glossary/</a><br><a href="http://www.codeceo.com/article/how-to-use-git-flow.html" target="_blank" rel="external">http://www.codeceo.com/article/how-to-use-git-flow.html</a><br><a href="http://blog.csdn.net/firststp/article/details/50390064" target="_blank" rel="external">http://blog.csdn.net/firststp/article/details/50390064</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://help.github.com/articles/github-glossary/" target="_blank" rel="external">https://help.github.com/articles/github-glossary/</a><br><a href="http://www.codeceo.com/article/how-to-use-git-flow.html" target="_blank" rel="external">http://www.codeceo.com/article/how-to-use-git-flow.html</a><br><a href="http://blog.csdn.net/firststp/article/details/50390064" target="_blank" rel="external">http://blog.csdn.net/firststp/article/details/50390064</a><br><a href="http://blog.csdn.net/qq_16885135/article/details/52777871" target="_blank" rel="external">http://blog.csdn.net/qq_16885135/article/details/52777871</a></p>
 
       
     </div>
@@ -443,8 +449,8 @@ Master 分支这个分支最近发布到">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/22/书签记录/" rel="next" title="书签记录">
-                <i class="fa fa-chevron-left"></i> 书签记录
+              <a href="/2017/03/25/React学习/" rel="next" title="React学习">
+                <i class="fa fa-chevron-left"></i> React学习
               </a>
             
           </div>
@@ -527,7 +533,7 @@ Master 分支这个分支最近发布到">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -595,7 +601,7 @@ Master 分支这个分支最近发布到">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Flow"><span class="nav-number">2.</span> <span class="nav-text">Git Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流程分支说明"><span class="nav-number">2.1.</span> <span class="nav-text">流程分支说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-flow"><span class="nav-number">2.2.</span> <span class="nav-text">git-flow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">2.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步fork源代码"><span class="nav-number">3.</span> <span class="nav-text">同步fork源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git分支"><span class="nav-number">4.</span> <span class="nav-text">Git分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git术语"><span class="nav-number">5.</span> <span class="nav-text">Git术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Flow"><span class="nav-number">2.</span> <span class="nav-text">Git Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流程分支说明"><span class="nav-number">2.1.</span> <span class="nav-text">流程分支说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-flow"><span class="nav-number">2.2.</span> <span class="nav-text">git-flow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">2.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步fork源代码"><span class="nav-number">3.</span> <span class="nav-text">同步fork源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git分支"><span class="nav-number">4.</span> <span class="nav-text">Git分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看分支"><span class="nav-number">4.1.</span> <span class="nav-text">查看分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建分支"><span class="nav-number">4.2.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除分支"><span class="nav-number">4.3.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他命令"><span class="nav-number">4.4.</span> <span class="nav-text">其他命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git其他命令"><span class="nav-number">5.</span> <span class="nav-text">Git其他命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add"><span class="nav-number">5.1.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#commit"><span class="nav-number">5.2.</span> <span class="nav-text">commit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git术语"><span class="nav-number">6.</span> <span class="nav-text">Git术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
