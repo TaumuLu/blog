@@ -218,6 +218,8 @@ Sublime一直被称为前端开发利器，本人是非常认同的，优雅的�
     增强右键菜单
 - SyncedSidebarBg          
     侧边栏同步背景颜色
+- SyncedSidebarBg   
+    侧边栏同步当前文件位置       
 - Clipboard History        
     粘贴板历史记录
 - Bracket​Highlighter       
