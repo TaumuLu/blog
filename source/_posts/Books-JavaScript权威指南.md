@@ -30,7 +30,7 @@ tags: 读书总结
             - getElementsByTagName()
             - getElementsByClassName()
             - ...
-    + Element对象 {
+    + Element对象 
         * 属性 
             - style 
                 + width
