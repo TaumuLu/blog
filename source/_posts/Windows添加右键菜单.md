@@ -22,10 +22,10 @@ win+R，输入regedit命令打开注册表管理器
         * \shell
         * \Background
             文件夹空白处右键
-    + Drive
+    + \Drive
         驱动 
         * \shell
-    + Folder
+    + \Folder
         文件夹和驱动器
         * \shell
 
@@ -41,9 +41,9 @@ win+R，输入regedit命令打开注册表管理器
 Signature="$Windows NT$"
 
 [DefaultInstall]
-AddReg=SublimeText3
+AddReg=VSCode
 
-[SublimeText3]
+[VSCode]
 hkcr,"*\\shell\\VSCode",,,"VSCode"
 hkcr,"*\\shell\\VSCode","Icon",0x20000,"%1%\Code.exe, 0"
 hkcr,"*\\shell\\VSCode\\command",,,"""%1%\Code.exe"" ""%%1"" %%*"

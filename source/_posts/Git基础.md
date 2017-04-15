@@ -5,26 +5,21 @@ tags: Git
 ---
 
 ## 前言
-
 ** Git是目前世界上最先进的分布式版本控制系统（没有之一） **
 ** Unix的哲学是“没有消息就是好消息” **
 
 ## 安装Git
-
 1. 下载msysgit
 2. 设置环境变量
     选择使用什么样的命令行工具，一般情况使用默认配置，使用Git Bash
-
     > Git自带：使用Git自带的Git Bash命令行工具
     > 系统自带CMD：使用windows系统的命令行工具
     > 二者都有：上面二者同时配置，但是注意，这样会将windows中的find.exe和sort.exe工具覆盖，如果不懂这些尽量不要选择
-
 3. 配置windows环境变量
     右键“计算机”->“属性”->“高级系统设置”->“环境变量”->在下方的“系统变量”中找到“path”添加
     `C:\Program Files\Git\cmd`
 
 ## Git生成SSH密钥
-
 1. 设置Git的user name和email
     `$ git config --global user.name "name"`
     `$ git config --global user.email "email@gmail.com"`
@@ -76,9 +71,7 @@ tags: Git
     ```
 
 ## HTTPS和SSH切换
-
 [官网说明](https://help.github.com/articles/testing-your-ssh-connection/)
-
 ```
 // 列出当前远程名现有的url
 git remote -v   
@@ -109,7 +102,6 @@ git config --global alias.co "checkout"
 ```
 
 ## Git常用命令清单
-
 ```
 git status                    // 当前状态
 git add .                     // 添加到缓存区

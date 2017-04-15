@@ -36,7 +36,7 @@ Vincent Driessen为了解决这个问题提出了[A Successful Git Branching Mod
 - Linux
 `apt-get install git-flow`
 - Windows
-`wget -q -O – –no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash`
+`wget -q -O –no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash`
 
 #### 使用
 - 命令一览
@@ -52,7 +52,6 @@ git flow <subcommand> checkout [<name|nameprefix>]
 git flow <subcommand> pull <remote> [<name>]
 
 ```
-
 - subcommand
     + init
     + feature

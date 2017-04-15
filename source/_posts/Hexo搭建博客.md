@@ -5,7 +5,6 @@ tags: Blog
 ---
 
 ## 安装Hexo
-
 1. 安装hexo
 `npm install hexo-cli -g`
 2. 生成博客
@@ -25,14 +24,12 @@ tags: Blog
 `npm install hexo-deployer-git --save`
 
 ## 配置Github
-
 1. 创建git仓库
 2. 仓库名命名为 <userName>.github.io
 3. Settings点击Launch automatic page generator将这个仓库生成静态网页
 4. 填写Page name和Tagline点击Continue to layouts完成
 
 ## 配置Hexo
-
 - 全局配置 _config.yml
 ```
 language: zh-CN #语言
@@ -46,7 +43,6 @@ deploy:
 - 主题配置 themes/[next]/_config.yml
 
 ### 页面配置
-
 ```
 ---
 title: Git使用
@@ -62,7 +58,6 @@ comments: true
 ```
 
 ### 社交链接
-
 ```
 social:
   GitHub: https://github.com/chaserr
@@ -78,7 +73,6 @@ social_icons:
 ```
 
 ### 开启评论
-
 ```
 # disqus评论,  与多说类似, 国内一般使用多说
 # disqus_shortname: 
@@ -98,7 +92,6 @@ duoshuo_info:
 ```
 
 ## 开始写博客
-
 1. 生成文章
 `hexo new "标题"`
 2. 生成页面
@@ -106,7 +99,6 @@ duoshuo_info:
 ** 所有源文件都在source文件夹下 **
 
 ## 换主题
-
 需改全局配置 _config.yml 下的 theme 为要替换的主题
 然后执行
 ```
@@ -117,7 +109,6 @@ hexo server
 ```
 
 ## 管理Hexo博客源文件和Git页面
-
 - 建立分支hexo管理源文件
 `git checkout -b hexo`
 
