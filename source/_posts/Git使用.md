@@ -119,7 +119,6 @@ git branch --set-upstream devtest origin/[branchname]
 
 ```
 
-
 ### 其他命令
 ```
 git branch -m | -M oldbranch newbranch 
@@ -127,12 +126,38 @@ git branch -m | -M oldbranch newbranch
 
 ```
 
+## Git版本回退
+
+### 3种回退方式
+```
+git reset --mixed       默认方式，只保留源码，回退commit和index信息
+git reset --soft        只回退commit的信息，不会恢复到inde xfile一级。如果还要提交，直接commit即可
+git reset --hard        彻底回退到某个版本，本地的源码也会变为上一个版本的内容
+```
+
+### reset命令
+```
+git reset HEAD^                 回退所有内容到上一个版本
+git reset HEAD^ [file]            回退某个文件的版本到上一个版本  
+git reset –soft HEAD~3          向前回退到第3个版本  
+git reset –hard origin/[master]   将本地的状态回退到和远程的一样 
+git reset [log]      回退到某个版本
+git revert HEAD      回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit
+```
+
+### reset和revert区别
+reset是指将当前head的内容重置，不会留任何痕迹
+revert是撤销某次提交，但是这次撤销也会作为一次提交进行保存
+git revert撤销某次操作，此次操作之前和之后的commit和history都会保留，并且把这次撤销作为一次最新的提交
+git reset是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容
+
+
 ## Git其他命令
 
 ### add
 ```
-git add -u       将文件的修改、文件的删除，添加到暂存区
 git add .        将文件的修改，文件的新建，添加到暂存区
+git add -u       将文件的修改、文件的删除，添加到暂存区
 git add -A       将文件的修改，文件的删除，文件的新建，添加到暂存区
 
 ```
