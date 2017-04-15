@@ -111,6 +111,15 @@ git remote prune origin         删除远程仓库不存在的分支
 
 ```
 
+### 关联远程分支
+```
+git branch -vv                        查看分支关联
+git branch -u origin/[branchname]     关联远程分支，git push不需要指定远程仓库
+git branch --set-upstream devtest origin/[branchname]
+
+```
+
+
 ### 其他命令
 ```
 git branch -m | -M oldbranch newbranch 
@@ -170,3 +179,4 @@ https://help.github.com/articles/github-glossary/
 http://www.codeceo.com/article/how-to-use-git-flow.html
 http://blog.csdn.net/firststp/article/details/50390064
 http://blog.csdn.net/qq_16885135/article/details/52777871
+http://www.cnblogs.com/xueweihan/p/5703144.html
