@@ -168,6 +168,13 @@ git commit -am "<message>"   将所有修改，但未进stage的改动加入stag
 
 ```
 
+### pull
+```
+git pull失败，提示：fatal: refusing to merge unrelated histories
+git pull origin master --allow-unrelated-histories
+
+```
+
 ## Git术语
 - Organizations
 组织，即多个开发者组成的团体，可包含众多的库和开发团队
@@ -206,3 +213,4 @@ http://blog.csdn.net/firststp/article/details/50390064
 http://blog.csdn.net/qq_16885135/article/details/52777871
 http://blog.csdn.net/xsckernel/article/details/9021225
 http://www.cnblogs.com/xueweihan/p/5703144.html
+http://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories
