@@ -104,6 +104,7 @@ git checkout -b [branchname]      创建本地分支且切换到此分支
 ```
 git branch -d | -D [branchname]   删除分支，大写的D强制删除
 git branch -d -r [branchname]     删除远程分支
+git push origin --delete [branchName]
 
 git branch -a                   任然显示删除的分支，即使远程已删除
 git remote show origin          查看remote地址，远程分支，本地分支与之相对应关系等信息
