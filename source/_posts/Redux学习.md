@@ -65,6 +65,15 @@ tags: React全家桶
 - redux-actions
 - redux-promise
 
+### react-redux
+- Provider
+- connectAdvanced
+- connect
+    + mapStateToProps(state, ownProps):stateProps
+    + mapDispatchToProps(dispatch, ownProps):dispatchProps
+    + mergeProps(stateProps, dispatchProps, ownProps):props
+    + options
+
 ### 相关名词
 - Redux HOC
 - Redux 莞式教程
