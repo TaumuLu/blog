@@ -48,3 +48,12 @@ feature-特征
 hotfix-修补程序
 release-释放 发行
 screenfull-全屏
+receive-接收
+
+
+
+
+
+
+
+
