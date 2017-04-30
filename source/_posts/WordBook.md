@@ -49,6 +49,9 @@ hotfix-修补程序
 release-释放 发行
 screenfull-全屏
 receive-接收
+complete-完成
+story-故事
+visited-访问
 
 
 
