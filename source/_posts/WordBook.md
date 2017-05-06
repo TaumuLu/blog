@@ -52,6 +52,17 @@ receive-接收
 complete-完成
 story-故事
 visited-访问
+plan-计划
+issue-问题
+amend-修改
+simple-简单
+strive-努力
+aware-意识到
+heap-堆
+diffculty-困难
+pattern-模式
+understand-理解
+reverse-颠倒
 
 
 
