@@ -42,6 +42,12 @@ tags: React全家桶
 - compose
     + funcs
 
+- store
+    + getState
+    + dispatch
+    + subscribe 
+    + replaceReducer
+
 ## 原理
 这里有一个自己人傻眼瞎的原因导致对其一直没能理解下面会讲
 
