@@ -63,6 +63,7 @@ diffculty-困难
 pattern-模式
 understand-理解
 reverse-颠倒
+property-属性
 
 
 
