@@ -64,6 +64,13 @@ pattern-模式
 understand-理解
 reverse-颠倒
 property-属性
+multiple-多个
+Iterator-迭代器
+interface-接口
+defer-推迟
+symbol-符号
+scatter-分散
+prune-修建
 
 
 
