@@ -71,6 +71,9 @@ defer-推迟
 symbol-符号
 scatter-分散
 prune-修建
+passive-消极的
+begin-开始
+stroke-划
 
 
 
