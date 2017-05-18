@@ -22,7 +22,6 @@ tags: Vue系列
 - 模版指令 
     + v-text
     + v-html
-        * {{}}
     + v-if
     + v-show
     + v-for
