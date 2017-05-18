@@ -33,7 +33,7 @@ brew-酿造
 study-学习
 practice-实践
 transfer-迁移
-releases-释放
+assemble-集合
 upstream-上游
 ahead-向前的
 fetch-取来
@@ -65,7 +65,7 @@ understand-理解
 reverse-颠倒
 property-属性
 multiple-多个
-Iterator-迭代器
+iterator-迭代器
 interface-接口
 defer-推迟
 symbol-符号
@@ -73,7 +73,9 @@ scatter-分散
 prune-修建
 passive-消极的
 begin-开始
+close-关闭
 stroke-划
+restore-恢复
 
 
 
