@@ -76,6 +76,7 @@ begin-开始
 close-关闭
 stroke-划
 restore-恢复
+author-作者
 
 
 

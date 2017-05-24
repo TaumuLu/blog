@@ -166,6 +166,7 @@ git add -A       将文件的修改，文件的删除，文件的新建，添加
 ### commit
 ```
 git commit -am "<message>"   将所有修改，但未进stage的改动加入stage，并记录commit信息，前提是被改动文件已被跟踪
+git commit --amend -m "New commit message"
 
 ```
 
