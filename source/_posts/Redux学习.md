@@ -64,6 +64,76 @@ tags: React全家桶
 还有一直阻挡我学习的其实莫过于自己了，先入为主的认为他难，难以战胜自己，心底里就没乐观的去对待，而是总有个声音在自己努力但未理解时轻轻说句好难啊，要不放弃吧。。。但就一定要实现，我的话一定可以
 
 ### 回到现在
+- 2017-6-4
+今天又看了下redux的实现，源于最近在看react全栈这本书，其中关于redux中间件的解释有所疑问，之前也是一直没弄清楚，主要是在redux中的compose函数一直想不通，这也是中间件机制其中的精髓所在，不得不说是挺难理解的，当然也对其简洁优美的实现所折服，在一番理解模拟后终于明白了其中的奥妙，遂记录下来，感慨函数式编程的优美和强大之处
+```
+function compose(...funcs) {
+  if (funcs.length === 0) {
+    return arg => arg
+  }
+  if (funcs.length === 1) {
+    return funcs[0]
+  }
+  return funcs.reduce((a, b) => (args) => a(b(args)))
+}
+
+let a = 0;
+
+function test1(next) {
+    const name = test1.name;
+    console.log(name);
+    return (action) => {
+        a++;
+        console.log(a, name, action, '1')
+        return result = next(action);
+    }
+}
+
+function test2(next) {
+    const name = test2.name;
+    console.log(name);
+    return (action) => {
+        a++;
+        console.log(a, name, action, '2')
+        return result = next(action);
+    }
+}
+
+function test3(next) {
+    const name = test3.name;
+    console.log(name);
+    return (action) => {
+        a++;
+        console.log(a, name, action, '3')
+        return result = next(action);
+    }
+}
+
+let next = (arg) => {
+    console.log('dispatch', a);
+    return arg;
+}
+
+let b = compose(
+    test1,
+    test2,
+    test3
+);
+
+let c = b(next);
+// test3
+// test2
+// test1
+// 最终返回test1的返回函数
+c(2333)
+// 1 "test1" 2333 "1"
+// 2 "test2" 2333 "2"
+// 3 "test3" 2333 "3"
+// "dispatch" "3"
+// 2333
+```
+
+在此顺便说下redux中间键的机制，开始以为是最后调用原生的dispatch，后来发现错了，其实是对dispatch的覆盖增强，利用函数柯里化固定需要的store和next参数，对于最后一个中间件来说是next是原生dispatch，其他中间件next依次是上一个中间件的最后返回函数，最后暴露出来的函数用来接受action来触发dispatch从而改变store，而其中固定next参数就利用了compose函数来完成，实现十分巧妙
 
 ## 相关库
 - redux

@@ -77,6 +77,21 @@ close-关闭
 stroke-划
 restore-恢复
 author-作者
+performance-性能
+percent-百分比
+prompt-提示
+reload-重装
+assert-断言
+expect-期望
+resolve-决定
+reject-拒绝
+pending-待定的
+fulfilled-满足 完成
+race-比赛 竞争
+harmony-和谐
+process-过程
+compose-组成
+
 
 
 
