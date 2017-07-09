@@ -24,7 +24,7 @@ Sublime一直被称为前端开发利器，本人是非常认同的，优雅的�
 首选项 -> 设置
 可以自己对照左边默认设置来配置
 
-配置文件
+#### 配置文件
 ```
 {
     "auto_complete_triggers":
@@ -75,6 +75,44 @@ Sublime一直被称为前端开发利器，本人是非常认同的，优雅的�
     "word_wrap": true
 }
 ```
+
+#### Mac配置文件
+Mac下的配置有些被覆盖需要写在用户设置中才能生效，如'find_selected_text'
+
+```
+{
+    "bold_folder_labels": true,
+    "close_windows_when_empty": false,
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+    "default_encoding": "UTF-8",
+    "draw_minimap_border": true,
+    "ensure_newline_at_eof_on_save": true,
+    "file_exclude_patterns":
+    [
+        ".DS_Store",
+        "*.sublime-workspace"
+    ],
+    "find_selected_text": true,
+    "fold_buttons": true,
+    "font_size": 13,
+    "highlight_line": true,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "save_on_focus_lost": true,
+    "scroll_past_end": true,
+    "show_encoding": true,
+    "tab_size": 4,
+    "theme": "Material-Theme.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "update_check": false,
+    "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?（，。、：；）",
+    "word_wrap": true
+}
+```
+
 
 ### 快捷键
 ```

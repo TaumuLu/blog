@@ -19,15 +19,14 @@ tags: React全家桶
 ## 概念
 之前也有写过，如今加工下
 
-### 基本结构
-- Store <= createStore()
-    + dispatch() <= Action <= Action Creator()
-- dispatch() => Reducer() => new Store
-    + action
- 
-> Action => Reducer => Store => View => Action
+### 流程
+View => Action => Reducer => Store => View
 
-## API
+- Store <= createStore()
+    + dispatch <= Action <= Action Creator()
+- dispatch() => Reducer() => new Store
+
+### API
 - createStore
     + reducer
     + preloadedState
@@ -66,6 +65,8 @@ tags: React全家桶
 ### 回到现在
 - 2017-6-4
 今天又看了下redux的实现，源于最近在看react全栈这本书，其中关于redux中间件的解释有所疑问，之前也是一直没弄清楚，主要是在redux中的compose函数一直想不通，这也是中间件机制其中的精髓所在，不得不说是挺难理解的，当然也对其简洁优美的实现所折服，在一番理解模拟后终于明白了其中的奥妙，遂记录下来，感慨函数式编程的优美和强大之处
+
+#### compose
 ```
 function compose(...funcs) {
   if (funcs.length === 0) {
@@ -150,10 +151,16 @@ c(2333)
     + mergeProps(stateProps, dispatchProps, ownProps):props
     + options
 
-### 相关名词
-- Redux HOC
-- Redux 莞式教程
-- Redux 木偶组件(无状态组件)
+### Flux
+Facebook出品，Redux之前，单向数据流，可创建多个store
+
+#### 流程
+View => Action => Dispathcer => Store => View
+
+- Dispatcher
+    + dispatch <= action
+    + register(reducer)
+    + waitFor
 
 ## 相关技巧
 
