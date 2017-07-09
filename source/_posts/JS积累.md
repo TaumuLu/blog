@@ -1,7 +1,7 @@
 ---
 title: JS积累
 date: 2017-03-14 23:55:28
-tags: Collect
+tags: JavaScript
 ---
 
 ## 前言
