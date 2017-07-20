@@ -91,7 +91,18 @@ race-比赛 竞争
 harmony-和谐
 process-过程
 compose-组成
-
+payload-有效载荷
+always-总是
+pure-纯净的
+travel-旅行
+model-模型
+standard-标准
+constants-常数
+rest-休息
+effect-效果
+result-结果
+instance-实例
+factory-工厂
 
 
 

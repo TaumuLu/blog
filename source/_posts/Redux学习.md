@@ -141,6 +141,11 @@ c(2333)
 - react-redux
 - redux-actions
 - redux-promise
+- redux-promise-middleware
+- redux-thunk
+- redux-saga
+- redux-loop
+- redux-effects
 
 ### react-redux
 - Provider
