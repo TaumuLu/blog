@@ -26,6 +26,8 @@ tags: React全家桶
         * array
     + className
     + htmlFor
+    + createElement
+    + cloneElement
 
 ### context
 指定数据并要将数据传递下去的父组件要定义childContextTypes和getChildContext()

@@ -125,6 +125,8 @@ git branch --set-upstream devtest origin/[branchname]
 git branch -m | -M oldbranch newbranch 
 重命名分支，如果newbranch名字分支已经存在，则需要使用-M强制重命名，否则，使用-m进行重命名
 
+git cherry-pick <commit id>
+将已提交的commit添加到当前分支
 ```
 
 ## Git版本回退

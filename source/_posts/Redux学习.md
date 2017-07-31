@@ -167,6 +167,13 @@ View => Action => Dispathcer => Store => View
     + register(reducer)
     + waitFor
 
+### Mobx
+- mobox
+    + observable 
+    + autorun
+    + computed
+    + action
+
 ## 相关技巧
 
 ### 函数式编程
