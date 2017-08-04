@@ -121,6 +121,16 @@ let b = compose(
     test3
 );
 
+(arg) => {
+    var prev =(arg) => {
+        var prev = (arg) => {
+            test1(test2(arg))
+        }
+        prev(test3(arg))
+    }
+    prev(test4(arg))
+}
+
 let c = b(next);
 // test3
 // test2
