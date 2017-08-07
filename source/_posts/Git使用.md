@@ -154,7 +154,6 @@ revert是撤销某次提交，但是这次撤销也会作为一次提交进行�
 git revert撤销某次操作，此次操作之前和之后的commit和history都会保留，并且把这次撤销作为一次最新的提交
 git reset是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容
 
-
 ## Git其他命令
 
 ### add

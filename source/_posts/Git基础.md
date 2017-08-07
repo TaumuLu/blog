@@ -12,6 +12,7 @@ tags: Git
 1. 下载msysgit
 2. 设置环境变量
     选择使用什么样的命令行工具，一般情况使用默认配置，使用Git Bash
+
     > Git自带：使用Git自带的Git Bash命令行工具
     > 系统自带CMD：使用windows系统的命令行工具
     > 二者都有：上面二者同时配置，但是注意，这样会将windows中的find.exe和sort.exe工具覆盖，如果不懂这些尽量不要选择
@@ -72,6 +73,7 @@ tags: Git
 
 ## HTTPS和SSH切换
 [官网说明](https://help.github.com/articles/testing-your-ssh-connection/)
+
 ```
 // 列出当前远程名现有的url
 git remote -v   
@@ -79,6 +81,22 @@ git remote -v
 git remote set-url origin https://github.com/userame/repository.git
 // 从HTTPS远程的URL更改到SSH
 git remote set-url origin git@github.com:userame/repository.git
+```
+
+## Gitignore
+
+### .gitignore文件
+新建.gitignore文件，windows可在命令行中进行创建：echo >.gitignore，或git base下创建：touch .gitignore
+
+### gitignore规则
+```
+# name           // 注释符号
+fileName.js      // 忽略此文件
+*.js             // 忽略此后缀的所有文件，通配符为*、？、[]等
+!fileName.js     // 取消忽略
+name             // 忽略所有此名称的文件和文件夹
+name/            // 忽略所有此名称的文件夹
+/name            // 只忽略当前文件夹下的文件和文件夹
 ```
 
 ## Git配置

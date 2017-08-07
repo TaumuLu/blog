@@ -272,7 +272,6 @@ module.exports = {
     + webpack.NoErrorsPlugin
     + webpack.DefinePlugin
 - 通过npm安装的 
-    + ExtractTextPlugin
     + webpack-visualizer-plugin
     + html-webpack-plugin
     + copy-webpack-plugin
