@@ -271,6 +271,8 @@ module.exports = {
     + webpack.optimize.DedupePlugin
     + webpack.NoErrorsPlugin
     + webpack.DefinePlugin
+    + webpack.DllPlugin
+    + webpack.DllReferencePlugin
 - 通过npm安装的 
     + webpack-visualizer-plugin
     + html-webpack-plugin
@@ -305,6 +307,8 @@ module.exports = {
 // page3.html: p3.js
 // admin-page1.html: commons.js, admin-commons.js, ap1.js
 // admin-page2.html: commons.js, admin-commons.js, ap2.js
+
+// p1.js,p2.js,p3.js,ap1.js,ap2.js,admin-commons.js(admin-commons.js),commons.js(commons.js + runtime)
 
 ```
 
@@ -371,3 +375,12 @@ var server = new WebpackDevServer(webpack(config), {
 server.listen(9090);
 
 ```
+
+
+## 参考资料
+https://segmentfault.com/q/1010000009070061/a-1020000009073036
+http://www.jianshu.com/p/2b81262898a4
+http://foio.github.io/wepack-code-spliting/
+
+### React+Webpack
+https://segmentfault.com/a/1190000007373555
