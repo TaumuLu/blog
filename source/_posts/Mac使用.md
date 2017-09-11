@@ -7,19 +7,47 @@ tags: Mac
 ## 前言
 对于一直在用Windows开发的我来说直接上手Mac有点麻烦且又要学习使用Mac，当然最大的阻碍还是不习惯，但是这是3、4天前的感受，短短几天时间我就深深体会到了Mac的优雅强大，工作开发起来简直不要太爽，要离不开的感觉，有种以前用windows开发都在浪费时间的感觉，哈哈，不过Mac对程序员还真是友好，故此记录下Mac的一些东西，随便写写玩了
 
+2017.02.27
+这次又看了一堆正确使用Mac的知识，不禁感叹距自己会用Mac还差的很远，尤其是作为程序员的我来说更要优雅的使用Mac，以提示自己的使用效率，继续学习一点点积累记录
+
 ## 常用软件
-- 编程
-    + XCode
-    + homebrew  
-    + oh my zsh
-    + VSCode
-    + CheatSheet 
-    + Chrome
+- homebrew
+    + install
+        * git
+        * git-flow
+        * nginx
+        * node
+        * mysql
+        * python
+        * python3
+        * maven
+        * archey
+        * tree
+        * autojump
+    + cask install
+        * java
+        * react-native-debugger
+- XCode
+- iTerm2
+- Oh My ZSH
+- VSCode
+- Sublime Text
+- IDEA
+- Switch Hosts
+- XX-Net
+- ShadowsockesX-NG
+- SourceTree
+- Chrome
+- The Unarchiver
+- PDF Expert
+- Alfred
+- QQ
+- 微信
+- 网易云音乐
+- 钉钉
 - 其他
-    + QQ
-    + 微信
+    + CheatSheet
     + AppCleaner
-    + the unarchiver
     + istat menus
 
 ### homebrew
@@ -37,20 +65,33 @@ brew list [FORMULA...]
 brew update && brew cask install react-native-debugger
 ```
 
-#### 安装列表
+#### 安装
 install和cask install的区别
 > brew主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发，brew cask主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在mac中直接运行使用
 > brew install curl可以安装curl第三方库，这样你在开发时就可以使用它的库来进行开发
 > brew cask install chrome可以安装谷歌浏览器应用程序，可直接运行brew偏管理第三方库和命令行工具方面的东东brew cask可以看作是苹果官方app store的补充
 
-- install
-    + git
-    + git-flow
-    + nginx
-    + node
-- cask install
-    + java
-    + react-native-debugger
+### Mysql
+
+#### 修改密码
+```
+mysqld_safe --skip-grant-tables
+mysql -u root -p
+UPDATE mysql.user SET authentication_string=PASSWORD('root') WHERE User='root';
+FLUSH PRIVILEGES;
+\q;
+```
+
+### Alfred
+安装之后几乎没有怎么去使用，毕竟需要学习成本，今天开始学新使用，瞬间觉得差点就错过了这个很好的工具，确实很强大，配合各种workflows和其他特性
+
+#### Workflows
+https://github.com/zenorocha/alfred-workflows
+
+#### Link
+https://sspai.com/post/32979
+https://zhuanlan.zhihu.com/p/19986749?columnSlug=pinapps
+https://www.zhihu.com/question/20205127
 
 ## 重装系统
 比Windows要操作简单，主要介绍U盘重装
@@ -80,16 +121,29 @@ install和cask install的区别
     + 格式化系统盘
     + 退回U盘重装
 
-## 操作
-- 隐藏文件设置
-    + 显示
-        `defaults write com.apple.finder AppleShowAllFiles -bool true`
-    + 隐藏
-        `defaults write com.apple.finder AppleShowAllFiles -bool false`
+## 配置
+
+### 隐藏文件设置
+- 显示
+    `defaults write com.apple.finder AppleShowAllFiles -bool true`
+- 隐藏
+    `defaults write com.apple.finder AppleShowAllFiles -bool false`
+
+### 环境变量
+
+- 加载顺序
+    + /etc/profile
+    + /etc/paths 
+    + ~/.bash_profile 
+    + ~/.bash_login 
+    + ~/.profile 
+    + ~/.bashrc
+
+设置环境变量路径里有空格时用引号引起来即可
 
 ## 其他
 http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html
-http://freemacsoft.net//
+http://freemacsoft.net/
 http://reactide.io/
 
 ## 参考链接

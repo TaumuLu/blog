@@ -164,6 +164,17 @@ git add -A       将文件的修改，文件的删除，文件的新建，添加
 
 ```
 
+### stash
+```
+git stash                       备份当前的工作区内容到Git栈中
+git stash list                  列出Git栈内的所有备份
+git stash pop stash@{id}        
+恢复到最近一次stash，可恢复到指定的stash，执行后会删除stash list里的stashId
+git stash apply stash@{id}    
+恢复到指定的stash，不会删除继stash list里的stashId
+git stash clear                 清空Git栈
+```
+
 ### commit
 ```
 git commit -am "<message>"   将所有修改，但未进stage的改动加入stage，并记录commit信息，前提是被改动文件已被跟踪

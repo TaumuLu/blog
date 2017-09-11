@@ -1,6 +1,4 @@
----
-title: Hexo搭建博客
-date: 2017-03-12 20:31:00
+--- title: Hexo搭建博客 date: 2017-03-12 20:31:00
 tags: Blog
 ---
 

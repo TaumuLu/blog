@@ -170,26 +170,28 @@ module.exports = {
     devServer: {
         // 本地服务器所加载的页面所在的目录，默认根文件夹提供本地服务器
         contentBase: "./dist",
-        // 单页应用时有用，它依赖于HTML5 history API，设置为true，所有的跳转将指向index.html
+        // 单页应用时有用，依赖HTML5historyAPI，为true时所有的跳转将指向index.html
         historyApiFallback: true,
-        // 设置路径
+        // 静态资源的地址，index.html和打包文件不在同一目录可设置
+        publicPath: "/dist/",
+        // 设置host
         host: '0.0.0.0',
-        // 热替换模式
+        // 热替换模式，同需要设置入口及其他
         hot: false,
-        // 当源文件改变时是否自动刷新页面
+        // 当源文件改变时是否自动刷新页面，可以通过命令行启动更方便
         inline: true,
         // 设置默认监听端口，默认为”8080“
         port: 9090,
         //终端中输出结果为彩色
-        colors: true,
-        // 显示编译进度
-        grogress: true,
+        stats: { colors: true },
+        // 显示编译进度，不能写在配置中需要在命令行下启动
+        --progress: true,
         // 使用gzip压缩
         compress: true,
         // 在默认浏览器中打开
         open: true,
-        // publicPath: "/dist/",
-        // headers: { "X-Custom-Header": "yes" },
+        // 默认打开的页面，即路由
+        openPage: '/different/page'
     }
 };
 
@@ -199,11 +201,11 @@ module.exports = {
 - webpack                                   
     最基本的启动webpack命令，执行一次开发时的编译
 - 配置选项
-    + --config XXX.js 
+    + --config XXX.js
         配置文件的路径
         字符串，默认值：webpack.config.js或webpackfile.js
-    + --env   
-        传递环境配置   
+    + --env
+        传递环境配置
 - 基本选项
     + --context
         用于解析入口点和统计信息的根目录
@@ -246,12 +248,15 @@ module.exports = {
 ### loaders配置
 - test 
     一个匹配loaders所处理的文件的拓展名的正则表达式（必须）
-- loader
-    loader的名称（必须）
-- include/exclude
-    手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）
+- loader/use
+    loader的名称(必须)，use可以写成数组形式
+    "-loader"可以省略不写的，多个loader之间用“!”连接起来
+- include
+    手动添加必须处理的文件(文件夹)(可选)
+- exclude
+    或屏蔽不需要处理的文件(文件夹)(可选)
 - query
-    为loaders提供额外的设置选项（可选）
+    为loaders提供额外的设置选项(可选)可用?代替
 
 - loader主要有3种使用方式：
     1. 在页面里面引用资源使用
@@ -260,8 +265,6 @@ module.exports = {
         `{ test: /.png$/, loader: "url?mimetype=image/png" };`
     3. 在命令行中编译使用
         `webpack --module-bind "png=url-loader?mimetype=image/png";`
-
-- "-loader"可以省略不写的，多个loader之间用“!”连接起来
 
 ### plugins配置
 - webpack自带的插件
@@ -274,10 +277,10 @@ module.exports = {
     + webpack.DllPlugin
     + webpack.DllReferencePlugin
 - 通过npm安装的 
+    + extract-text-webpack-plugin
     + webpack-visualizer-plugin
     + html-webpack-plugin
     + copy-webpack-plugin
-    + extract-text-webpack-plugin
     + happyPack
 
 #### CommonsChunkPlugin
