@@ -31,7 +31,8 @@ tags: React全家桶
 
 ### context
 指定数据并要将数据传递下去的父组件要定义childContextTypes和getChildContext()
-想要接收到数据的子组件 必须定义contextTypes来使用传递过来的context 
+想要接收到数据的子组件 必须定义contextTypes来使用传递过来的context
+
 - childContextTypes
 - getChildContext
 - contextTypes
@@ -70,6 +71,17 @@ tags: React全家桶
 
 ## 性能优化
 纯函数，无副作用，数据不可变
+
+## 最佳实践
+- 优先使用函数式组件
+- 添加propTypes和defaultProps静态属性，尽可能的把它们写在组件的最上方
+- 使用箭头函数确保正确的this
+- 有依赖上一状态传递函数给setState
+- 解构Props/state
+- 使用装饰器(Decorators)
+- 减少render,传递给自组件的值不要每次创建
+- 函数式组件避免使用匿名函数(箭头函数)
+- 判断语句多使用短路语法
 
 ### Reselect
 使用Resselect避免不必要的selector计算

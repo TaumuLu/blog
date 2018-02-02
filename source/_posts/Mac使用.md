@@ -121,6 +121,12 @@ https://www.zhihu.com/question/20205127
     + 格式化系统盘
     + 退回U盘重装
 
+## 快捷键
+- control+shift+power               息屏，程序继续运行
+- command+option+power              睡眠，等于合盖
+- control+power                     显示重启、关机、睡眠对话框 
+- command+control+power             重新启动 
+
 ## 配置
 
 ### 隐藏文件设置
@@ -141,6 +147,28 @@ https://www.zhihu.com/question/20205127
 
 设置环境变量路径里有空格时用引号引起来即可
 
+### 设置开机自启
+利用Launchctl来设置，通过写在/Library/LaunchDaemons/下的.plist文件
+
+- brew
+通过brew安装的软件去/usr/local/opt下找到对应的.plist文件
+```
+sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons
+sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+```
+
+- 验证.plist文件
+sudo plutil -lint /Library/LaunchDaemons/com.mysql.plist
+
+- 注册系统服务
+sudo launchctl load -w /Library/LaunchDaemons/*.plist 
+
+- 卸载注册服务
+sudo launchctl unload -w /Library/LaunchDaemons/*.plist
+
+- 修改执行权限
+sudo chown root:wheel /Library/LaunchDaemons/*.plist
+
 ## 其他
 http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html
 http://freemacsoft.net/
@@ -148,6 +176,7 @@ http://reactide.io/
 
 ## 参考链接
 https://www.zhihu.com/question/22624898/answer/105234217
+http://www.cnblogs.com/52php/p/5684348.html
 
 
 

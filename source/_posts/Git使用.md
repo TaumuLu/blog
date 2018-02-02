@@ -120,6 +120,27 @@ git branch --set-upstream devtest origin/[branchname]
 
 ```
 
+### 删除大文件记录
+```
+// 获取大文件列表
+git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -5 | awk '{print$1}')"
+
+// 删除文件的记录
+git log --pretty=oneline --branches -- [big-file.jar]
+git filter-branch --force --index-filter 'git rm -rf --cached --ignore-unmatch [big-file.jar]' --prune-empty --tag-name-filter cat -- --all
+git filter-branch --force --index-filter 'git rm -rf --cached --ignore-unmatch [big-file.jar]' -- commitId
+
+rm -rf .git/refs/original/
+git reflog expire --expire=now --all
+git fsck --full --unreachable
+git repack -A -d
+git gc --aggressive --prune=now
+git push --force [remote] master
+
+// 删除暂存区或分支上的文件
+git rm --cached  // 加cached本地不删除
+```
+
 ### 其他命令
 ```
 git branch -m | -M oldbranch newbranch 
@@ -142,8 +163,8 @@ git reset --hard        彻底回退到某个版本，本地的源码也会变�
 ```
 git reset HEAD^                 回退所有内容到上一个版本
 git reset HEAD^ [file]            回退某个文件的版本到上一个版本  
-git reset –soft HEAD~3          向前回退到第3个版本  
-git reset –hard origin/[master]   将本地的状态回退到和远程的一样 
+git reset –-soft HEAD~3          向前回退到第3个版本  
+git reset –-hard origin/[master]   将本地的状态回退到和远程的一样 
 git reset [log]      回退到某个版本
 git revert HEAD      回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit
 ```

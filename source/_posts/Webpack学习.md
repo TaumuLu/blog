@@ -276,9 +276,11 @@ module.exports = {
     + webpack.DefinePlugin
     + webpack.DllPlugin
     + webpack.DllReferencePlugin
+    + webpack.BundleAnalyzerPlugin
 - 通过npm安装的 
     + extract-text-webpack-plugin
     + webpack-visualizer-plugin
+    + webpack-bundle-analyzer
     + html-webpack-plugin
     + copy-webpack-plugin
     + happyPack
