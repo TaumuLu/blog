@@ -84,6 +84,9 @@ react 宽度基于pt为单位， 可以通过Dimensions 来获取宽高，PixelR
 | drawable-mdpi | 160dpi | 320x480 | 48x48 |
 | drawable-ldpi | 120dpi | 240x320 | 36x36 |
 
+## IOS
+cd ~/Library/MobileDevice/Provisioning\ Profiles/
+
 
 ## 报错收集
 

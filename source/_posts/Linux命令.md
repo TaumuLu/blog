@@ -1,7 +1,7 @@
 ---
 title: Linux命令
 date: 2017-03-22 17:02:26
-tags: Linux
+tags: Command
 ---
 
 ## Init

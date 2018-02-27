@@ -1,7 +1,7 @@
 ---
 title: Vim命令
 date: 2017-03-22 17:02:17
-tags: Vim
+tags: Command
 ---
 
 ## Init

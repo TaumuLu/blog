@@ -104,6 +104,34 @@ result-结果
 instance-实例
 factory-工厂
 
+-------------------
+
+vertical 垂直
+horizontal 水平
+coach 教练
+
+shortcuts 快捷键
+reduce 减少
+grid 网格
+assembly 组装
+
+splash 泼洒
+measure 测量
+manager 经理
+gravity 重力
+fragment 片段
+frame 框架
+servlet 控制器
+reveal 揭示
+behavior 行为
+harmony 和谐
+entries 条目
+stretch 拉伸
+series 系列
+guide 指南
+chain 链
+support 支持
+
 
 
 
