@@ -584,6 +584,25 @@ registry=http://registry.npm.terminus.io/
 
 ```
 
+### SublimeLinter Settings
+```
+{
+  "linters": {
+    "eslint": {
+      "@disable": false,
+      "args": [
+        "-c",
+        "/Users/mt/Code/Config/Eslint/.eslintrc.yml",
+        "--ignore-path",
+        "/Users/mt/Code/Config/Eslint/.eslintignore",
+      ],
+      "excludes": []
+    },
+  },
+}
+```
+
+
 ## MacApp
 ```
 Adobe Application Manager Charles.app               Genymotion.app            Microsoft PowerPoint.app  Proxifier.app             Stickies.app              WeChat.app
