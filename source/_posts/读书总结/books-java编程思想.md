@@ -59,6 +59,7 @@ tags: 读书总结
 - protected
 - private
 
+类的访问权限
 - 只能有一个public类
 - public类的名称与文件名完全匹配
 - 可以完全不带public类

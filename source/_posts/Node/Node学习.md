@@ -1,14 +1,36 @@
 ---
-title: NodeJs学习
+title: Node学习
 date: 2017-02-27 16:46:55
 tags: Node
 ---
+
+## 基础
+
+### 全局对象 global
+- console
+    + log()
+    + error()
+    + trace() 
+process
+    + argv
+    + stdout
+        * write() 
+    + stdin
+        * resume()
+    + stderr
+    + nextTick(callback)
+
+### NodeJS有三大核心
+- CallBack回调
+- Event事件
+- Stream流
+
 
 慕课网学习
     一、关注
         1、nodejs.org看看nodejs的版本升级，新特性的加入，重要bug的修复等
         2、www.npmjs.com模块社区，看他人源代码，省力
-        3、github.com大量的项目和源码
+        3、github.com大量的项目和 源码
         4、stackoverflow.com技术解答社区以及查询相关资源，环境配置，异常均可找到答案
     二、安装事项
         1、Node.js版本
@@ -88,11 +110,6 @@ tags: Node
 
 
 
-NodeJS有三大核心 {
-    CallBack回调
-    Event事件
-    Stream流
-}
 
 
 
@@ -234,26 +251,7 @@ Node.js {
 
 
 
-全局对象 {
-    global {
-        console {
-            log()
-            error()
-            trace()
-        }
-        process {
-            argv
-            stdout {
-                write()
-            }
-            stdin {
-                resume()
-            }
-            stderr
-            nextTick(callback)
-        }
-    }
-}
+
 核心模块 {
     util {
         inherits(constructor, superConstructor)

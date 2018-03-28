@@ -12,20 +12,22 @@ tags: IOS
 - double
 - char
 
-#### 限定词
+### 限定词
 - long
 - long long
 - short
 - unsined
 - signed
+- readnly 只读
+- const
+- extern
+- static
 
-## 其他类型
+### 其他类型
 - 指针类型 *p
 - 自定义类型
-- id 万能类型
+- id 万能类型，类型已经被预定义为指针类型，不需要加一个*号
 - instancetype 只可作为返回值，使那些非关联返回类型的方法返回所在类的类型
-
-
 - NSString @"" 不加@为C语言字符串类型
 - NSNumber
 - NSInteger
@@ -37,13 +39,12 @@ tags: IOS
 - NSMutableArray
 - NSMutableDictionary
 - NSDictionary
-
 - RSLog
     + %d
     + %p
     + %@
 
-
+### 类定义
 类内使用成员变量类外使用属性
 
 - 成员变量
@@ -53,15 +54,12 @@ tags: IOS
     + @property()
         * nonatomic 非原子性访问, 不加同步机制, 多线程并非访问时可提高性能
         * strong 相当于一个深拷贝的操作
-
 - 继承
     + : 冒号表示继承
     + 父类方法没有声明，子类无法继承
-
 - 多态
     + 方法重写
     + 方法重载 OC不支持
-
 - super 父类
 - self 当前类
 
@@ -71,14 +69,15 @@ tags: IOS
 - @protected
 - @package
 
-
 ### 语法
 - #import 引入
+    + <.h> 在编译器的安装目录的标准库中开始查找
+    + ".h" 在当前的工程所在的文件夹开始寻找
 - @interface 接口
 - @implementation 实施
 - @end 结束语句
 - : 继承
-- @property
+- @property 属性
 - @synthesize 让编译器为你自动生成setter与getter方法
 - @autoreleasepool 在此关键字后面的程序自动进行内存回收
 - \- 减号方法 普通方法即对象方法申明，对象调用
@@ -89,11 +88,10 @@ tags: IOS
     + alloc 为对象分配空间
     + init
 - 函数调用使用\[\]
-
-### 声明语法
-- readnly 只读
-
-
+- typedef 
+    + 定义新类型 typedef 类型 新类型
+    + 函数指针 typedef 返回值类型 (*新类型) (参数列表)
+    + typedef 结构体和枚举
 
 ### 扩展名
 |  | 头文件 | 实现文件 |
@@ -103,16 +101,14 @@ tags: IOS
 | oc语言 | .h | .m |
 | oc&c++ | .h | .mm |
 
+### 宏
+\#define, 宏的名字, 主体
+宏作用在预编译时期，其真正的效果就是代码替换，而且是直接替换
+\#运算符被用于利用宏参数创建字符串
+\#\#宏定义中的连接运算符
+
+- 类对象宏
+- 类函数宏
+- ...、\_\_VA_ARGS\_\_ 定义可变参数宏的，放在参数的最后
 
 
-
-
-
-
-
-- RN导出静态变量
-constantsToExport
-
-- info.plist
-    - NSAppTransportSecurity 请求协议配置
-        + NSAllowsArbitraryLoads YES禁用ATS

@@ -6,15 +6,12 @@ tags: Vue系列
 
 ## 前言
 
-- *.vue 
-    + html 
-        * <template\></template\>   
-    + css
-        * <style\></style\>         
-    + javaScript
-        * <script\></script\>       
+- *.vue
+    + html <template\></template\>   
+    + css <style\></style\>         
+    + javaScript <script\></script\>       
 
-- 组件 
+- 组件
     + data
     + methods
     + watch
@@ -25,8 +22,8 @@ tags: Vue系列
     + v-if
     + v-show
     + v-for
-    + v-on:(@)
-    + v-bind:(:)
+    + v-on: @
+    + v-bind: :
 
 
 

@@ -4,7 +4,7 @@ date: 2018-02-27 16:34:11
 tags: Command
 ---
 
-# 命令
+# Command
 
 ## react-native
 
@@ -198,4 +198,9 @@ dxdiag                            DX版本查询
 ipconfig /flushdns                清除DNS缓存
 ```
 
+## Chrome
 
+### Console
+```
+Array.from(document.querySelectorAll('.simditor-body span')).forEach((span) => span.style.fontSize = 'inherit')  // pmp
+```

@@ -1,10 +1,9 @@
 ---
-title: android学习
-date: 2017-09-24 15:49:36
-tags: android
+title: Gradle
+date: 2018-03-28 20:53:21
+tags: 构建工具
 ---
 
-# Gradle
 
 ## Gradle Files
 - MyApp
@@ -106,3 +105,4 @@ task makeDebugDir() {
     }
 }
 ```
+

@@ -130,10 +130,11 @@ https://www.zhihu.com/question/20205127
 ## 配置
 
 ### 隐藏文件设置
-- 显示
-    `defaults write com.apple.finder AppleShowAllFiles -bool true`
-- 隐藏
-    `defaults write com.apple.finder AppleShowAllFiles -bool false`
+- 显示 `defaults write com.apple.finder AppleShowAllFiles -bool true`
+- 隐藏 `defaults write com.apple.finder AppleShowAllFiles -bool false`
+
+### 更改截图位置
+`defaults write com.apple.screencapture location /CustomPath`
 
 ### 环境变量
 

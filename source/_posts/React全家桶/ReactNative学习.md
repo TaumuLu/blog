@@ -7,23 +7,14 @@ tags: React全家桶
 ## 前言
 先接触的ReactNative，后学习的React，其实也都差不多，但ReactNative要稍微局限点，限制较多，但很强大，实现了跨平台开发，正如React所追求的一次编写，随处运行(Writeonce, run anywhere)，现在还记得当时刚接触React一脸懵逼的状态，还好有人带也对其有所了解了
 
-
 ## 基础
 只用ReactNatiev开发过一段时间，当时还不熟悉React用法就去写所以RN，写的代码质量很差，还是应先打好基础
 
 ### 布局
-
-#### Flex
-RN的布局为flex布局，基本实现了css3里的flex布局，语法也是类似的
-
-#### PixelRatio, Dimensions 
-```
-const ratio = PixelRatio.get() > 2 ? PixelRatio.get() : 3;
-const { width, height } = Dimensions.get('window');
-```
-
-react 宽度基于pt为单位， 可以通过Dimensions 来获取宽高，PixelRatio 获取密度，如果想使用百分比，可以通过获取屏幕宽度手动计算。
-
+- react宽度基于pt为单位
+    + 可以通过Dimensions来获取宽高
+    + PixelRatio获取密度
+    + 如果想使用百分比，可以通过获取屏幕宽度手动计算
 - 基于flex的布局 
     + view默认宽度为100%
     + 水平居中用alignItems, 垂直居中用justifyContent
@@ -50,10 +41,9 @@ react 宽度基于pt为单位， 可以通过Dimensions 来获取宽高，PixelR
 - UIManager
     + measure
 
-
 ## app图标及启动图
 
-### ios
+### iOS
 
 #### icon
 
@@ -67,12 +57,12 @@ react 宽度基于pt为单位， 可以通过Dimensions 来获取宽高，PixelR
  
 #### 启动图
   
-| ios  | @1x | @2x | @3x | Retina4 |
+| iOS  | @1x | @2x | @3x | Retina4 |
 | --- | --- | --- | --- | --- |
 | iOS 5,6 | 320×480 | 640×960 |  | 640×1136 |
-| ios 7+ |  | 640×960 |  | 640×1136 |
-| ios 8+ |  | 750×1334 | 1242×2208 |  |
-| ios x |  |  | 1125x2436 |  |
+| iOS 7+ |  | 640×960 |  | 640×1136 |
+| iOS 8+ |  | 750×1334 | 1242×2208 |  |
+| iOS x |  |  | 1125x2436 |  |
 
 ### android
 
@@ -84,11 +74,53 @@ react 宽度基于pt为单位， 可以通过Dimensions 来获取宽高，PixelR
 | drawable-mdpi | 160dpi | 320x480 | 48x48 |
 | drawable-ldpi | 120dpi | 240x320 | 36x36 |
 
-## IOS
-cd ~/Library/MobileDevice/Provisioning\ Profiles/
+## iOS
+- info.plist
+    - NSAppTransportSecurity 请求协议配置
+        + NSAllowsArbitraryLoads YES禁用ATS
 
+### 证书
+- Provision路径 `cd ~/Library/MobileDevice/Provisioning\ Profiles/`
+
+### RN原生开发
+- RCT_EXPORT_MODULE() 指定模块的名字，默认类名
+
+#### 原生模块
+- Module : NSObject <RCTBridgeModule>
+    + RCT_EXPORT_METHOD()
+    + constantsToExport 导出常量
+
+#### 原生UI
+- UIView : RCTViewManager
+    + RCT_EXPORT_VIEW_PROPERTY()
+    + \-(UIView *) view
+
+## Android
+
+### RN原生开发
+- package implements ReactPackage
+    + createViewManagers
+
+#### 原生模块
+- Module extends ReactContextBaseJavaModule
+    + getName
+    + @ReactMethod (public void)
+    + getContants 导出常量
+
+#### 原生UI
+- Manager extends UI组件
+    + getName
+    + createViewInstance
+    + REACT_CLASS (static final String)
+    + @ReactModule
+    + @ReactProp (public void)
+    + @ReactPropGroup (public void)
+    + getCommandsMap
+    + receiveCommand
+    + onAfterUpdateTransaction 属性都初始化完成后，做一些处理
+- UIView
 
 ## 报错收集
 
  
-
+## 参考资料

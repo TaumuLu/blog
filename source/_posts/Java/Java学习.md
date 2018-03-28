@@ -220,16 +220,17 @@ tags: Java
     + 基本的数据类型
         * void关键字都存在类类型
 
-- object
-    + getClass
+- getClassInfo
     + getMethods 获取所有public的函数，包括父类继承而来的
     + getDeclaredMethods 获取该类所有 自己声明的方法
-    + getName 得到方法的名称
-    + getReturnName 得到方法返回值的类型的类类型
-    + getParameterTypes 得到参数列表的类型的类类型
-    + getFields() 获取所有public的成员变量
-    + getDeclaredFields() 获取该类自己所有声明的成员变量
-    + getType() 得到成员变量的类型的类类型
+    + getDeclaredMethod
+        * getName 得到方法的名称 
+        * getReturnName 得到方法返回值的类型的类类型 
+        * getParameterTypes 得到参数列表的类型的类类型
+    + getFields 获取所有public的成员变量
+    + getDeclaredFields 获取该类自己所有声明的成员变量
+    + getDeclaredField
+        * getType 得到成员变量的类型的类类型
     + getConstructor() 获取所有public的构造函数
     + getDeclaredConstructor() 获取该类自己所有声明的构造函数
 
@@ -241,3 +242,4 @@ java.lang.reflect.Constructor
 
 ## 参考资料
 http://blog.csdn.net/s10461/article/details/53941091
+[Java中的泛型方法](https://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html)
