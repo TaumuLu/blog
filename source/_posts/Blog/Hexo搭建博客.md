@@ -11,7 +11,7 @@ tags: Blog
 `hexo init blog`
 `cd blog`
 3. 安装依赖
-`npm install`
+`npm install`  
 *注意：*可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息
 4. 本地启动查看
 `hexo server`

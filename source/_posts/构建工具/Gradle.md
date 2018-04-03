@@ -4,7 +4,6 @@ date: 2018-03-28 20:53:21
 tags: 构建工具
 ---
 
-
 ## Gradle Files
 - MyApp
     + setting.gradle 管理项目和子项目，主要声明一些需要加入gradle的module
@@ -66,10 +65,15 @@ group -> name -> version
         * dependsOn
         * doFirst
         * doLast/<<
-    + ext 
+    + ext
     + gradle.properties
     + android
         * productFlavors 在AS中BuildVariants中指定对应的调试特性包
+        * publishNonDefault true module不再按默认只构建release版本
+            - debugCompile project(path:':sublibrary', configuration:'debug')
+            - releaseCompile project(path:':sublibrary', configuration:'release')
+            - flavor1Compile project(path:':sublibrary', configuration:'flavor1Release')
+        * applicationIdSuffix 包名添加后缀
 
 - 构建生命周期
     + 初始化

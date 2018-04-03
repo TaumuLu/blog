@@ -4,8 +4,8 @@ date: 2017-08-25 17:39:12
 tags: Java
 ---
 
-## 基础语法
 
+## 基础语法
 - 编译与运行 java/javac
 - 变量
     + byte 
@@ -212,7 +212,7 @@ tags: Java
         * currentClass.class
         * instance.getClass()
         * Class.forName('当前类的全称')
-        * .newInstance() 通过获取的类类型实例
+        * .newInstance() 实例化获取的类类型
     + 编译时刻静态加载类
         * new
     + 运行时刻动态加载类
@@ -238,6 +238,31 @@ tags: Java
 java.lang.class
 java.lang.reflect.Field
 java.lang.reflect.Constructor
+
+
+## 代码块
+- 普通代码块 类中方法的方法体
+- 构造代码块 构造块会在创建对象时被调用，每次创建时都会被调用，优先于类构造函数执行
+- 静态代码块 用static {}包裹起来的代码片段，只会执行一次。静态代码块优先于构造块执行
+- 同步代码块 使用synchronized() {}包裹起来的代码块，在多线程环境下，对共享数据的读写操作是需要互斥进行的，否则会导致数       据的不一致性。同步代码块需要写在方法中
+
+### 注意
+静态代码按顺序执行，依次加载
+
+
+## 集合
+- Integer
+    + valueOf()
+    + parseInt()
+- Map
+    + get()
+    + entrySet()
+        * iterator()
+        * getKey()
+        * getValue()
+    + keySet()
+    + valueSet()
+
 
 
 ## 参考资料

@@ -7,6 +7,29 @@ tags: React全家桶
 ## 前言
 先接触的ReactNative，后学习的React，其实也都差不多，但ReactNative要稍微局限点，限制较多，但很强大，实现了跨平台开发，正如React所追求的一次编写，随处运行(Writeonce, run anywhere)，现在还记得当时刚接触React一脸懵逼的状态，还好有人带也对其有所了解了
 
+## 环境搭建
+
+### iOS
+- Xcode
+- CocoaPods
+```
+gem update --system
+gem sources --remove https://rubygems.org/
+gem sources -a https://gems.ruby-china.org/
+// gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+gem sources -l
+gem install cocoapods
+gem install -n /usr/local/bin cocoapods
+pod setup
+pod search 'AFNetworking'
+```
+
+### Android
+- Android Studio 
+- Android SDK
+- Genymotion
+
+
 ## 基础
 只用ReactNatiev开发过一段时间，当时还不熟悉React用法就去写所以RN，写的代码质量很差，还是应先打好基础
 
@@ -82,6 +105,16 @@ tags: React全家桶
 ### 证书
 - Provision路径 `cd ~/Library/MobileDevice/Provisioning\ Profiles/`
 
+### 创建工程
+- 创建静态库 File -> New Project
+- copy到RN项目
+- 打开.xcodeproj
+- 修改Build Setting -> Targets -> Header Search Paths 
+    + $(SRCROOT)/../../react-native/React recursive
+- 使用
+    + 拖动到工程中的Library中
+    + Podfile pod 'react-native-\*', :path => '../node_modules/react-native-\*'
+
 ### RN原生开发
 - RCT_EXPORT_MODULE() 指定模块的名字，默认类名
 
@@ -100,6 +133,12 @@ tags: React全家桶
 ### RN原生开发
 - package implements ReactPackage
     + createViewManagers
+
+### 创建工程
+- 创建Module File -> New Module -> Android Library
+- 填写模块名和包名及最低sdk版本
+- copy到RN项目
+- android/app/build.gradle compile project(':react-native-*')
 
 #### 原生模块
 - Module extends ReactContextBaseJavaModule
@@ -124,3 +163,4 @@ tags: React全家桶
 
  
 ## 参考资料
+https://github.com/liuchungui/react-native-BGNativeModuleExample
