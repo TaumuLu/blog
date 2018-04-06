@@ -177,6 +177,12 @@ use db_name;                                连接数据库
 show tables;                                查看数据表
 
 mysqldump -u root -p 库名>sql_name.sql       备份数据库
+
+// 导入数据库
+mysql -u root -p
+create database name;
+use name;
+source [将.sql文件直接拖拽至终端，自动补全其文件目录];
 ```
 
 ## Cmd

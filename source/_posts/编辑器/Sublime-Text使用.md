@@ -1,5 +1,5 @@
 ---
-title: SublimeText使用
+title: Sublime-Text使用
 date: 2017-04-9 21:51:43
 tags: 编辑器
 ---

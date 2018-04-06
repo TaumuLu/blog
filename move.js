@@ -24,7 +24,7 @@ function moveFunc(handlePath, dirName = null) {
                 const fileName = execTag && execTag[1] && execTag[1].trim()
 
                 if (fileName) {
-                    if (!dirName && fileName !== dirName) {
+                    if (!dirName || fileName !== dirName) {
                         const targetPath = path.join(rootPath, fileName)
                         if (!existsSync(targetPath)) {
                             mkdirSync(targetPath)

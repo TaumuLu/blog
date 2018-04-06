@@ -23,4 +23,14 @@ tags: 数据库
 缓存
 任务队列
 
+## 登录
+```
+redis-cli
+CONFIG get requirepass
+CONFIG set requirepass "password"
+auth password
+```
+
 ### jedis
+
+

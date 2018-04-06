@@ -210,6 +210,24 @@ git pull origin master --allow-unrelated-histories
 
 ```
 
+### rebase
+```
+git rebase <branch>
+git rebase --continue
+git rebase --abort
+```
+
+### clean
+```
+git clean 参数
+    -n 显示将要删除的文件和目录
+    -f 删除文件
+    -df 删除文件和目录
+
+git clean -n
+git clean -df
+```
+
 ## Git术语
 - Organizations
 组织，即多个开发者组成的团体，可包含众多的库和开发团队
@@ -249,3 +267,5 @@ http://blog.csdn.net/qq_16885135/article/details/52777871
 http://blog.csdn.net/xsckernel/article/details/9021225
 http://www.cnblogs.com/xueweihan/p/5703144.html
 http://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories
+
+http://gitbook.liuhui998.com/index.html
