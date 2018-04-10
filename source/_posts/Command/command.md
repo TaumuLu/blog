@@ -1,10 +1,9 @@
 ---
-title: command
+title: Command
 date: 2018-02-27 16:34:11
 tags: Command
 ---
 
-# Command
 
 ## react-native
 
@@ -83,7 +82,10 @@ code-push deployment list Muyi -k
 ## Mac 
 
 ```
-curl ip.cn
+curl -v  // ip.cn
+ps aux|grep <process>
+lsof -i :<port>
+cp
 ```
 
 ## Xcode 
