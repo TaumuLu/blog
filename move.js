@@ -50,6 +50,22 @@ moveFunc(rootPath)
 console.log(`${moveFileCount}个文件移动`)
 // deleteFunc(rootPath)
 
+// const deleteFile = (deletePath) => {
+//   if (existsSync(deletePath)) {
+//     const files = readdirSync(deletePath)
+//     files.forEach((file) => {
+//       var curPath = path.join(deletePath, file)
+//       if (statSync(curPath).isDirectory()) {
+//         deleteFile(curPath)
+//       } else {
+//         unlinkSync(curPath)
+//       }
+//     })
+
+//     rmdirSync(deletePath)
+//   }
+// }
+
 
 // function deleteFunc(handlePath) {
 //     const files = readdirSync(handlePath)
