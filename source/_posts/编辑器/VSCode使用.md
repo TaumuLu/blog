@@ -26,7 +26,7 @@ tags: 编辑器
 ### 个人配置
 工作区设置 > 用户设置 > 默认设置
 
-```
+```json
 {
     "workbench.iconTheme": "vscode-icons",
     "editor.renderIndentGuides": true,

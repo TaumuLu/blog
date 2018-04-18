@@ -13,7 +13,7 @@ sh是Unix标准默认的shell
 
 ## 命令
 - 交互式
-- 批处理
+- 批处理(脚本)
 
 ### 运算符
 - |
@@ -46,3 +46,56 @@ sh是Unix标准默认的shell
 
 ### 脚本
 > \#!是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种Shell。echo命令用于向窗口输出文本
+
+### 语法
+- 定义变量 variable_name="value"
+    + 变量名和等号之间不能有空格
+- 使用变量 $variable_name
+    + 变量名外面的花括号是可选的，字符串中使用
+- 只读变量 readonly variable_name
+- 删除变量 unset variable_name
+    + 不能删除只读变量
+- 变量类型
+    + 局部变量
+    + 环境变量
+    + shell变量
+- Shell特殊变量
+    + \$$ $表示当前Shell进程的ID，即pid
+    + $n 参数
+    + $# 参数个数
+    + $? 上个命令的退出状态，或函数的返回值
+- Shell替换 -e -E -n
+- 命令替换 反引号
+- Shell运算符 expr 表达式
+    + 乘号*前边必须加反斜杠\\才能实现乘法运算
+- 关系运算符
+    + 只支持数字，不支持字符串，除非字符串的值是数字
+- 布尔运算符
+    + ! 非运算
+    + -o 或运算
+    + -a 与运算
+- 字符串运算符
+- 文件测试运算符
+- Shell注释 #号注释
+- Shell字符串
+    + 可以用单引号，也可以用双引号，也可以不用引号
+- Shell数组
+    + 括号来表示数组，数组元素用“空格”符号分割开
+    + 使用@或*可以获取数组中的所有元素 array_name\[@|*]
+- 获取长度 #array_name|string
+- echo命令
+- printf命令
+- if...else语句
+    + if...fi 语句
+    + if...else...fi 语句
+    + if...elif...else...fi语句
+    + \[]和其中的表达式要有空格
+    + then关键字
+    + if后可跟test命令
+- case esac命令
+- for循环
+- while循环
+
+
+## 参考资料
+https://blog.csdn.net/xiaoyida11/article/details/52240376

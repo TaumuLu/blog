@@ -26,7 +26,9 @@ tags: 编辑器
     + y
     + r
     + c
+    + b
 - Insert
     + esc
 
-
+## Config
+~/.vimrc

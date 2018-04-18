@@ -50,7 +50,7 @@ AuthorizedKeysFile .ssh/authorized_keys
 
 ### authorized_keys
 远程主机保存用户的公钥 $HOME/.ssh/authorized_keys  
-```
+```bash
 ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
 
@@ -78,7 +78,7 @@ StrictHostKeyChecking no // 是否记录密匙到known_hosts
 ```
 
 #### ProxyCommand
-```
+```bash
 ssh user@host -W %h:%p
 ssh user@host -W $(echo %h|awk -F 'test' '{print $2}'):%p 2> /dev/null
 ```
@@ -105,7 +105,7 @@ Host product
 
 
 ## Command
-```
+```bash
 ssh -CfNg -L 7072:hisense-test-web:6379 hisense-paas1
 // ssh -L <local port>:<remote host>:<remote port> <SSH hostname>
 ```

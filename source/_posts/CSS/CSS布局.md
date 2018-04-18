@@ -133,7 +133,7 @@ zoom 是除了在 IE 5.0 中外，总是能触发 hasLayout 。zoom 用于设置
 
 由此看来最好的清除浮动方法为使用 :after伪元素来清除浮动
 #### 代码分析
-```
+```css
 :after { 
     content:""; 
     display:block; 
@@ -157,7 +157,7 @@ zoom 是除了在 IE 5.0 中外，总是能触发 hasLayout 。zoom 用于设置
 > 除了clear：both用来清除浮动的，其他代码都是为了隐藏掉content生成的内容，因此其他版本的清除浮动可能会有font-size：0，line-height：0
 
 ** 精益求精 **
-```
+```css
 .clearfix:after { 
     content:"\200B"; 
     display:block; 
@@ -198,7 +198,7 @@ zoom 是除了在 IE 5.0 中外，总是能触发 hasLayout 。zoom 用于设置
 
 - overflow:auto/hidden
 由于overflow有剪裁和出现滚动条等隐患，不适合作为整站通用类，类似清除浮动的通用类语句
-```
+```css
 .clearfix { 
     *zoom: 1; 
 }
@@ -209,14 +209,14 @@ zoom 是除了在 IE 5.0 中外，总是能触发 hasLayout 。zoom 用于设置
 }
 ```
 两栏或多栏自适应布局的通用类语句是（block水平标签，需配合浮动）
-```
+```css
+/* 这是zxx.lib.cssCSS样式库中.cell的由来！*/
 .cell { 
     display: table-cell; 
     width: 9999px; 
     *display: inline-block; 
     *width: auto;
 }
-// 这是zxx.lib.cssCSS样式库中.cell的由来！
 ```
 
 > 存在浮动元素，清除浮动于是，就有了.fix + .l/.r + .cell的无敌组合，可以多栏，也可以无限嵌套
@@ -243,7 +243,7 @@ inline-block 元素的空白间距
 3. 设置父元素字体为0
 4. 丢失结束标签
 5. jquery方法
-```
+```js
 $("").contents().filter(function() { return this.nodeType === 3; }).remove();
 ```
 

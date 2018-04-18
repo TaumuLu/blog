@@ -12,16 +12,18 @@ webpack在前端的定位是工具类，再考究点为打包工具，等等，�
 
 其实我也只是用过webpack，其他一些还没怎么用过就过时了，对于webpack个人觉得有上手起来点难度，用其他人来说是反人类？哈哈，有点过了，不过虽然目前仅对其理解了一点，但感受是这玩意确实好用
 
-## 正文
+## webpack原理
+- webpack中每个模块有一个唯一的id，是从0开始递增的。整个打包后的bundle.js是一个匿名函数自执行
+- 参数则为一个数组。数组的每一项都为个function。function的内容则为每个模块的内容，并按照require的顺序排列。
 
-### webpack配置
+## webpack配置
 对于记录学习webpack还真没什么好写的，不如写个实现方式上代码来
 
 首先说下webpack的机制，其实是将入口文件作为开始然后对其分析生成一颗树状依赖，加载分析入口文件的依赖及其依赖的依赖，直至加载所有相关依赖，加载时会对依赖文件调用配置里写的加载器去加载解析，还有很多实现细节也是根据所写配置去分析打包，最后打包的文件实为用匿名函数包起来的一个函数，通过传参来解决输入输出项
 
 所以对于学习webpack，不深究的话也不过如同css一样去写配置项而已
 对于最佳直观理解还是直接上代码
-```
+```js
 var webpack = reuqire('Webpack');
 var path = require('path');
 
@@ -350,7 +352,7 @@ module.exports = {
     - 要使HMR功能生效，还需要做一件事情，就是要在应用热替换的模块或者根模块里面加入允许热替换的代码。否则，热替换不会生效，还是会重刷整个页面
 
 #### 相关代码
-```
+```js
 // Node.js API代码
 // 引入相应模块
 var webpack = require('webpack');
@@ -382,10 +384,179 @@ server.listen(9090);
 ```
 
 
+## webpack打包文件
+```js
+(function(modules) {
+    // 处理
+    var parentJsonpFunction = window["webpackJsonp"];
+    window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
+        // add "moreModules" to the modules object,
+        // then flag all "chunkIds" as loaded and fire callback
+        var moduleId, chunkId, i = 0, resolves = [], result;
+        for(;i < chunkIds.length; i++) {
+            chunkId = chunkIds[i];
+            if(installedChunks[chunkId]) {
+                resolves.push(installedChunks[chunkId][0]);
+            }
+            installedChunks[chunkId] = 0;
+        }
+        for(moduleId in moreModules) {
+            if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+                modules[moduleId] = moreModules[moduleId];
+            }
+        }
+        if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
+        while(resolves.length) {
+            resolves.shift()();
+        }
+        if(executeModules) {
+            for(i=0; i < executeModules.length; i++) {
+                result = __webpack_require__(__webpack_require__.s = executeModules[i]);
+            }
+        }
+        return result;
+    };
+
+    // The module cache
+    var installedModules = {};
+
+    // objects to store loaded and loading chunks
+    var installedChunks = {
+        4: 0
+    };
+
+    // The require function
+    function __webpack_require__(moduleId) {
+
+        // Check if module is in cache
+        if(installedModules[moduleId]) {
+            return installedModules[moduleId].exports;
+        }
+        // Create a new module (and put it into the cache)
+        var module = installedModules[moduleId] = {
+            i: moduleId,
+            l: false,
+            exports: {}
+        };
+
+        // Execute the module function
+        modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+        // Flag the module as loaded
+        module.l = true;
+
+        // Return the exports of the module
+        return module.exports;
+    }
+
+    // This file contains only the entry chunk.
+    // The chunk loading function for additional chunks
+    __webpack_require__.e = function requireEnsure(chunkId) {
+        var installedChunkData = installedChunks[chunkId];
+        if(installedChunkData === 0) {
+            return new Promise(function(resolve) { resolve(); });
+        }
+
+        // a Promise means "currently loading".
+        if(installedChunkData) {
+            return installedChunkData[2];
+        }
+
+        // setup Promise in chunk cache
+        var promise = new Promise(function(resolve, reject) {
+            installedChunkData = installedChunks[chunkId] = [resolve, reject];
+        });
+        installedChunkData[2] = promise;
+
+        // start chunk loading
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.charset = 'utf-8';
+        script.async = true;
+        script.timeout = 120000;
+
+        if (__webpack_require__.nc) {
+            script.setAttribute("nonce", __webpack_require__.nc);
+        }
+        script.src = __webpack_require__.p + "assets/scripts/" + ({"2":"app","3":"design_inner"}[chunkId]||chunkId) + ".chunk.js";
+        var timeout = setTimeout(onScriptComplete, 120000);
+        script.onerror = script.onload = onScriptComplete;
+        function onScriptComplete() {
+            // avoid mem leaks in IE.
+            script.onerror = script.onload = null;
+            clearTimeout(timeout);
+            var chunk = installedChunks[chunkId];
+            if(chunk !== 0) {
+                if(chunk) {
+                    chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
+                }
+                installedChunks[chunkId] = undefined;
+            }
+        };
+        head.appendChild(script);
+
+        return promise;
+    };
+
+    // expose the modules object (__webpack_modules__)
+    __webpack_require__.m = modules;
+
+    // expose the module cache
+    __webpack_require__.c = installedModules;
+
+    // identity function for calling harmony imports with the correct context
+    __webpack_require__.i = function(value) { return value; };
+
+    // define getter function for harmony exports
+    __webpack_require__.d = function(exports, name, getter) {
+        if(!__webpack_require__.o(exports, name)) {
+            Object.defineProperty(exports, name, {
+                configurable: false,
+                enumerable: true,
+                get: getter
+            });
+        }
+    };
+
+    // getDefaultExport function for compatibility with non-harmony modules
+    __webpack_require__.n = function(module) {
+        var getter = module && module.__esModule ?
+            function getDefault() { return module['default']; } :
+            function getModuleExports() { return module; };
+        __webpack_require__.d(getter, 'a', getter);
+        return getter;
+    };
+
+    // Object.prototype.hasOwnProperty.call
+    __webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+    // __webpack_public_path__
+    __webpack_require__.p = "/";
+
+    // on error function for async loading
+    __webpack_require__.oe = function(err) { console.error(err); throw err; };
+
+    // Load entry module and return exports
+    return __webpack_require__(__webpack_require__.s = 1603);
+ })
+ (
+  [
+   function modules1(module, exports, __webpack_require__) {},
+   function modules2(module, exports, __webpack_require__) {},
+   ...
+  ]
+)
+```
+
+
 ## 参考资料
 https://segmentfault.com/q/1010000009070061/a-1020000009073036
 http://www.jianshu.com/p/2b81262898a4
 http://foio.github.io/wepack-code-spliting/
+
+https://www.jianshu.com/p/e24ed38d89fd
+https://zhuanlan.zhihu.com/p/32093510
 
 ### React+Webpack
 https://segmentfault.com/a/1190000007373555

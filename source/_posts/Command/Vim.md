@@ -7,3 +7,8 @@ tags: Command
 ## Init
 Vim是一个开源文本编辑器
 在命令窗下输入vimtutor来学习
+
+## 命令
+
+### shell
+`set -o vi`

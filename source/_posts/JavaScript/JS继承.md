@@ -107,7 +107,7 @@ JavaScript使用new操作符创建对象，或者用直接字面量创建对象�
 
 1. 原型链
 在之前创建对象的各类方法上加入了原型链而实现继承。从而可以让构造函数的原型对象继承另一个构造函数和原型对象，使其原型对象成为他们的实例（因此而拥有他们的方法和属性），之后在此构造函数上创建的实例就拥有这两个构造函数和其原型对象的所有属性和方法
-```
+```js
 // 超类型
 function parent() {      
     this.name = par;
@@ -153,7 +153,7 @@ alert(test.getage());   // 11
 也叫伪造对象或经典继承
 在子类型构造函数的内部调用超类型构造函数
 通过 apply()和 call()方法来实现
-```
+```js
 // 超类型
 function parent(oname) {      
     this.name = oname;
@@ -177,7 +177,7 @@ alert(test.age);        // oage
 3. 组合继承
 也叫为经典继承
 使用原型链来实现对原型属性和方法的继承，使用构造函数来实现对实例属性的继承
-```
+```js
 // 超类型
 function parent(oname) {      
     this.name = oname;
@@ -227,7 +227,7 @@ alert(two.getage());    // oage
 
 4. 原型式继承
 目的就是让已有的对象利用原型的共享性都共享一个属性
-```
+```js
 function object(O) {
     function F(){};
     F.prototype = O;
@@ -240,7 +240,7 @@ function object(O) {
 
 5. 寄生式继承
 目的是让已有的对象利用构造函数来添加一个方法
-```
+```js
 function createAnother(original) {
     var clone = Object(original);
     clone.sayHi = function() {
@@ -257,7 +257,7 @@ function createAnother(original) {
 目的：
 组合继承会调用两次超类型，之前说过，因此需要解决
 通过借用构造函数来继承属性，通过原型链的混成形式，即利用原型式继承来继承方法
-```
+```js
 // 超类型
 function parent(oname) {      
     this.name = oname;

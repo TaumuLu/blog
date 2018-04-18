@@ -53,7 +53,7 @@ tags: Mac
 ### homebrew
 
 #### 常用命令
-```
+```bash
 brew search [TEXT|/REGEX/]
 brew (info|home|options) [FORMULA...]
 brew install FORMULA...
@@ -136,24 +136,23 @@ https://www.zhihu.com/question/20205127
 ### 更改截图位置
 `defaults write com.apple.screencapture location /CustomPath`
 
-### 环境变量
+### zsh
+如果当前shell为zsh，则不加载bash相关文件，依次加载，可以source引入即可
+- ~/.zlogin
+- ~/.zshrc
 
-- 加载顺序
-    + /etc/profile
-    + /etc/paths 
-    + ~/.bash_profile 
-    + ~/.bash_login 
-    + ~/.profile 
-    + ~/.bashrc
-
-设置环境变量路径里有空格时用引号引起来即可
+```
+// 查看当前shell
+echo $SHELL
+ps -p $$
+```
 
 ### 设置开机自启
 利用Launchctl来设置，通过写在/Library/LaunchDaemons/下的.plist文件
 
 - brew
 通过brew安装的软件去/usr/local/opt下找到对应的.plist文件
-```
+```bash
 sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons
 sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 ```
@@ -178,6 +177,8 @@ http://reactide.io/
 ## 参考链接
 https://www.zhihu.com/question/22624898/answer/105234217
 http://www.cnblogs.com/52php/p/5684348.html
+http://macshuo.com/?p=676
+https://blog.csdn.net/waneto2008/article/details/52486433
 
 
 

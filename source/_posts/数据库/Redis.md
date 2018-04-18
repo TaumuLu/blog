@@ -24,7 +24,7 @@ tags: 数据库
 任务队列
 
 ## 登录
-```
+```bash
 redis-cli
 CONFIG get requirepass
 CONFIG set requirepass "password"

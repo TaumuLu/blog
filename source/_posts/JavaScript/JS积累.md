@@ -70,9 +70,11 @@ EventLoop派一个人来轮询所有的，其他人都可以把观察条件和�
 in 运算符要求左边的操作数必须是字符串类型或可以转换为字符串类型的其他类型，右边的操作数必须是数组或对象，只有第1个操作数的值是第2个操作数的属性名，才会返回true，否则返回false  
 in 运算符会在整个原型链上查询指定的属性或者键值
 
+#### Promise
+Promise 是异步的，所以对其 try catch 是没有作用的，只能用自身的then或catch方法去捕获
 
 ### Label
-```
+```html
 <marquee direction="up" behavior="scroll" scrollamount="1" scrolldelay="0" loop="-1" width="1000" height="50" bgcolor="#0099FF" hspace="10" vspace="10">
     指整个Marquee对齐方式; (2)behavior:设置滚动的方式: scroll:表示由一端滚动到另一端,会重复,缺陷是不能无缝滚动。 slide:表示由一段滚动到另一端,不会重复...
 </marquee>
@@ -85,7 +87,7 @@ in 运算符会在整个原型链上查询指定的属性或者键值
 ```
 
 #### head
-```
+```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta http-equiv="content-Type" content="text/html; charset=utf-8"/>
 <meta name='viewport' content='width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no'>
@@ -101,7 +103,7 @@ in 运算符会在整个原型链上查询指定的属性或者键值
 - 验证数字包括负数和小数 `const reg = /^(-)?\d+(\.\d+)?$/g;`
 
 ### Code Snippet
-```
+```js
 // 为所有元素添加、移除不同颜色边框
 [].forEach.call($$("*"),function(a){
   a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16);

@@ -39,7 +39,7 @@ Ctrl+Shift+F下，Where配置
     *.cache 
 
 #### 配置文件
-```
+```json
 {
     "auto_complete_triggers":
     [
@@ -93,7 +93,7 @@ Ctrl+Shift+F下，Where配置
 #### Mac配置文件
 Mac下的配置有些被覆盖需要写在用户设置中才能生效，如'find_selected_text'
 
-```
+```json
 {
     "bold_folder_labels": true,
     "close_windows_when_empty": false,
@@ -129,7 +129,7 @@ Mac下的配置有些被覆盖需要写在用户设置中才能生效，如'find
 
 
 ### 快捷键
-```
+```json
 [
     {
         "keys": ["shift+tab"],
@@ -286,7 +286,7 @@ Mac下的配置有些被覆盖需要写在用户设置中才能生效，如'find
 
 ### Sublime​Code​Intel
 SublimeCodeIntel/.codeintel/config下添加 
-```
+```json
 //注意上下文需要添加的逗号
 "JavaScript":{
     "javascriptExtraPaths":[]

@@ -82,7 +82,7 @@ group -> name -> version
 
 ### 代码片段
 - 版本冲突构建失败
-```
+```java
 configurations.all { 
     resolutionStrategy { 
         failOnVersionConflict()
@@ -92,7 +92,7 @@ configurations.all {
 ```
 
 - 自定义任务
-```
+```java
 def createDir = {
     path ->
         File dir = new File(path)

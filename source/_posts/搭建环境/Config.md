@@ -46,7 +46,7 @@ npm_mirror: https://npm.taobao.org/mirrors/npm/
 ## Linux
 
 ### .bashrc
-```
+```bash
 alias bundle-android='react-native bundle --platform android --entry-file index.android.js --bundle-output ./bundles/index.android.bundle --dev false'
 
 alias bundle-ios='react-native bundle --platform ios --entry-file index.ios.js --bundle-output ./bundles/index.ios.bundle --dev false'
@@ -138,7 +138,7 @@ D:\Web\Develop\Apache22\bin
 ## ESlint
 
 ### .eslintrc.yml
-```
+```yaml
 parser: babel-eslint
 env:
   es6: true
@@ -187,7 +187,7 @@ rules:
 
 
 ## .bash_profile
-```
+```bash
 # show Mac info
 # archey
 
@@ -203,7 +203,7 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 ```
 
 ## .zshrc
-```
+```bash
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -304,7 +304,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 ```
 
 ## .npmrc
-```
+```bash
 //registry.npm.terminus.io/:_password="bnBtIz0zNzQ2NTU="
 //registry.npm.terminus.io/:username=taumu
 //registry.npm.terminus.io/:email=972409545@qq.com
@@ -343,7 +343,7 @@ registry=http://registry.npm.terminus.io/
 ## VsCode
 
 ### settings
-```
+```json
 {
     "workbench.iconTheme": "vscode-icons",
     "editor.renderIndentGuides": true,
@@ -425,7 +425,7 @@ registry=http://registry.npm.terminus.io/
 ```
 
 ### keyBindings
-```
+```json
 // 将键绑定放入此文件中以覆盖默认值
 [
     {
@@ -463,7 +463,7 @@ registry=http://registry.npm.terminus.io/
 ## SublimeText
 
 ### settings
-```
+```json
 {
     "bold_folder_labels": true,
     "close_windows_when_empty": false,
@@ -511,7 +511,7 @@ registry=http://registry.npm.terminus.io/
 ```
 
 ### keyBindings
-```
+```json
 [
     {
         "keys": ["super+b"],
@@ -555,7 +555,7 @@ registry=http://registry.npm.terminus.io/
 ```
 
 ### packageSetting
-```
+```json
 {
     "bootstrapped": true,
     "in_process_packages":
@@ -585,7 +585,7 @@ registry=http://registry.npm.terminus.io/
 ```
 
 ### SublimeLinter Settings
-```
+```json
 {
   "linters": {
     "eslint": {

@@ -40,7 +40,7 @@ Vincent Driessen为了解决这个问题提出了[A Successful Git Branching Mod
 
 #### 使用
 - 命令一览
-```
+```bash
 git flow <subcommand> [list] [-v]
 git flow <subcommand> start [-F] <name> [<base>]
 git flow <subcommand> finish [-rFk] <name|nameprefix>

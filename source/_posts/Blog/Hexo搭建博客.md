@@ -31,7 +31,7 @@ tags: Blog
 
 ## 配置Hexo
 - 全局配置 _config.yml
-```
+```yaml
 language: zh-CN #语言
 theme: next
 ...
