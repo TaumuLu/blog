@@ -161,13 +161,14 @@ tags: Java
 类型通配符一般是使用？代替具体的类型实参(是类型实参，而不是类型形参)
 
 ### 泛型方法
-如果静态方法要使用泛型的话，必须将静态方法也定义成泛型方法
+如果静态方法要使用类上的泛型，必须将静态方法也定义成泛型方法
 
 ### 泛型上下边界
 泛型的上下边界添加，必须与泛型的声明在一起
 
 ### 泛型数组
 不能创建一个确切的泛型类型的数组
+数组的类型不可以是类型变量，除非是采用通配符的方式
 
 
 ## 注解
@@ -209,10 +210,10 @@ tags: Java
 - Class
     + 类是class类的实例对象
     + 获取当前类的类类型
-        * currentClass.class
-        * instance.getClass()
+        * \[currentClass].class
+        * \[instance].getClass()
         * Class.forName('当前类的全称')
-        * .newInstance() 实例化获取的类类型
+            - .newInstance() 实例化获取的类类型，只能调用无参构造方法
     + 编译时刻静态加载类
         * new
     + 运行时刻动态加载类
@@ -220,19 +221,31 @@ tags: Java
     + 基本的数据类型
         * void关键字都存在类类型
 
-- getClassInfo
-    + getMethods 获取所有public的函数，包括父类继承而来的
-    + getDeclaredMethods 获取该类所有 自己声明的方法
-    + getDeclaredMethod
-        * getName 得到方法的名称 
-        * getReturnName 得到方法返回值的类型的类类型 
-        * getParameterTypes 得到参数列表的类型的类类型
-    + getFields 获取所有public的成员变量
-    + getDeclaredFields 获取该类自己所有声明的成员变量
-    + getDeclaredField
-        * getType 得到成员变量的类型的类类型
-    + getConstructor() 获取所有public的构造函数
-    + getDeclaredConstructor() 获取该类自己所有声明的构造函数
+- ClassInfo
+    + Method
+        * getMethods 获取所有public的函数，包括父类继承而来的
+        * getDeclaredMethods 获取该类所有，自己声明的方法
+        * getDeclaredMethod
+            - getName 得到方法的名称
+            - getReturnName 得到方法返回值的类型的类类型 
+            - getParameterTypes 得到参数列表的类型的类类型
+    + Field
+        * getFields 获取所有public的成员变量
+        * getDeclaredFields 获取该类自己所有声明的成员变量
+        * getDeclaredField
+            - getName
+            - getType 得到成员变量的类型的类类型
+            - getModifiers 权限修饰符
+            - setAccessible() 设置Java的权限控制检查，针对private变量
+    + Constructor
+        * getConstructor() 获取所有public的构造函数
+        * getConstructors() 获得类中所有的构造函数
+        * getDeclaredConstructor() 获取该类自己所有声明的构造函数
+    + Interfaces
+        * getInterfaces() 获得类所实现的接口
+    + Inherit
+        * getSuperclass() 获得类所继承的父类
+
 
 ### 涉及类包
 java.lang.class
@@ -263,6 +276,21 @@ java.lang.reflect.Constructor
     + keySet()
     + valueSet()
 
+## 多态
+- 同一个行为具有多个不同表现形式或形态的能力
+- 多态的分类
+    + 编译时多态（重载，严格说不能算作多态）
+    + 运行时多态（重写）
+- 运行时多态的前提：
+    + 继承（实现）
+    + 重写
+    + 向上转型
+- 向上转型与向下转型
+- 继承链中对象方法的调用的优先级：
+    + this.show(O)
+    + super.show(O)
+    + this.show((super)O)
+    + super.show((super)O)
 
 
 ## 参考资料

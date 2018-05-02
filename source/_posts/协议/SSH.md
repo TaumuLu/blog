@@ -101,6 +101,10 @@ Host product
     ProxyCommand ssh -q -W gateway %h:%p
     // ProxyCommand ssh gateway nc %h %p
     PasswordAuthentication no
+
+
+ssh xzc@180.97.33.108 -p 998 'echo "select * from user;" | mysql xzc_db -uxzc -pxzcpwd' > user.txt
+ssh hisense-paas1 'ssh hisense-test-web "cat test.txt"' > test.txt
 ```
 
 

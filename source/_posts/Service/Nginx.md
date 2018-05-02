@@ -23,3 +23,11 @@ tags: Service
             - index 在不指定访问具体资源时，默认展示的资源文件列表
 
     + upstream name 负载均衡配置
+
+### 文件路径
+- root
+- alias
+
+alias会把location后面配置的路径丢弃掉
+使用alias时，目录名后面一定要加"/"
+alias只能位于location块中
