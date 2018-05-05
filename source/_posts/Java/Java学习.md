@@ -292,6 +292,14 @@ java.lang.reflect.Constructor
     + this.show((super)O)
     + super.show((super)O)
 
+## static
+- 静态导入 `import static [package];`
+- 静态变量
+    + 不能在方法体中定义static变量，只有类变量，不包括方法内部的变量
+- 静态方法
+- 静态代码段
+- 静态内部类
+
 
 ## 参考资料
 http://blog.csdn.net/s10461/article/details/53941091

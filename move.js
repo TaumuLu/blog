@@ -1,162 +1,133 @@
 const fs = require('fs')
 const path = require('path')
 
-const rootPath = path.join(process.cwd(), 'source/_posts')
-const regTitle = /title:(.*)/
-const regTags = /tags:(.*)/
-const { readdirSync, statSync, readFileSync, existsSync, mkdirSync, renameSync } = fs
+const { statSync, readFileSync, existsSync, mkdirSync, renameSync, rmdirSync, unlinkSync } = fs
 
+class CollateMarkDown {
+    constructor() {
+        this.regTitle = /title:(.*)/
+        this.regTags = /tags:(.*)/
 
-let moveFileCount = 0
-function moveFunc(handlePath, dirName = null) {
-    const files = readdirSync(handlePath)
+        this.moveFileList = []
+        this.deleteDirList = []
+        this.noTagFileList = []
+        this.noMDFileList = []
+        this.rootPath = path.join(process.cwd(), 'source/_posts')
 
-    for (let file of files) {
-        const currentPath = path.join(handlePath, file)
-        const stat = statSync(currentPath)
+        this.init()
+    }
 
-        if (stat.isDirectory()) {
-            moveFunc(currentPath, file)
-        } else {
-            if (file.endsWith('.md')) {
-                const data = readFileSync(currentPath, 'utf8')
-                const execTag = regTags.exec(data)
-                const fileName = execTag && execTag[1] && execTag[1].trim()
+    init() {
+        const { rootPath } = this
 
-                if (fileName) {
-                    if (!dirName || fileName !== dirName) {
-                        const targetPath = path.join(rootPath, fileName)
-                        if (!existsSync(targetPath)) {
-                            mkdirSync(targetPath)
+        this.moveMarkDownFile(rootPath)
+        this.deleteEmptyDir(rootPath)
+        this.printResult()
+    }
+
+    readdirSync(readPath) {
+        return fs.readdirSync(readPath).filter((f) => !f.startsWith('.'))
+    }
+
+    moveMarkDownFile(handlePath, dirName = null) {
+        const { regTitle, regTags, moveFileList, noTagFileList, noMDFileList, readdirSync, rootPath } = this
+        const files = readdirSync(handlePath)
+
+        for (let file of files) {
+            const currentPath = path.join(handlePath, file)
+            const stat = statSync(currentPath)
+
+            if (stat.isDirectory()) {
+                this.moveMarkDownFile(currentPath, file)
+            } else {
+                if (file.endsWith('.md')) {
+                    const data = readFileSync(currentPath, 'utf8')
+                    const execTag = regTags.exec(data)
+                    const fileName = execTag && execTag[1] && execTag[1].trim()
+
+                    if (fileName) {
+                        if (!dirName || fileName !== dirName) {
+                            const targetPath = path.join(rootPath, fileName)
+                            if (!existsSync(targetPath)) {
+                                mkdirSync(targetPath)
+                            }
+                            renameSync(currentPath, path.join(targetPath, file))
+                            moveFileList.push(file)
                         }
-                        moveFileCount += 1
-                        renameSync(currentPath, path.join(targetPath, file))
+                    } else {
+                        const execTitle = regTitle.exec(data)
+                        const title = execTitle && execTitle[1] && execTitle[1].trim()
+                        renameSync(currentPath, path.join(rootPath, file))
+                        noTagFileList.push(file)
                     }
                 } else {
-                    const execTitle = regTitle.exec(data)
-                    const title = execTitle && execTitle[1] && execTitle[1].trim()
-                    console.warn(`"${title}"文件没有写tag`)
                     renameSync(currentPath, path.join(rootPath, file))
+                    noMDFileList.push(file)
                 }
-            } else {
-                // renameSync(currentPath, rootPath)
             }
+        }
+    }
+
+    deleteEmptyDir(handlePath) {
+        const { readdirSync, deleteDirList } = this
+
+        const files = readdirSync(handlePath)
+        for (let file of files) {
+            const currentPath = path.join(handlePath, file)
+            const stat = statSync(currentPath)
+
+            if (stat.isDirectory()) {
+                const files = readdirSync(currentPath)
+
+                if(files.length === 0) {
+                    this.deleteDir(currentPath)
+                    deleteDirList.push(file)
+                }
+            }
+        }
+    }
+
+    printResult() {
+        const { moveFileList, deleteDirList, noTagFileList, noMDFileList } = this
+        const printList = [
+            {
+                list: moveFileList,
+                desc: 'md文件移动'
+            }, {
+                list: deleteDirList,
+                desc: '文件夹删除'
+            }, {
+                list: noTagFileList,
+                desc: 'md文件没有写tag'
+            }, {
+                list: noMDFileList,
+                desc: '文件不是md'
+            },
+        ]
+        printList.forEach((item) => {
+            const { list, desc } = item
+            const len = list.length
+            if (len > 0) {
+                console.log(`${len}个${desc}: ${list.join(',')}`)
+            }
+        })
+    }
+
+    // 移除文件夹及文件
+    deleteDir(deletePath) {
+        if (existsSync(deletePath)) {
+            const files = fs.readdirSync(deletePath)
+            files.forEach((file) => {
+                var curPath = path.join(deletePath, file)
+                if (statSync(curPath).isDirectory()) {
+                    this.deleteDir(curPath)
+                } else {
+                    unlinkSync(curPath)
+                }
+            })
+            rmdirSync(deletePath)
         }
     }
 }
 
-
-moveFunc(rootPath)
-console.log(`${moveFileCount}个文件移动`)
-// deleteFunc(rootPath)
-
-// const deleteFile = (deletePath) => {
-//   if (existsSync(deletePath)) {
-//     const files = readdirSync(deletePath)
-//     files.forEach((file) => {
-//       var curPath = path.join(deletePath, file)
-//       if (statSync(curPath).isDirectory()) {
-//         deleteFile(curPath)
-//       } else {
-//         unlinkSync(curPath)
-//       }
-//     })
-
-//     rmdirSync(deletePath)
-//   }
-// }
-
-
-// function deleteFunc(handlePath) {
-//     const files = readdirSync(handlePath)
-//     for (let file of files) {
-//         const currentPath = path.join(handlePath, file)
-//         const stat = statSync(currentPath)
-
-//         if (stat.isDirectory()) {
-
-//         }
-//     }
-// }
-
-// function deleteall(path) {
-//     var files = []
-//     if(fs.existsSync(path)) {
-//         files = fs.readdirSync(path)
-//         files.forEach(function(file, index) {
-//             var curPath = path + "/" + file
-//             if(fs.statSync(curPath).isDirectory()) { // recurse
-//                 deleteall(curPath)
-//             } else { // delete file
-//                 fs.unlinkSync(curPath)
-//             }
-//         })
-//         fs.rmdirSync(path)
-//     }
-// };
-
-// var fs = require('fs'),
-//     stdin = process.stdin,
-//     stdout = process.stdout;
-// var stats = [];
-
-// fs.readdir(process.cwd(), function(err, files) {
-//     console.log(' ');
-
-//     if (!files.length) {
-//         return console.log(' \033[31m No files to show!\033[39m\n');
-//     }
-
-//     function file(i) {
-//         var filename = files[i];
-
-//         fs.stat(__dirname + '/' + filename, function(err, stat) {
-//             stats[i] = stat;
-//             if (stat.isDirectory()) {
-//                 console.log(' ' + i + ' \033[36m' + filename + '/\033[39m');
-//             } else {
-//                 console.log(' ' + i + ' \033[90m' + filename + '\033[39m');
-//             }
-
-//             i++;
-
-//             if (i == files.length) {
-//                 read();
-//             } else {
-//                 file(i);
-//             }
-//         });
-//     }
-
-//     function read() {
-//         console.log(' ');
-//         stdout.write(' \033[33mEnter your choice : \033[39m');
-//         stdin.resume();
-//         stdin.setEncoding('utf8');
-//         stdin.on('data', option);
-//     }
-
-//     function option(data) {
-//         var filename = files[Number(data)];
-//         if (!files[Number(data)]) {
-//             stdout.write(' \033[mEnter your choice : \033[39m');
-//         } else if (stats[Number(data)].isDirectory()) {
-//             fs.readdir(__dirname + '/' + filename, function(err, files) {
-//                 console.log(' ');
-//                 console.log(' (' + files.length + 'files)');
-//                 files.forEach(function(file) {
-//                     console.log(' - ' + file);
-//                 });
-//                 console.log(' ');
-//             });
-//         } else {
-//             stdin.pause();
-//             fs.readFile(__dirname + '/' + filename, 'utf8', function(err, data) {
-//                 console.log(' ');
-//                 console.log('\033[90m' + data.replace(/(.*) /g, ' $1') + '\033[39m');
-//             });
-//         }
-//     }
-
-//     file(0);
-// });
+new CollateMarkDown()
