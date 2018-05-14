@@ -28,33 +28,33 @@ tags: English
 
 -------------------
 
-touch-触摸
-brew-酿造
-study-学习
-practice-实践
-transfer-迁移
-assemble-集合
-upstream-上游
-ahead-向前的
-fetch-取来
-remote-遥远的
-include-包括
-alias-别名
-point-点 得分
-language-语言
-Interview-面试
-decorator-装饰
-feature-特征
-hotfix-修补程序
-release-释放 发行
-screenfull-全屏
-receive-接收
-complete-完成
-story-故事
-visited-访问
-plan-计划
-issue-问题
-amend-修改
+touch 触摸
+brew 酿造
+study 学习
+practice 实践
+transfer 迁移
+assemble 集合
+upstream 上游
+ahead 向前的
+fetch 取来
+remote 遥远的
+include 包括
+alias 别名
+point 点 得分
+language 语言
+interview 面试
+decorator 装饰
+feature 特征
+hotfix 修补程序
+release 释放 发行
+screenfull 全屏
+receive 接收
+complete 完成
+story 故事
+visited 访问
+plan 计划
+issue 问题
+amend 修改
 simple-简单
 strive-努力
 aware-意识到
