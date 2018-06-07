@@ -163,4 +163,4 @@ pod search 'AFNetworking'
 
  
 ## 参考资料
-https://github.com/liuchungui/react-native-BGNativeModuleExample
+https://github.com/liuchungui/react-native-BGNativeModuleExampl

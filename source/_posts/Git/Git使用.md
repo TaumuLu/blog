@@ -194,6 +194,7 @@ git stash pop stash@{id}
 git stash apply stash@{id}    
 恢复到指定的stash，不会删除继stash list里的stashId
 git stash clear                 清空Git栈
+git stash drop stash@{0}        删除指定队列
 ```
 
 ### commit
@@ -269,3 +270,5 @@ http://www.cnblogs.com/xueweihan/p/5703144.html
 http://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories
 
 http://gitbook.liuhui998.com/index.html
+[修改git全部已提交的用户名和邮箱](https://blog.csdn.net/hello5orld/article/details/51386218)
+[修改git全部已提交的用户名和邮箱(github)](https://help.github.com/articles/changing-author-info/)

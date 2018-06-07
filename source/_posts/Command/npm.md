@@ -34,6 +34,7 @@ tags: Command
 - --save -S
 - --save-dev -D
 - --save-exact 在package.json文件指定安装模块的确切版本
+- --unsafe-perm 
 ```
 npm install <name>@<tag|version>
 npm install --tag <tag>

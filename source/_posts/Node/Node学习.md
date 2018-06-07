@@ -417,3 +417,28 @@ Node.js {
         parse()
     }
 }
+
+
+node-inspector
+
+调试工具（基于npm安装）：node-inspector
+
+执行流程：
+
+1、安装 node-inspector
+
+npm install node-inspector -g
+
+2、监听端口（执行）
+
+node-inspector
+
+run
+
+3、cmd到你的目录下执行node debug模式
+
+node --debug-brk server.js
+
+run
+
+4、打开谷歌浏览器，在地址栏输入以上显示的地址：http://127.0.0.1:8080/debug?port=5858 就可以进行调试了，成功后会到以下页面，按F8即可执行到你打断点处，如果没打则直接结束。（如果不行请刷新下）

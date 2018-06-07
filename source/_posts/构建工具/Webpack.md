@@ -558,5 +558,7 @@ http://foio.github.io/wepack-code-spliting/
 https://www.jianshu.com/p/e24ed38d89fd
 https://zhuanlan.zhihu.com/p/32093510
 
+http://webpack.wuhaolin.cn/
+
 ### React+Webpack
 https://segmentfault.com/a/1190000007373555

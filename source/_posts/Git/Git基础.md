@@ -99,6 +99,13 @@ name/            // 忽略所有此名称的文件夹
 /name            // 只忽略当前文件夹下的文件和文件夹
 ```
 
+### 清除本地缓存
+```
+git rm -r --cached .  
+git add .
+git commit -m 'update gitignore'
+```
+
 ## Git配置
 ```
 git config --list   // 列出配置信息

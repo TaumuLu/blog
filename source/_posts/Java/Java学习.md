@@ -4,9 +4,12 @@ date: 2017-08-25 17:39:12
 tags: Java
 ---
 
+## 命令
+- 运行 java
+- 编译 javac
+- 分解器 javap
 
 ## 基础语法
-- 编译与运行 java/javac
 - 变量
     + byte 
     + int 
@@ -25,31 +28,30 @@ tags: Java
     + 构造器没有返回值
 - 方法重载
     方法名 + 参数列表 => 实际调用哪一个方法
-    构建和普通方法都可以进行重载
+    构造器和普通方法都可以进行重载
 - 修饰符
     + public
     + private
     + protected
     + default
+    - static
+    - final
+        + final基本类型: 定值，只能赋值一次，不能再被修改
+        + final方法: 该方法不能被重写，private的方法默认为final的方法
+        + final类: 该类不能被继承
 - interface 
     + 使用implements来实施
     + interface中的方法默认为public
     + 我们用implements关键字来实施interface，一旦在类中实施了某个interface，必须至少在该类中定义interface的所有方法
     + 一个类可以实施不止一个的interface
 - 包管理
-    + package 
     + import
+    + package
 - 继承 extends
-- static
-- final
-    + final基本类型的数据: 定值 (constant value)，只能赋值一次，不能再被修改
-    + final方法: 该方法不能被覆盖，private的方法默认为final的方法
-    + final类: 该类不能被继承
 - abstract
     + 当一个类中出现abstract方法时，这个类的声明必须加上abstract关键字
     + abstract类不能用于创建对象
     + 继承抽象类必须用完整的方法定义，覆盖抽象类中的抽象方法，否则，衍生类依然是一个抽象类
-    + 类似于interface
 - 参数按值传递
 - 类型转换
     + 基本类型转换
@@ -75,7 +77,7 @@ tags: Java
         * toLowerCase
         * splace
 - 异常处理
-    + Trowable类
+    + Throwable类
     + throws Exception 
         * 异常声明，对异常不处理，收到异常我也向外抛
     + getMessage()
@@ -281,12 +283,12 @@ java.lang.reflect.Constructor
 - 多态的分类
     + 编译时多态（重载，严格说不能算作多态）
     + 运行时多态（重写）
-- 运行时多态的前提：
+- 运行时多态的前提
     + 继承（实现）
     + 重写
     + 向上转型
 - 向上转型与向下转型
-- 继承链中对象方法的调用的优先级：
+- 继承链中对象方法的调用的优先级
     + this.show(O)
     + super.show(O)
     + this.show((super)O)
@@ -300,6 +302,58 @@ java.lang.reflect.Constructor
 - 静态代码块
 - 静态内部类
 
+## Enum
+- 枚举变量的定义放在第一行，多个枚举变量直接用逗号隔开
+- 以分号结束以区分自定义变量，没有的自定义变量分号可以省略
+- 构造函数必须私有化，写private是多余的，默认并强制是private，也只能写private，写public是不能通过编译的
+- 枚举类不能继承其他类，也不能被其他类继承(因为已经继承了枚举类)
+- 枚举类中可以定义抽象方法，此时枚举类会编译为抽象类，一般枚举类会被编译为final的普通类(所以无法被继承)
+- 枚举类相当于定义的变量==static new当前枚举类
+- 枚举类不能继承其他类，但是还是可以实现接口
+
+## Interface
+- 不可new实例化
+- 接口没有构造函数
+- 接口的方法全部为public
+- 接口中的方法都是抽象的需要实现
+- 接口可以继承接口
+- 接口内的变量自动设置为public static final
+- 接口无修饰符缺省为package内可见，或者为public
+- 一个类可以实现多个接口
+
+## Abstract
+- 不可new实例化
+- 抽象类有构造函数
+- 抽象类中可以有非抽象方法
+- 抽象类的方法可以是public，protected or private
+
+## 异常处理
+- Throwable
+    + Error
+    + Exception
+        * RuntimeException
+        * IOException
+
+## 线程
+- 创建线程
+    + Thread
+    + Runnable
+- 线程周期概念一个线程有4种状态
+    + 创建(new)状态: 调用new 方法产生一个线程对象后、调用 start 方法前所处的状态。线程对象虽然已经创建,但还没有调用 start 方法启动,因此无法执行。当线程处于创建状态时,线程对象可以调用 start 方法进入启动状态,也可以调用 stop 方法进入停止状态。
+    + 可运行(runnable)状态: 当线程对象执行 start()方法后,线程就转到可运行状态。进入此状态只是说明线程对象具有了可以运行的条件,但线程并不一定处于运行状态。因为在单处理器系统中运行多线程程序时,一个时间点只有一个线程运行,系统通过调度机制实现宏观意义上的运行线程共享处理器。因此一个线程是否在运行,除了线程必须处于 Runnable 状态之外,还取决于优先级和调度。
+    + 不可运行(non Runnable)状态: 线程处于不可运行状态是由于线程被挂起或者发生阻塞,例如对一个线程调用 wait()函数后,它就可能进入阻塞状态;调用线程的notify 或 notifyAll 方法后它才能再次回到可执行状态。
+    + 退出(done)状态: 一个线程可以从任何一个状态中调用 stop 方法进入退出状态。线程一旦进入退出状态就不存在了,不能再返回到其他的状态。除此之外,如果线程执行完 run 方法,也会自动进入退出状态。 
+- Java中锁机制的实现方法是共享代码之前加入 synchronized 关键字
+- 线程通信
+    + Java 中线程之间的通信是通过Object 类中的 wait()、notify()、notifyAll()等几种方法实现的。Java 中每个对象内部不仅有一个对象锁之外,还有一个线程等待队列,这个队列用于存放所有等待对象锁的线程。wait 方法调用的前提条件是当前线程获取了这个对象的锁,也就是说 wait 方法必须放在同步块或同步方法中。
+
+## 引用
+- 强引用
+- 弱引用
+    + WeakReference
+- 软引用
+- 虚引用
+
 
 ## 体系
 - J2SE 桌面应用软件的编程
@@ -311,6 +365,13 @@ java.lang.reflect.Constructor
     + EJB
     + JDBC
     + JavaMail
+
+## Other
+- Java中实现真正的克隆，继承Cloneable接口
+- 注意如果一个类的成员也是一个类，而又希望支持类克隆，则要对逐级类都实现克隆
+- Overload和Override的区别
+    + Overloaded的方法是否可以改变返回值的类型?
+    + 方法的重写Overriding和重载Overloading是Java多态性的不同表现。重写Overriding是父类与子类之间多态性的一种表现，重载Overloading是一个类中多态性的一种表现。如果在子类中定义某方法与其父类有相同的名称和参数，我们说该方法被重写 (Overriding)。子类的对象使用这个方法时，将调用子类中的定义，对它而言，父类中的定义如同被“屏蔽”了。如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称为方法的重载(Overloading)。Overloaded的方法是可以改变返回值的类型
 
 ### 开源程序
 - Jive http://www.jdon.com
