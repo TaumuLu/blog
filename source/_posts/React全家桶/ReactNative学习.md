@@ -159,8 +159,14 @@ pod search 'AFNetworking'
     + onAfterUpdateTransaction 属性都初始化完成后，做一些处理
 - UIView
 
+
+## 调试
+debug地址使用localhost来调试，用本机ip网上说有跨域问题
+`http://localhost:8081/debugger-ui/`
+
 ## 报错收集
 
  
 ## 参考资料
-https://github.com/liuchungui/react-native-BGNativeModuleExampl
+https://github.com/liuchungui/react-native-BGNativeModuleExample
+https://smallpath.me/post/react-native-debug

@@ -101,7 +101,7 @@ name/            // 忽略所有此名称的文件夹
 
 ### 清除本地缓存
 ```
-git rm -r --cached .  
+git rm -r --cached .
 git add .
 git commit -m 'update gitignore'
 ```

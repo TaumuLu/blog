@@ -421,6 +421,19 @@ typedef struct {
 } 结构体变量;
 ```
 
+## 方法调用
+1. 给实例对象发送消息的过程(调用对象方法)
+根据对象的isA指针去该对象的类方法中查找，如果找到了就执行
+如果没有找到，就去该类的父类类对象中查找
+如果没有找到就一直往上找，直到跟类（NSObject）
+如果都没有找到就报错
+
+2. 给类对象发送消息(调用类方法)
+根据类对象的isA指针去元对象中查找，如果找到了就执行
+如果没有找到就去父元对象中查找
+如果如果没有找到就一直往上查找，直到根类（NSOject）
+如果都没有找到就报错
+
 
 ## 其他定义
 
@@ -443,6 +456,32 @@ typedef struct {
 - 类对象宏
 - 类函数宏
 - ...、\_\_VA_ARGS\_\_ 定义可变参数宏的，放在参数的最后
+
+### SEL类型
+- SEL类型的定义`typeof struct objc_selector *SEL`
+- SEL类型代表着方法的签名，在类对象的方法列表中存储着该签名与方法代码的对应关系
+- 每个类的方法列表都存储在类对象中
+- 每个方法都有一个与之对应的SEL类型的对象
+- 根据一个SEL对象就可以找到方法的地址，进而调用方法
+
+> 在方法的查找过程中会有缓存，第一次找的时候是一个一个的找，非常耗性能，之后再用到的时候就直接使用
+
+#### 获取SEL类型
+- 编译时，通过编译器指令\@selector来获取
+    + `SEL aSelector = @selector(methodName);`
+- 运行时，通过字符串来获取一个方法名NSSelectorFromString
+    + `SEL aSelector = NSSelectorFromString(@"methodName");`
+- 将SEL对象转为NSString对象
+    + `NSString *str = NSStringFromSelector(@selector(methodName));`
+
+#### SEL的使用
+- 检验对象是否实现了某个方法
+    + `- (BOOL) respondsToSelector:(SEL)selector;` 检查实例方法
+    + `+ (BOOL) instancesRespondToSelector:(SEL)aSelector;` 检查静态方法
+- 让对象执行某个方法
+    + `- (id) performSelector:(SEL)aSelector;`
+    + `- (id) performSelector:(SEL)aSelector withObject:(id)object;`
+    + `- (id) performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;`
 
 
 ## 知识点

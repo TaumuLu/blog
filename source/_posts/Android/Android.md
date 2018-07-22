@@ -62,6 +62,70 @@ R文件是一个java文件，因为它是被自动创建的，所以Android stud
     + switch语句的case操作必须是一个常量
 
 
+## 触摸事件
+触摸事件是种责任链模式，上层到下层的分发，下层到上层的反馈  
+触摸事件的类为MotionEvent，类似于js里的event  
+一个手势（Gesture）被定义为以ACTION_DOWN开始，以ACTION_UP结束，中间穿插其他事件  
+android的事件流和dom有点类似三个阶段：捕捉，目标，冒泡  
+
+### 事件类型
+- ACTION_DOWN
+- ACTION_UP
+- ACTION_MOVE
+- ACTION_POINTER_DOWN
+- ACTION_POINTER_UP
+- ACTION_CANCEL
+
+### 事件处理
+- dispatchTouchEvent 分发
+- onInterceptTouchEvent 拦截
+- onTouchEvent 消费
+
+#### 事件传递流程
+- ACTION_DOWN
+- dispatchTouchEvent
+- onInterceptTouchEvent
+- onTouchEvent
+
+#### dispatchTouchEvent
+分发事件的方法，在此控制拦截、处理事件以及分发给下级  
+
+##### 伪代码
+```
+// 将dispatchTouchEvent的返回值交给上层组件，用作上层判断子view是否消费
+public boolean dispatchTouchEvent(MotionEvent ev) {
+    boolean result = false;             // 默认状态为没有消费过
+
+    if (!onInterceptTouchEvent(ev)) {   // 如果没有拦截交给子View
+        result = child.dispatchTouchEvent(ev);
+    }
+
+    if (!result) {                      // 如果事件没有被子View消费，询问自身onTouchEvent
+        result = onTouchEvent(ev);
+    }
+
+    return result;                      // 如果自身onTouchEvent也没消费，返回false
+}
+```
+
+#### onInterceptTouchEvent
+拦截事件的方法，dispatchTouchEvent方法分发时会调用，且只关心此方法的返回值，返回true交由自身的onTouchEvent处理，返回false则传递给下级处理  
+顶层Activity和底层View没有此方法，因为两者是事件的起点和终点，拦截没有意义，在dispatchTouchEvent处会直接调用onTouchEvent，不需要拦截判断  
+
+#### onTouchEvent
+处理事件的方法，用作消费事件，返回true表示消费此事件，此次和之后的事件不会再流入下级处理，返回false则代表不消费事件，交由下级处理
+
+### 事件描述
+- 整个过程由顶层Activity开始分发，直到底层View，再回传回顶层Activity
+- 多个子View时计算Touch事件的坐标，判断哪个子View接收Touch事件
+- 一但组件处理了Down，之后的MOVE和UP会直接到当前处理组件的onTouchEvent中不会再流入下级处理
+- Down是关键，他到哪里被处理，之后的MOVE和UP就同样到那里
+
+### 触摸冲突
+某层组件一旦拦截处理了本次触摸事件，那么之后的同一事件序列在下次触摸事件之前都不会再分发给子组件，直接进入当前组件的onTouchEvent方法中，但之后的同一事件序列还是会经过当前组件的所有父组件，且每个手势事件都会触发父组件的dispatchTouchEvent和onInterceptTouchEvent方法，所以父组件是可以随时拦截处理掉，但父组件一旦拦截处理，就和开始说的当前组件拦截一样，之后的同一事件序列也不会再分发给当前组件直至下次触摸事件  
+
+所以说android不支持嵌套滚动，一旦父组件拦截处理，子组件在当前事件就再也没有机会参与处理，所以android又提供了NestedScrolling这套API 来支持嵌入滑动机制  
+
 
 ## android JNI实现
 
@@ -93,3 +157,8 @@ https://blog.csdn.net/carson_ho/article/details/73250163
 
 https://blog.csdn.net/mcryeasy/article/details/53523562
 https://juejin.im/post/591094ae2f301e006c2d4a61
+
+### 触摸事件
+https://blog.csdn.net/a_long_/article/details/52124606
+https://race604.com/android-nested-scrolling/
+https://www.jianshu.com/p/7ff768a77410
