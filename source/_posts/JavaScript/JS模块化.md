@@ -1,9 +1,8 @@
 ---
-title: 模块化
+title: JS模块化
 date: 2017-03-17 19:51:06
-tags: Module
+tags: JavaScript
 ---
-
 
 ## 模块化
 - 模块化解决 

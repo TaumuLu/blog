@@ -1,7 +1,7 @@
 ---
 title: Hexo搭建博客 
 date: 2017-03-12 20:31:00
-tags: Blog
+tags: 里程碑
 ---
 
 ## 安装Hexo

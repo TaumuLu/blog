@@ -1,7 +1,7 @@
 ---
 title: Canvas
 date: 2017-05-27 10:40:23
-tags: Canvas
+tags: JavaScript
 ---
 
 

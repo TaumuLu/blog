@@ -1,5 +1,5 @@
 ---
-title: 再谈js继承
+title: 再谈Js继承
 date: 2018-02-15 17:05:40
 tags: JavaScript
 ---
@@ -35,6 +35,6 @@ tags: JavaScript
 
 
 ## 参考资料
-https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf
-https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create
-https://www.zhihu.com/question/34183746
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+- https://www.zhihu.com/question/34183746
