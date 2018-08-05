@@ -102,5 +102,5 @@ tags: React全家桶
 - Redux 木偶组件(无状态组件)
 
 ## 参考链接
-http://www.oschina.net/translate/performance-engineering-with-react
-http://www.jianshu.com/p/6e38c66366cd
+- http://www.oschina.net/translate/performance-engineering-with-react
+- http://www.jianshu.com/p/6e38c66366cd

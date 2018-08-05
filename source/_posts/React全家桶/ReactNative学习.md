@@ -168,5 +168,6 @@ debug地址使用localhost来调试，用本机ip网上说有跨域问题
 
  
 ## 参考资料
-https://github.com/liuchungui/react-native-BGNativeModuleExample
-https://smallpath.me/post/react-native-debug
+- https://github.com/liuchungui/react-native-BGNativeModuleExample
+- https://smallpath.me/post/react-native-debug
+- https://zhuanlan.zhihu.com/p/40683068

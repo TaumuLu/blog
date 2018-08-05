@@ -193,4 +193,4 @@ View => Action => Dispathcer => Store => View
 写本篇文章断断续续，但也花费了很多时间，还是不一定理解最正确亦或写的很好，只是帮助现阶段的自己成长学习，身为技术人唯有不断沉淀自己才能成为别人眼里的大神，而不是当别人眼里的大神是什么感受呢！不甘心
 
 ## 参考链接
-http://www.open-open.com/lib/view/open1481264095497.html
+- http://www.open-open.com/lib/view/open1481264095497.html
