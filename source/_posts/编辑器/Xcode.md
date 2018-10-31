@@ -46,6 +46,20 @@ Xcode弹框提示是否加载插件选择Load Bundles
 项目地址有完整的安装说明，已用有几个小bug，也算不影戏使用  
 还是要多用vim，方便不同编辑器的快速开发，正在努力适应中  
 
+## 升级Xcode10
+
+```
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib
+
+-l"stdc++.6.0.9"
+libstdc++.6.tbd
+libstdc++.6.0.9.tbd
+```
+
+## 配置
+
+### 配置文件
+`~/Library/MobileDevice/Provisioning" "Profiles`
 
 ## 参考资料
 https://blog.csdn.net/garrison_Z/article/details/44730417

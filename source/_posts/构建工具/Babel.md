@@ -58,7 +58,7 @@ babel转码真正需要的是plugins，presets是建立在plugin之上的概念�
 - babel-preset-react react转码规则
 - babel-preset-react-native react-native转码规则
     + babel-preset-react-native-stage-0
-- stage-\[number] 
+- stage-\[number] 当年最新规范的草案，每年更新
     + babel-preset-stage-0
     + babel-preset-stage-1
     + babel-preset-stage-2

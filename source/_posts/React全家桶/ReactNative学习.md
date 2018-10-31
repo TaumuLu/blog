@@ -29,6 +29,16 @@ pod search 'AFNetworking'
 - Android SDK
 - Genymotion
 
+### 启动指定模拟器
+```
+xcrun simctl list devices
+react-native run-ios --simulator "iPhone 7 Latest"
+```
+
+### 手动打bundle包
+```
+sudo react-native bundle --entry-file index.ios.js --bundle-output ./ios/main.jsbundle --platform ios --assets-dest ./ios --dev false
+```
 
 ## 基础
 只用ReactNatiev开发过一段时间，当时还不熟悉React用法就去写所以RN，写的代码质量很差，还是应先打好基础
@@ -93,7 +103,7 @@ pod search 'AFNetworking'
 | :-- | :-- | :-- | :-- |
 | drawable-xxhdpi | 480dpi | 1080x1920 | 144x144 |
 | drawable-xhdpi |  320dpi | 720x1280 | 96x96 |
-| drawable-hdpi | 240dpi | 400x800 | 72x72 |
+| drawable-hdpi | 240dpi | 480x800 | 72x72 |
 | drawable-mdpi | 160dpi | 320x480 | 48x48 |
 | drawable-ldpi | 120dpi | 240x320 | 36x36 |
 
@@ -166,6 +176,15 @@ debug地址使用localhost来调试，用本机ip网上说有跨域问题
 
 ## 报错收集
 
+## 报错解决
+```
+./gradlew --stop
+./gradlew stop然后执行 ./gradlew assembleRelease
+
+watchman watch-del-all
+rm -rf node_modules && npm install
+npm start -- --reset-cache
+```
  
 ## 参考资料
 - https://github.com/liuchungui/react-native-BGNativeModuleExample

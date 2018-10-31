@@ -28,4 +28,4 @@ tags: 构建工具
 - https://juejin.im/post/5a1bcdadf265da430e4ee137
 - https://github.com/happylindz/blog/issues/6
 
-- https://webpack.docschina.org/guides/build-performance/#loaders
+- https://webpack.docschina.org/guides/build-performance/#loader

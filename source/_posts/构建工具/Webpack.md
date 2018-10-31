@@ -233,6 +233,25 @@ module.exports = {
 - 其他选项
     + --color，--colors
         显示静态资源的颜色，如会用红色显示耗时较长的步骤
+
+#### 其他
+```
+// webpack                             最基本的启动webpack命令，执行一次开发时的编译
+// webpack --config XXX.js             使用另一份配置文件（比如webpack.config2.js）来打包
+// webpack --watch                     监听变动并自动打包
+// webpack -p                          对打包后的文件进行压缩
+// webpack -d                          生成map映射文件，告知哪些模块被最终打包到哪里了
+// webpack -w                          提供watch方法，实时进行打包更新
+// webpack --colors                    显示静态资源的颜色，如会用红色显示耗时较长的步骤
+// webpack --profile                   输出性能数据，可以看到每一步的耗时
+// webpack --progress                  显示编译进度
+
+// webpack --display-modules           显示默认node_modules下被隐藏的模块
+// webpack --display-chunks            展示编译后的分块
+// webpack --display-reasons           显示更多引用模块原因
+// webapck --display-error-details     显示更多报错信息，方便定位
+// webpack --sort-modules-by, --sort-chunks-by, --sort-assets-by 将modules/chunks/assets进行列表排序
+```
                                  
 ### devtool配置
 - source-map
@@ -259,7 +278,6 @@ module.exports = {
     或屏蔽不需要处理的文件(文件夹)(可选)
 - query
     为loaders提供额外的设置选项(可选)可用?代替
-
 - loader主要有3种使用方式：
     1. 在页面里面引用资源使用
         `require("url-loader?mimetype=image/png!./file.png");`
@@ -551,14 +569,18 @@ server.listen(9090);
 
 
 ## 参考资料
-https://segmentfault.com/q/1010000009070061/a-1020000009073036
-http://www.jianshu.com/p/2b81262898a4
-http://foio.github.io/wepack-code-spliting/
+- https://segmentfault.com/q/1010000009070061/a-1020000009073036
+- http://www.jianshu.com/p/2b81262898a4
+- http://foio.github.io/wepack-code-spliting/
 
-https://www.jianshu.com/p/e24ed38d89fd
-https://zhuanlan.zhihu.com/p/32093510
+- https://www.jianshu.com/p/e24ed38d89fd
+- https://zhuanlan.zhihu.com/p/32093510
 
-http://webpack.wuhaolin.cn/
+- http://webpack.wuhaolin.cn/
+- https://segmentfault.com/a/1190000005106383
 
 ### React+Webpack
-https://segmentfault.com/a/1190000007373555
+- https://segmentfault.com/a/1190000007373555
+
+### Webpack4
+- https://segmentfault.com/a/1190000015237322 
