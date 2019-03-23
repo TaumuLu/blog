@@ -377,6 +377,12 @@ java.lang.reflect.Constructor
 - Jive http://www.jdon.com
 - Pet Store
 
+### java名词
+- aop
+- bean
+
+### 相关书籍
+- 编码：隐匿在计算机软硬件背后的语言
 
 ## 参考资料
 http://blog.csdn.net/s10461/article/details/53941091

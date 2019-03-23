@@ -169,6 +169,20 @@ sudo react-native bundle --entry-file index.ios.js --bundle-output ./ios/main.js
     + onAfterUpdateTransaction 属性都初始化完成后，做一些处理
 - UIView
 
+## Jenkins构建命令
+```bash
+#security unlock-keychain -p "1" /Users/terminus/Library/Keychains/login.keychain
+#npm install --registry http://registry.npm.terminus.io/
+#work_path=$(pwd)
+#cd $work_path && cd android && ./gradlew clean assembleFlavors_jenkinsRelease -DXHSD_PUSH_ENV=Test && fir publish app/build/outputs/apk/app-flavors_jenkins-release.apk -T ${FIR_TOKEN} &
+#cd $work_path && cd ios && pod update --no-repo-update && rm -rf build/* && xcodebuild clean && xcodebuild -workspace xinhuaMobile.xcworkspace -scheme xinhuaMobile_inHouse_test -configuration Test -derivedDataPath build && xcrun -sdk iphoneos  PackageApplication -v ./build/Build/Products/Test-iphoneos/xinhuaMobile_inHouse.app -o /Users/terminus/terminus/ipa/xinhuaMobile_inHouse_test.ipa && fir publish /Users/terminus/terminus/ipa/xinhuaMobile_inHouse_test.ipa -T ${FIR_TOKEN}
+#curl 'https://oapi.dingtalk.com/robot/send?access_token=59a79f2f12a2fd8dff337609608c0c337e2af0b1a5216a8befcf253fdd816c0f' -H 'Content-Type:application/json' -d '{ "msgtype": "link","link": {"text": "新华书店inHouse_App打包成功，点击链接扫码下载","title": "新华书店App打包成功","picUrl": "","messageUrl": "https://fir.im/97nu"}}'
+#jenkins-mobile-cli build --platform=rn --android-task=assembleFlavors_jenkinsRelease --ios-scheme=xinhuaMobile_inHouse_test --ios-configurations=Test --log-quiet=true --ding-talk-token=59a79f2f12a2fd8dff337609608c0c337e2af0b1a5216a8befcf253fdd816c0f --fir-token=${FIR_TOKEN} --keychain-file=${KEYCHANIN_FILE} --keychain-password=${KEYCHAIN_PASSWORD}
+
+#--ding-talk-token=ba67df9bb2da8156cd8aacc297fc18eab76767bf29c6ff1324573e0ce81301d1
+#test ding talk token a0c0bed514affe974d2644bdabeb408d2d718e1810069fc61ac49fc29ab9429a
+jenkins-mobile-cli build --platform=rn --android-task=assembleRelease --android-DTEST=1 --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --ios-scheme=jiajiayueMobile_test --ios-configurations=Test   --fir-token=982a194018b86cf315c34ea6e507d541 --keychain-file=${KEYCHANIN_FILE} --keychain-password=${KEYCHAIN_PASSWORD} --log-quiet=true --static-scan=false --ding-talk-token=100eca1a5221071113ca6854ac8198728e7e1f5118bc4d4cd9d7cc79f52fee8a
+```
 
 ## 调试
 debug地址使用localhost来调试，用本机ip网上说有跨域问题

@@ -113,3 +113,14 @@ ssh hisense-paas1 'ssh hisense-test-web "cat test.txt"' > test.txt
 ssh -CfNg -L 7072:hisense-test-web:6379 hisense-paas1
 // ssh -L <local port>:<remote host>:<remote port> <SSH hostname>
 ```
+
+### ssh免密登录
+- [HowTos/Network/SecuringSSH - CentOS Wiki](https://wiki.centos.org/HowTos/Network/SecuringSSH)
+
+```
+ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+```
+
+### ssh相关命令
+- ssh -vvv
+- /usr/sbin/sshd -d -p 2222 (在2222端口启动一个带debug输出的sshd)

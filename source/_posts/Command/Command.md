@@ -148,7 +148,21 @@ git config --global credential.helper store           保存提交密码
 git config --global alias.st "status"
 
 git update-index --assume-unchanged PATH_TO_FILE
+
+git config --global alias.lcrev "log --reverse --no-merges --stat @{1}.."
+git config --global alias.dl "diff @{1}.."
 ```
+
+### 对比差异
+可以使用refspecs相当简单地完成此操作
+
+git pull origin
+git diff @{1}..
+
+current=`git rev-parse HEAD`
+git pull origin
+git diff $current..
+
 
 ## Mongodb
 
@@ -212,3 +226,50 @@ ipconfig /flushdns                清除DNS缓存
 ```
 Array.from(document.querySelectorAll('.simditor-body span')).forEach((span) => span.style.fontSize = 'inherit')  // pmp
 ```
+
+## 创建https的SSL证书
+```shell
+openssl req \
+    -newkey rsa:2048 \
+    -x509 \
+    -nodes \
+    -keyout server.key \
+    -new \
+    -out server.crt \
+    -subj /CN=dev-m.idf66.com \
+    -reqexts SAN \
+    -extensions SAN \
+    -config <(cat /System/Library/OpenSSL/openssl.cnf \
+        <(printf '[SAN]\nsubjectAltName=DNS:dev-m.idf66.com')) \
+    -sha256 \
+    -days 3650
+```
+
+### nginx配置
+``` conf
+server {
+  listen 80;
+  listen [::]:80;
+  listen 443 ssl;
+  server_name m.dev.shop.hisense.com;
+  ...
+  ssl_certificate /Users/martin/MyWorkPlace/test2/dev/server.crt;
+  ssl_certificate_key /Users/martin/MyWorkPlace/test2/dev/server.key;
+  ...
+}
+```
+
+### chrome相关设置
+```
+chrome://net-internals/#hsts
+```
+
+### gradle命令
+```
+./gradlew compileDebugSource --stacktrace -info
+./gradlew clean --refresh-dependencies
+```
+
+
+
+

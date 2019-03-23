@@ -132,6 +132,9 @@ https://www.zhihu.com/question/20205127
 ### 安全设置显示任何来源选项
 `sudo spctl --master-disable`
 
+### 关闭自动开机
+`sudo nvram AutoBoot=%00`
+
 ### 隐藏文件设置
 - 显示 `defaults write com.apple.finder AppleShowAllFiles -bool true`
 - 隐藏 `defaults write com.apple.finder AppleShowAllFiles -bool false`

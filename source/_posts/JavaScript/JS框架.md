@@ -1,0 +1,131 @@
+---
+title: JS框架
+date: 2018-12-16 16:21:20
+tags: JavaScript
+---
+
+## 框架
+- pawjs `pwa渐进式Web应用程序框架`
+- david `检查依赖包是否过期`
+- node-cross-spawn `node的spawn和spawnSync的跨平台解决方案`
+- getmac `获取当前计算机的mac地址`
+- jStat `js统计库`
+- chokidar `文件监控的库`
+- inversify `依赖注入框架`
+- publish-please `npm publish的安全且功能强大的替代品`
+- [htmlparser](https://johnresig.com/files/htmlparser.js) `jquery作者John Resig写的，没有对应的npm包`
+- cherow `javascript解析器`
+- gatsby `基于React静态网站生成器`
+- hexo `博客框架`
+- next `轻量级服务端渲染框架`
+- docz `生成文档`
+- semver `npm语义版本`
+
+### 脚手架
+- create-react-app `快速创建react应用`
+- roadhog `类似于create-react-app，提供可定制的配置`
+- vue-cli `vue脚手架工具`
+
+### 编译
+- swc `类似于babel的js编译器`
+
+### 打包构建
+- lerna `管理多个包项目的工具`
+- rollup `用es6模块打包代码的构建工具(支持css和js打包)`
+- poi `一个webpack的封装库，使开发变的简单`
+- fuse-box `高性能的JS打包/加载器`
+- parcel `快速，零配置的Web应用程序打包器`
+
+#### webpack
+模块打包器，打包所有的资源
+
+- webpack-jarvis `基于浏览器的Webpack仪表板`
+- webpack-chain `用于生成和简化Webpack配置修改的链接api`
+- webpack-merge `合并多个webpack配置的工具`
+- webpack-blocks `用于webpack配置的功能构建块，简化webpack配置`
+- parallel-webpack `并行构建多配置`
+- stats-webpack-plugin `写入构建信息到文件`
+
+##### 插件
+- html-webpack-include-assets-plugin `dll资源引用`
+- add-asset-html-webpack-plugin `dll资源引用`
+- dll-link-webpack-plugin `dll资源引用`
+
+### react生态
+- unstated `简明的状态管理工具`
+- mobx `响应式状态管理库`
+- react-sticky `粘性吸顶react组件`
+
+### 服务
+- express `轻量级Web框架`
+- koa `下一代中间件web框架`
+- pm2 `进程管理工具`
+- serve-static `提供静态文件`
+- cors node `CORS中间件`
+- compression `node压缩中间件，deflate gzip`
+- thinkjs `基于koa实现的node框架`
+- nest `渐进式Node.js框架`
+- pandora `node.js应用程序管理器`
+- Rendora `动态服务器端渲染，为爬虫提供零配置服务器端渲染`
+
+### 命令工具
+- shx `用于node端的跨平台Shell命令`
+- rimraf `node端的rm -rf工具`
+- minimist `解析参数选项`
+- commander `命令行界面的完整解决方案`
+- arg `命令行选项解析器`
+- yargs `解析参数，构建交互式命令行工具`
+- opn `打开网站，文件，可执行文件等内容`
+- diff-so-fancy `git-diff美化工具`
+- loadtest `负载测试`
+- npm-check `依赖更新检查库`
+- spy-debugger `页面调试，抓包工具`
+- concurrently `跨平台同时运行多个命令`
+- npm-run-all `并行或顺序运行多个npm脚本`
+- oclif `node开放cli框架`
+- meow `cli框架`
+- inquirer `常用交互式命令行用户界面的集合`
+
+### 调试
+- chalk `控制台打印带颜色`
+- debug `JS调试工具`
+- vorlon `用于远程调试和测试JavaScript`
+- easy-monitor `node性能监控、分析工具`
+- memwatch `检测泄漏检测`
+- heapdump `生成内存快照`
+- vconsole `一个轻量、可拓展、针对手机网页的前端开发者调试面板`
+
+### 规范
+- standard `javaScript代码规范`
+- pretty-quick `基于代码管理工具格式化代码`
+- husky `git钩子`
+- commitlint `lint提交消息`
+- lint-staged `在git staged文件上运行linters`
+- commitizen `撰写合格Commit message的工具`
+- xo `JavaScript happiness style linter`
+
+### 模版引擎
+- mustache `模版引擎`
+- handlebars `基于mustache的模版引擎`
+
+### 绘图
+- sigma `专门用于绘图的JavaScript库`
+- pts `用于可视化和创意编码的库`
+- shapeshifter `适用于Android，iOS和Web的SVG图标动画工具`
+- popmotion `精简的动画库`
+- gojs `用于交互式流程图，组织结构图，设计工具，规划工具，可视语言的JavaScript图表库`
+- plottable `基于D3构建的模块化图表组件库`
+
+### 测试
+- jest `js自动化测试框架`
+- mocha `js自动化测试框架`
+- intern `js自动化测试框架`
+- ava `并发测试框架`
+- chai `js断言库`
+
+### 编辑器
+- Ace `javaScript编写的独立代码编辑器`
+- monaco-editor `基于浏览器的代码编辑器`
+
+## 参考资料
+- [rollup](https://www.rollupjs.com/guide/zh)

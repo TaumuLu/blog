@@ -31,3 +31,11 @@ tags: Service
 alias会把location后面配置的路径丢弃掉
 使用alias时，目录名后面一定要加"/"
 alias只能位于location块中
+
+### set
+设置变量  
+在Nginx中变量的值类型只有一种，即字符串类型，故不加引号或加双引号都是可以正确解析的，但如果有空格，需要用引号  
+
+
+## 链接
+https://fankeke.github.io/2017/03/09/Nginx%E4%B8%ADSet%E5%8F%98%E9%87%8F%E7%9A%84%E2%80%9C%E6%9D%A5%E9%BE%99%E5%8E%BB%E8%84%89/

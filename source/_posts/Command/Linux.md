@@ -128,6 +128,9 @@ chmod -R a+r *  // 将目前目录下的所有文件与子目录皆设为任何�
 chmod --reference=file1 file2  // 将file2的权限改为和file1相同
 ```
 
+### 安装软件
+- [yum安装jenkins - 第一天 - CSDN博客](https://blog.csdn.net/diyiday/article/details/79024825)
+- [Linux查看系统信息的一些命令及查看已安装软件包的命令 - 小 楼 一 夜 听 春 雨 - 博客园](https://www.cnblogs.com/kex1n/p/5909617.html)
 
 ## 参考链接
 http://man.linuxde.net/chmod
