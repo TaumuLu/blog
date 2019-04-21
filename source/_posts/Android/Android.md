@@ -23,7 +23,7 @@ SingleTop和SingleTask有额外的钩子函数onNewIntent
         * FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS android:excludeFromRecents="trure"
 
 ## 资源文件
-R文件（R.java）是由Android 资源打包工具AAPT（Android Asset Packaging Tool)）自动生成，包含了res目录下所有资源的Id。每当创建一个新资源，会自动地在R文件中添加该资源的id。我们可以在代码中使用该id，执行任何有关该资源的操作。注意，如果我们手动删除R文件，编译器会自动创建。 
+R文件（R.java）是由Android 资源打包工具AAPT（Android Asset Packaging Tool）自动生成，包含了res目录下所有资源的Id。每当创建一个新资源，会自动地在R文件中添加该资源的id。我们可以在代码中使用该id，执行任何有关该资源的操作。注意，如果我们手动删除R文件，编译器会自动创建。 
 
 R文件是一个java文件，因为它是被自动创建的，所以Android studio 会把它进行隐藏，具体位置在 app/build/generated/source/r/debug
 

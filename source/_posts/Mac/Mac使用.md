@@ -181,6 +181,9 @@ sudo launchctl unload -w /Library/LaunchDaemons/*.plist
 - 修改执行权限
 sudo chown root:wheel /Library/LaunchDaemons/*.plist
 
+### Network Link Conditioner
+`Additional tools for Xcode`
+
 ## bash命令安装应用
 ```bash
 #!/usr/bin/env zsh

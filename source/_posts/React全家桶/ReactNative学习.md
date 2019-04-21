@@ -40,6 +40,14 @@ react-native run-ios --simulator "iPhone 7 Latest"
 sudo react-native bundle --entry-file index.ios.js --bundle-output ./ios/main.jsbundle --platform ios --assets-dest ./ios --dev false
 ```
 
+### rn开发调试
+```
+// 关闭黄屏警告
+console.disableYellowBox = true
+// debug下chrome显示网络请求信息
+GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
+```
+
 ## 基础
 只用ReactNatiev开发过一段时间，当时还不熟悉React用法就去写所以RN，写的代码质量很差，还是应先打好基础
 

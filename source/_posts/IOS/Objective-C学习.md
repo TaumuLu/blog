@@ -194,7 +194,7 @@ tags: IOS
 - 重写setter和getter实现
     + 只重写setter和getter其中之一，可以直接重写
     + 同时重写setter和getter，需要加上@synthesize propertyName = _propertyName;
-        * 系统不会帮你自动生成这个实例变量，所以需要手机加上@synthesize，此时实例变量权限为protected
+        * 系统不会帮你自动生成这个实例变量，所以需要手动加上@synthesize，此时实例变量权限为protected
 
 ### 静态变量
 - 语法 `static type virableName;`
@@ -262,7 +262,7 @@ tags: IOS
 // 方法类型 (返回类型)方法名:(参数类型)参数名称 参数二签名:(参数二类型)参数二名称
 // 调用方法
 // [对象 方法名:参数 参数二签名:参数二 参数三签名:参数三]
-// 方法内真正使用参数，签名只是
+// 方法内真正使用参数名，签名只是区分方法的
 @end
 // 实现
 @implementation 类名
@@ -288,7 +288,7 @@ tags: IOS
 
 - 命名
     + 类名+类别名称
-    + 使用vsCode，新建Object-C Fie选File Type为Category会自动创建
+    + 使用xCode，新建Object-C Fie选File Type为Category会自动创建
 - 类似用java聚合类的使用
 - 可以添加实例方法，类方法，甚至可以实现协议，添加属性，不能增加实例变量
     + 利用RunTime也可以在Category中添加实例变量
@@ -375,12 +375,12 @@ OC系统类型的变量、自定义类型的变量都是指针
     + 所以只能用->来访问真实地址的属性
     + 如果用*解引用到的是真实地址，可以用.去直接访问(*obj)._property
 - 指针 *
-    + 运算符，代表读取星号后边这个地址指向的值
+    + 取值运算符，代表读取星号后边这个地址指向的值
     + 声明时加*表示声明了一个指针变量
     + 使用时加*表示解引用，取*后面指针变量指向的内存地址(真正的值)
     + 指针访问用箭头符号->
 - 引用 &
-    + 运算符，代表读取&后边这个值的指针地址
+    + 取地址运算符，代表读取&后边这个值的指针地址
     + 声明时加&表示创建一个变量的别名
     + 使用时不用加&，直接使用声明的引用名
     + 如果在使用加了&表示取这个变量的指针地址
@@ -520,7 +520,8 @@ https://my.oschina.net/cobish/blog/356550
 https://tech.meituan.com/DiveIntoCategory.html
 
 ### 指针
-http://skx926.com/2017/03/03/pointer-and-reference/
+http://skx926.me/2017/03/03/pointer-and-reference/
+    https://github.com/skx926/skx926.github.io/blob/master/2017/03/03/pointer-and-reference/index.html
 https://blog.csdn.net/senwin2009/article/details/48439361
 
 ### 插件

@@ -369,6 +369,9 @@ module.exports = {
         在webpack-dev-server的配置中添加：hot:true
     - 要使HMR功能生效，还需要做一件事情，就是要在应用热替换的模块或者根模块里面加入允许热替换的代码。否则，热替换不会生效，还是会重刷整个页面
 
+#### 关闭热加载
+地址栏带上参数?hotreload=false
+
 #### 相关代码
 ```js
 // Node.js API代码

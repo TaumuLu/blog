@@ -151,6 +151,14 @@ git update-index --assume-unchanged PATH_TO_FILE
 
 git config --global alias.lcrev "log --reverse --no-merges --stat @{1}.."
 git config --global alias.dl "diff @{1}.."
+
+git log --graph --oneline
+
+git clone --single-branch --depth=1 <directory>
+git fetch --unshallow
+
+// 列出所有远程分支及最后commit时间并按时间排序
+for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort -r
 ```
 
 ### 对比差异

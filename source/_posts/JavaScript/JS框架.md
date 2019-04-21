@@ -20,6 +20,13 @@ tags: JavaScript
 - next `轻量级服务端渲染框架`
 - docz `生成文档`
 - semver `npm语义版本`
+- reflect-metadata `元编程库`
+- inversify `ioc库，依赖注入、依赖查询`
+- nprogress `YouTube风格的web端进度条`
+- progress `node端命令行进度条`
+- dragula `拖放库`
+- omi `腾讯出品，下一代前端统一框架 - 支持桌面Web、移动H5、小程序、云开发`
+- meteor `web APP开发框架`
 
 ### 脚手架
 - create-react-app `快速创建react应用`
@@ -59,6 +66,9 @@ tags: JavaScript
 ### 服务
 - express `轻量级Web框架`
 - koa `下一代中间件web框架`
+- strongloop `node服务，API经济提供动力`
+- restify `REST风格服务应用框架`
+- hapi `构建应用程序和服务的框架，提供基础设施代码`
 - pm2 `进程管理工具`
 - serve-static `提供静态文件`
 - cors node `CORS中间件`
@@ -67,6 +77,7 @@ tags: JavaScript
 - nest `渐进式Node.js框架`
 - pandora `node.js应用程序管理器`
 - Rendora `动态服务器端渲染，为爬虫提供零配置服务器端渲染`
+- lru-cache `缓存库，只缓存最频繁访问的内容`
 
 ### 命令工具
 - shx `用于node端的跨平台Shell命令`
@@ -85,6 +96,7 @@ tags: JavaScript
 - oclif `node开放cli框架`
 - meow `cli框架`
 - inquirer `常用交互式命令行用户界面的集合`
+- ora `打印出优雅的文本小图标展示`
 
 ### 调试
 - chalk `控制台打印带颜色`
@@ -126,6 +138,10 @@ tags: JavaScript
 ### 编辑器
 - Ace `javaScript编写的独立代码编辑器`
 - monaco-editor `基于浏览器的代码编辑器`
+
+#### 富文本编辑器
+- draft-js
+- react-draft-wysiwyg
 
 ## 参考资料
 - [rollup](https://www.rollupjs.com/guide/zh)
