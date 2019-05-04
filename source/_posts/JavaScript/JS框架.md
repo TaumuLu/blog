@@ -27,6 +27,8 @@ tags: JavaScript
 - dragula `拖放库`
 - omi `腾讯出品，下一代前端统一框架 - 支持桌面Web、移动H5、小程序、云开发`
 - meteor `web APP开发框架`
+- jss `使用JavaScript的方式以声明css，无冲突和可重用的方式描述样式，与框架无关`
+- react-hot-loader `实时调整React组件`
 
 ### 脚手架
 - create-react-app `快速创建react应用`
@@ -34,7 +36,11 @@ tags: JavaScript
 - vue-cli `vue脚手架工具`
 
 ### 编译
+- bable `js编译器`
 - swc `类似于babel的js编译器`
+
+#### bable
+- babel-plugin-module-resolver `路径解析转化`
 
 ### 打包构建
 - lerna `管理多个包项目的工具`
