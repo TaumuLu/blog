@@ -258,20 +258,25 @@ brew cask install google-chrome virtualbox iterm2 sequel-pro alfred3 visual-stud
 brew cask alfred3 link
 ```
 
+## QuickLook
+- https://github.com/sindresorhus/quick-look-plugins
+- https://sspai.com/post/31927
+- https://www.jianshu.com/p/34d5e66dcf52
+
 ## 其他
-http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html
-http://freemacsoft.net/
-http://reactide.io/
+- http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html
+- http://freemacsoft.net/
+- http://reactide.io/
 
 ## 参考链接
-https://www.zhihu.com/question/22624898/answer/105234217
-http://www.cnblogs.com/52php/p/5684348.html
-http://macshuo.com/?p=676
-https://blog.csdn.net/waneto2008/article/details/52486433
+- https://www.zhihu.com/question/22624898/answer/105234217
+- http://www.cnblogs.com/52php/p/5684348.html
+- http://macshuo.com/?p=676
+- https://blog.csdn.net/waneto2008/article/details/52486433
 
 ## 破解软件
-[SizeUp](http://xclient.info/s/sizeup.html?t=444caf1f97867f539878507e77b1f7f48e4b7434)  
-[karabiner](https://pqrs.org/osx/karabiner/)
+- [SizeUp](http://xclient.info/s/sizeup.html?t=444caf1f97867f539878507e77b1f7f48e4b7434)  
+- [karabiner](https://pqrs.org/osx/karabiner/)
 
 
 

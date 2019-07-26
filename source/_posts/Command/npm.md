@@ -5,37 +5,37 @@ tags: Command
 ---
 
 ## 命令
-- npm 
-    + init
-    + set
-    + config
-    + info
-    + search
-    + list
-        * -g --depth=0
-    + update
-    + install
-    + uninstall
-    + run
-    + bin 相对于当前目录的，Node模块的可执行脚本所在的目录
-    + adduser
-    + login
-    + publish
-    + deprecate
-    + owner
-        * ls
-    + home
-    + repo
-    + outdated
-    + prune
-    + shrinkwrap
+- init
+- set
+- config
+- info
+- search
+- list
+    * -g --depth=0
+- update
+- install
+- uninstall
+- run
+- bin 相对于当前目录的，Node模块的可执行脚本所在的目录
+- adduser
+- login
+- publish
+- deprecate
+- owner
+    * ls
+- home
+- repo
+- outdated
+- prune
+- shrinkwrap
 
 ### install
-- --save -S
-- --save-dev -D
-- --save-exact 在package.json文件指定安装模块的确切版本
-- --unsafe-perm 
-```
+- `--save -S`
+- `--save-dev -D`
+- `--save-exact` 在package.json文件指定安装模块的确切版本
+- `--unsafe-perm`
+
+```bash
 npm install <name>@<tag|version>
 npm install --tag <tag>
 ```
@@ -61,7 +61,7 @@ npm install --tag <tag>
     + 发布指定标签，默认发布标签是latest
 - 私有模块
     +  npm init --scope=<yourscope\>
-- 废弃版本 
+- 废弃版本
     + npm deprecate package@"< 0.2.3" "critical bug fixed in v0.2.3"
 
 ### shrinkwrap
@@ -85,3 +85,37 @@ prefix = /home/username/npm
 - scripts
     + 运行脚本
     + 可使用Linux命令(| && &)
+
+## 全局包
+
+- @terminus/herd
+- @terminus/nusi-sdk
+- @vue/cli
+- @vue/cli-service-global
+- babel-cli
+- create-next-app
+- diff-so-fancy
+- easy-monitor
+- flow-remove-types
+- generator-react-server
+- genfe-cli
+- gitbook
+- gitbook-cli
+- hexo
+- http-server
+- lissom
+- live-server
+- loadtest
+- lodash-cli
+- ndb
+- npm
+- npm-check
+- react-native-cli
+- react-native-git-upgrade
+- react-server-cli
+- spy-debugger
+- think-cli
+- typescript
+- vue-cli
+- yo
+- expo-cli

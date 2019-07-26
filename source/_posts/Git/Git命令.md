@@ -154,6 +154,10 @@ git remote set-url origin git@github.com:userame/repository.git
 # 重命名分支，如果newbranch名字分支已经存在，则需要使用-M强制重命名，否则，使用-m进行重命名
 git branch -m | -M oldbranch newbranch 
 
+# 图形化查看git日志
+git log --graph --oneline
+git log --graph --pretty=oneline --abbrev-commit
+
 # 将已提交的commit添加到当前分支
 git cherry-pick <commit id>
 ```
@@ -241,4 +245,5 @@ http://yourname:password@git.oschina.net/name/project.git
 
 - http://gitbook.liuhui998.com/index.html
 - [修改git全部已提交的用户名和邮箱](https://blog.csdn.net/hello5orld/article/details/51386218)
-- [修改git全部已提交的用户名和邮箱(github)](https://help.github.com/articles/changing-author-info/)
+- [修改git全部已提交的用户名和邮箱(github)](https://help.github.com/articles/changing-author-info)
+- [彻底搞懂 Git-Rebase](http://jartto.wang/2018/12/11/git-rebase)

@@ -207,6 +207,10 @@ watchman watch-del-all
 rm -rf node_modules && npm install
 npm start -- --reset-cache
 ```
+
+### 升级rn导致的错误
+- https://faichou.space/upgrade-rn-was-a-chaos/idnex/
+- [第三方依赖找不到react头文件](https://github.com/facebook/react-native/issues/11721)
  
 ## 参考资料
 - https://github.com/liuchungui/react-native-BGNativeModuleExample
