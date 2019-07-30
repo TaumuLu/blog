@@ -148,7 +148,7 @@ git config --list   // 列出配置信息
 git config --global user.name "user"  
 git config --global user.email "user@email.com"
 
-git config core.longpaths true                // 支持长文件名     
+git config --global core.longpaths true                // 支持长文件名     
 git config --global core.quotepath false      // 路径中文转义
 git config --global credential.helper store   // 记住提交密码
 git config --global core.ignorecase false              // 关闭忽略大小写

@@ -139,6 +139,8 @@ https://www.zhihu.com/question/20205127
 - 显示 `defaults write com.apple.finder AppleShowAllFiles -bool true`
 - 隐藏 `defaults write com.apple.finder AppleShowAllFiles -bool false`
 
+`KillAll Finder`
+
 ### 清除DNS缓存
 ```
 sudo dscacheutil -flushcache
@@ -198,6 +200,7 @@ fi
 
 if [[ ! -x $(/usr/bin/which -s brew) ]]; then
   echo "Installing Homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 fi
 
