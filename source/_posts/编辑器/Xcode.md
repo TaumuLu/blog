@@ -37,7 +37,7 @@ Xcode弹框提示是否加载插件选择Load Bundles
 若不小心点接了Skip Bundles，则需要清除Xcode插件设置  
 运行以下命令清除，命令中的Xcode-X.X改成自己的Xcode版本
 
-`defaults delete  com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-X.X`
+`defaults delete com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-X.X`
 
 ### 使用vim开发
 让Xcode支持Vim操作，不得不说Xcode的自带的快捷键操作太少也不不好用了，更加坚定了我要用Vim做所有编辑器开发的决心  
