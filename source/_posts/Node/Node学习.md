@@ -10,11 +10,11 @@ tags: Node
 - console
     + log()
     + error()
-    + trace() 
+    + trace()
 process
     + argv
     + stdout
-        * write() 
+        * write()
     + stdin
         * resume()
     + stderr

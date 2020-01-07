@@ -11,13 +11,13 @@ tags: Java
 
 ## 基础语法
 - 变量
-    + byte 
-    + int 
-    + char 
-    + short 
-    + long 
-    + float 
-    + double 
+    + byte
+    + int
+    + char
+    + short
+    + long
+    + float
+    + double
     + boolean
 - 基本类型初始值
     + 数值型: 0
@@ -39,7 +39,7 @@ tags: Java
         + final基本类型: 定值，只能赋值一次，不能再被修改
         + final方法: 该方法不能被重写，private的方法默认为final的方法
         + final类: 该类不能被继承
-- interface 
+- interface
     + 使用implements来实施
     + interface中的方法默认为public
     + 我们用implements关键字来实施interface，一旦在类中实施了某个interface，必须至少在该类中定义interface的所有方法
@@ -78,7 +78,7 @@ tags: Java
         * splace
 - 异常处理
     + Throwable类
-    + throws Exception 
+    + throws Exception
         * 异常声明，对异常不处理，收到异常我也向外抛
     + getMessage()
     + 自定义异常
@@ -97,7 +97,7 @@ tags: Java
         * newInstance()
         * getFields()
         * getMethods()
-- Run-Time 
+- Run-Time
 - TypeIdentification
 - 多线程
     + Thread(class)
@@ -110,7 +110,7 @@ tags: Java
         * run
     + 修饰符
         * synchronized
-- container 容器    
+- container 容器
     + 数组
         * 类型加一个\[\]
         * 需要声明数组的大小
@@ -229,7 +229,7 @@ tags: Java
         * getDeclaredMethods 获取该类所有，自己声明的方法
         * getDeclaredMethod
             - getName 得到方法的名称
-            - getReturnName 得到方法返回值的类型的类类型 
+            - getReturnName 得到方法返回值的类型的类类型
             - getParameterTypes 得到参数列表的类型的类类型
     + Field
         * getFields 获取所有public的成员变量

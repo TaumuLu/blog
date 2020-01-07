@@ -190,11 +190,41 @@ GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 #--ding-talk-token=ba67df9bb2da8156cd8aacc297fc18eab76767bf29c6ff1324573e0ce81301d1
 #test ding talk token a0c0bed514affe974d2644bdabeb408d2d718e1810069fc61ac49fc29ab9429a
 jenkins-mobile-cli build --platform=rn --android-task=assembleRelease --android-DTEST=1 --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --ios-scheme=jiajiayueMobile_test --ios-configurations=Test   --fir-token=982a194018b86cf315c34ea6e507d541 --keychain-file=${KEYCHANIN_FILE} --keychain-password=${KEYCHAIN_PASSWORD} --log-quiet=true --static-scan=false --ding-talk-token=100eca1a5221071113ca6854ac8198728e7e1f5118bc4d4cd9d7cc79f52fee8a
+
+cd ./android && rm -rf app/build && ./gradlew clean && ./gradlew assembleFlavors_testRelease && cd ../
+
+#cd $work_path && cd android && ./gradlew clean assembleFlavors_jenkinsRelease -DXHSD_PUSH_ENV=Test && fir publish app/build/outputs/apk/app-flavors_jenkins-release.apk -T ${FIR_TOKEN} &
+
+#cd $work_path && cd ios && pod update --no-repo-update && rm -rf build/* && xcodebuild clean && xcodebuild -workspace xinhuaMobile.xcworkspace -scheme xinhuaMobile_inHouse_test -configuration Test -derivedDataPath build && xcrun -sdk iphoneos PackageApplication -v ./build/Build/Products/Test-iphoneos/xinhuaMobile_inHouse.app -o /Users/terminus/terminus/ipa/xinhuaMobile_inHouse_test.ipa && fir publish /Users/terminus/terminus/ipa/xinhuaMobile_inHouse_test.ipa -T ${FIR_TOKEN}
+
+#curl 'https://oapi.dingtalk.com/robot/send?access_token=xxx' -H 'Content-Type:application/json' -d '{ "msgtype": "link","link": {"text": "","title": "": "","messageUrl": ""}}'
+
+#jenkins-mobile-cli build --platform=rn --android-task=assembleFlavors_jenkinsRelease --ios-scheme=xinhuaMobile_inHouse_test --ios-configurations=Test --log-quiet=true --ding-talk-token=xxx --fir-token=${FIR_TOKEN} --keychain-file=${KEYCHANIN_FILE} --keychain-password=${KEYCHAIN_PASSWORD}
+
+#--ding-talk-token=xxx
+#test ding talk token xxx
+
+jenkins-mobile-cli build --platform=rn --android-task=assembleChannelDevRelease --android-DTEST=1 --android-DABI_FILTER=0 --android-DENV_SWITCH=1 --android-DENV_TYPE=prepub --ios-scheme=jiajiayueMobile_test --ios-configurations=Test --GCC_PREPROCESSOR_DEFINITIONS='$(inherited) TERMINUS_ENV_TYPE=\@\"prepub\"' --fir-token=xxx --keychain-file=${KEYCHANIN_FILE} --keychain-password=${KEYCHAIN_PASSWORD} --log-quiet=true --static-scan=false --ding-talk-token=100eca1a5221071113ca6854ac8198728e7e1f5118bc4d4cd9d7cc79f52fee8a
+
+
+#--ding-talk-token=xxx
+#jenkins-mobile-cli build --platform=rn --android-task=assembleRelease --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --ios-scheme=cnoocWebMobile --ios-configurations=Test --log-quiet=true --static-scan=false --fir-token=xxx --keychain-file=${KEYCHANIN_FILE} --keychain-password=${KEYCHAIN_PASSWORD}
+jenkins-mobile-cli build --platform=rn-android --android-task=assembleRelease --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --android-DENV_CHECK=0 --ios-scheme=cnoocWebMobile --ios-configurations=Test --log-quiet=true --static-scan=false --fir-token=xxx
+jenkins-mobile-cli build --platform=rn-ios --android-task=assembleRelease --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --ios-scheme=cnoocWebMobile_test --ios-configurations=Test --log-quiet=true --static-scan=false --fir-token=xxx --ding-talk-token=xxx --keychain-file=${KEYCHANIN_FILE} --keychain-password=${KEYCHAIN_PASSWORD}
 ```
 
 ## 调试
 debug地址使用localhost来调试，用本机ip网上说有跨域问题
 `http://localhost:8081/debugger-ui/`
+
+### chrome中调试网络
+Chrome调试器在React Native中调试网络调用  
+修改js写入一下代码  
+```javascript
+GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
+```
+关闭安全策略启动chrome
+chrome --disable-web-security --user-data-dir
 
 ## 报错收集
 
@@ -211,7 +241,7 @@ npm start -- --reset-cache
 ### 升级rn导致的错误
 - https://faichou.space/upgrade-rn-was-a-chaos/idnex/
 - [第三方依赖找不到react头文件](https://github.com/facebook/react-native/issues/11721)
- 
+
 ## 参考资料
 - https://github.com/liuchungui/react-native-BGNativeModuleExample
 - https://smallpath.me/post/react-native-debug

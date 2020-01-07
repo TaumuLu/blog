@@ -73,6 +73,18 @@ sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallme
 - 格式化系统盘
 - 退回U盘重装
 
+## 命令
+```bash
+# 转发远程端口到本地端口
+ssh -N -D 127.0.0.1:9090 root@远程地址
+
+# 查看唤醒日志记录
+pmset -g log | grep -e " Sleep  " -e " Wake  "
+
+# 查看id
+osascript -e 'id of app "Chrome"'
+```
+
 ## 参考链接
 - http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html
 - https://www.zhihu.com/question/22624898/answer/105234217
