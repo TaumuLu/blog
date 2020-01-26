@@ -39,6 +39,13 @@ tags: JavaScript
 - cli-cursor `切换终端光标`
 - jsdiff `对比文本差异`
 - pont `前端接口层工具`
+- chameleon
+- rrweb
+
+### UI框架
+- grommet
+- ant-design
+- rsuite
 
 ### 脚手架
 - create-react-app `快速创建react应用`
@@ -110,7 +117,8 @@ tags: JavaScript
 - pandora `node.js应用程序管理器`
 - Rendora `动态服务器端渲染，为爬虫提供零配置服务器端渲染`
 - lru-cache `缓存库，只缓存最频繁访问的内容`
-- Sequelize `ORM框架`
+- sequelize `ORM框架`
+- sails
 
 ### http请求库
 - axios `基于promise的同构请求库`
@@ -177,6 +185,8 @@ tags: JavaScript
 - popmotion `精简的动画库`
 - gojs `用于交互式流程图，组织结构图，设计工具，规划工具，可视语言的JavaScript图表库`
 - plottable `基于D3构建的模块化图表组件库`
+- echarts
+- spritejs
 
 ### 测试
 - jest `js自动化测试框架`
@@ -192,6 +202,11 @@ tags: JavaScript
 #### 富文本编辑器
 - draft-js
 - react-draft-wysiwyg
+
+### 工具库
+- underscore
+- lodash
+- ramda
 
 ## 参考资料
 - [rollup](https://www.rollupjs.com/guide/zh)
