@@ -41,6 +41,8 @@ tags: JavaScript
 - pont `前端接口层工具`
 - chameleon
 - rrweb
+- phantomjs
+- puppeteer
 
 ### UI框架
 - grommet
