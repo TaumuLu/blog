@@ -5,6 +5,7 @@ tags: JavaScript
 ---
 
 ## 框架
+
 - pawjs `pwa渐进式Web应用程序框架`
 - david `检查依赖包是否过期`
 - node-cross-spawn `node的spawn和spawnSync的跨平台解决方案`
@@ -43,25 +44,33 @@ tags: JavaScript
 - rrweb
 - phantomjs
 - puppeteer
+- crypto-js `加密库`
 
-### UI框架
+### UI 框架
+
 - grommet
 - ant-design
+- material
 - rsuite
+- react-uwp
 
 ### 脚手架
+
 - create-react-app `快速创建react应用`
 - roadhog `类似于create-react-app，提供可定制的配置`
 - vue-cli `vue脚手架工具`
 
 ### 编译
+
 - bable `js编译器`
 - swc `类似于babel的js编译器`
 
 #### bable
+
 - babel-plugin-module-resolver `路径解析转化`
 
 ### 打包构建
+
 - lerna `管理多个包项目的工具`
 - rollup `用es6模块打包代码的构建工具(支持css和js打包)`
 - poi `一个webpack的封装库，使开发变的简单`
@@ -69,6 +78,7 @@ tags: JavaScript
 - parcel `快速，零配置的Web应用程序打包器`
 
 #### webpack
+
 模块打包器，打包所有的资源
 
 - webpack-jarvis `基于浏览器的Webpack仪表板`
@@ -79,14 +89,17 @@ tags: JavaScript
 - stats-webpack-plugin `写入构建信息到文件`
 
 ##### 插件
+
 - html-webpack-include-assets-plugin `dll资源引用`
 - add-asset-html-webpack-plugin `dll资源引用`
 - dll-link-webpack-plugin `dll资源引用`
 
 ### react
+
 - react-sticky `粘性吸顶react组件`
 
 #### react-native
+
 - ignite `生成react-native模板，可定值需要的插件库`
 - react-native-rename `重命名react-native应用`
 - react-native-create-library `快速创建rn原生库`
@@ -94,17 +107,20 @@ tags: JavaScript
 - create-react-native-web-app `react native web三端构建脚手架`
 
 ### 状态管理库
+
 - unstated `简明的状态管理工具`
 - mobx `响应式状态管理库`
 - immutable `不可变的数据`
 - immer `轻量级函数式immutable库，利用ES6 proxy`
 
-### form表单
+### form 表单
+
 - react-jsonschema-form `用于从JSON Schema构建Web表单的React组件`
 - final-form `框架无关，高性能，基于订阅的表单状态管理`
 - uform `面向复杂场景的中后台表单解决方案`
 
 ### 服务
+
 - express `轻量级Web框架`
 - koa `下一代中间件web框架`
 - strongloop `node服务，API经济提供动力`
@@ -120,9 +136,11 @@ tags: JavaScript
 - Rendora `动态服务器端渲染，为爬虫提供零配置服务器端渲染`
 - lru-cache `缓存库，只缓存最频繁访问的内容`
 - sequelize `ORM框架`
+- typeorm `ORM框架`
 - sails
 
-### http请求库
+### http 请求库
+
 - axios `基于promise的同构请求库`
 - superagent `基于promise的同构请求库`
 - supertest
@@ -133,6 +151,7 @@ tags: JavaScript
 - got
 
 ### 命令工具
+
 - shx `用于node端的跨平台Shell命令`
 - rimraf `node端的rm -rf工具`
 - minimist `解析参数选项`
@@ -152,6 +171,7 @@ tags: JavaScript
 - get-port `获取可用的端口号`
 
 ### 调试
+
 - chalk `控制台打印带颜色`
 - debug `JS调试工具`
 - vorlon `用于远程调试和测试JavaScript`
@@ -161,12 +181,14 @@ tags: JavaScript
 - vconsole `一个轻量、可拓展、针对手机网页的前端开发者调试面板`
 
 #### 调试工具
+
 - Whistle
 - Zan Proxy
 - Anyproxy
 - spy-debugger
 
 ### 规范
+
 - prettier `代码格式化工具`
 - standard `javaScript代码规范`
 - pretty-quick `基于代码管理工具格式化代码`
@@ -177,10 +199,12 @@ tags: JavaScript
 - xo `JavaScript happiness style linter`
 
 ### 模版引擎
+
 - mustache `模版引擎`
 - handlebars `基于mustache的模版引擎`
 
 ### 绘图
+
 - sigma `专门用于绘图的JavaScript库`
 - pts `用于可视化和创意编码的库`
 - shapeshifter `适用于Android，iOS和Web的SVG图标动画工具`
@@ -191,6 +215,7 @@ tags: JavaScript
 - spritejs
 
 ### 测试
+
 - jest `js自动化测试框架`
 - mocha `js自动化测试框架`
 - intern `js自动化测试框架`
@@ -198,17 +223,21 @@ tags: JavaScript
 - chai `js断言库`
 
 ### 编辑器
+
 - Ace `javaScript编写的独立代码编辑器`
 - monaco-editor `基于浏览器的代码编辑器`
 
 #### 富文本编辑器
+
 - draft-js
 - react-draft-wysiwyg
 
 ### 工具库
+
 - underscore
 - lodash
 - ramda
 
 ## 参考资料
+
 - [rollup](https://www.rollupjs.com/guide/zh)
